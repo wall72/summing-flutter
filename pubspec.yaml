@@ -1,0 +1,29 @@
+name: summing_flutter
+description: Summing — multiplatform puzzle game (Flutter remake).
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  audioplayers: ^6.1.0
+  flutter_riverpod: ^2.6.1
+  meta: ^1.12.0
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    # Copied from original iOS project: Summing/Summing/
+    - assets/audio/bg_music.mp3
+    # WAV converted from tap_sound.aif / clap_sound.aif (better cross-platform support)
+    - assets/audio/tap_sound.wav
+    - assets/audio/clap_sound.wav
