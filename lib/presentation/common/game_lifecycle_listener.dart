@@ -36,10 +36,10 @@ class _GameLifecycleListenerState extends ConsumerState<GameLifecycleListener>
       case AppLifecycleState.inactive:
       case AppLifecycleState.paused:
       case AppLifecycleState.hidden:
+      case AppLifecycleState.detached:
         unawaited(ref.read(gameSessionProvider.notifier).persistIfNeeded());
         break;
       case AppLifecycleState.resumed:
-      case AppLifecycleState.detached:
         break;
     }
   }
