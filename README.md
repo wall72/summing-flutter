@@ -40,6 +40,22 @@
    flutter run
    ```
 
+### 웹(Chrome)에서 저장 데이터가 재실행 시 초기화되는 경우
+
+`shared_preferences`의 웹 구현은 브라우저 `localStorage`(Origin 단위)에 저장됩니다.
+개발 중 `flutter run -d chrome`를 그대로 쓰면 **실행마다 포트가 바뀌거나 임시 프로필이 바뀌어**(Origin/Profile 변경) 저장 데이터(진행상태·설정·하이스코어)가 새로 보일 수 있습니다.
+
+아래처럼 **고정 포트 + 고정 Chrome user-data-dir**로 실행하면 재실행 후에도 동일 저장소를 사용합니다.
+
+```bash
+flutter run -d chrome \
+  --web-hostname localhost \
+  --web-port 7357 \
+  --web-browser-flag="--user-data-dir=$HOME/.config/summing-flutter-chrome"
+```
+
+> 참고: 실제 배포(고정 도메인)에서는 동일 Origin을 사용하므로 이 현상이 재현되지 않습니다.
+
 ## 프로젝트 구조
 
 ```
