@@ -63,7 +63,8 @@ class _MenuPageState extends ConsumerState<MenuPage> {
       data: (LocalPersistence p) {
         _settings ??= p.settings.load();
         final s = _settings!;
-        final canResume = p.gameSave.hasSaveGame;
+        final savedGame = p.gameSave.load();
+        final canResume = savedGame != null;
 
         return Scaffold(
           body: SafeArea(
@@ -104,7 +105,11 @@ class _MenuPageState extends ConsumerState<MenuPage> {
                                 () => ref.read(gameSessionProvider.notifier).resumeGame(),
                               )
                             : null,
-                        child: const Text('Resume Game'),
+                        child: Text(
+                          canResume
+                              ? 'Resume Game (${savedGame!.turnCount} turns)'
+                              : 'Resume Game',
+                        ),
                       ),
                       const SizedBox(height: 12),
                       OutlinedButton(
