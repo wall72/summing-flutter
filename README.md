@@ -1,6 +1,6 @@
 # Summing (Flutter)
 
-9×9 보드에 숫자를 배치해 이웃 합의 일의 자리와 맞추며 칸을 비우는 퍼즐 게임입니다. iOS 원작을 Flutter로 옮긴 멀티플랫폼 버전입니다.
+9×9 보드에 숫자를 배치해 이웃 합의 일의 자리와 맞추며 칸을 비우는 퍼즐 게임입니다. iOS 원작을 Flutter로 옮긴 버전이며, 현재 프로젝트 폴더는 **Web 플랫폼 중심**으로 유지합니다.
 
 ## 게임 요약
 
@@ -26,19 +26,57 @@
 - **shared_preferences** — 설정, 세이브, 하이스코어(JSON)
 - **audioplayers** — BGM / 효과음
 
+## 현재 플랫폼 구성
+
+현재 저장소에는 웹 실행/빌드에 필요한 플랫폼 폴더만 유지합니다.
+
+```
+web/               # Flutter Web 플랫폼 설정
+lib/               # 앱 소스
+assets/            # 오디오 에셋
+test/              # 테스트
+run_chrome.ps1     # Windows용 Chrome 실행 스크립트
+pubspec.yaml       # Flutter/Dart 의존성 및 에셋 설정
+```
+
+`android/`, `ios/`, `macos/`, `windows/` 플랫폼 폴더는 현재 웹 전용 운영을 위해 제거되어 있어도 정상입니다. 나중에 네이티브 빌드가 필요하면 `flutter create . --platforms ...` 명령으로 다시 생성할 수 있습니다.
+
 ## 시작하기
 
 1. [Flutter SDK](https://docs.flutter.dev/get-started/install) 설치
-2. 플랫폼 폴더가 없다면 프로젝트 루트에서:
-   ```bash
-   flutter create . --project-name summing_flutter
+2. 프로젝트 루트로 이동:
+   ```powershell
+   cd C:\Users\user\Workspace\summing-flutter
    ```
-3. 의존성 및 테스트:
-   ```bash
+3. 웹 플랫폼 폴더가 없다면 생성:
+   ```powershell
+   flutter create . --platforms web
+   ```
+4. 의존성 설치 및 테스트:
+   ```powershell
    flutter pub get
    flutter test
-   flutter run
    ```
+5. Chrome에서 실행:
+   ```powershell
+   .\run_chrome.ps1
+   ```
+
+## 웹 빌드
+
+릴리스용 웹 산출물은 아래 명령으로 생성합니다.
+
+```powershell
+flutter build web
+```
+
+빌드 결과는 `build\web`에 생성됩니다.
+
+Chrome에서 개발 실행만 할 때는 빌드 명령이 아니라 아래 실행 명령을 사용합니다.
+
+```powershell
+flutter run -d chrome
+```
 
 ### 웹(Chrome)에서 저장 데이터가 재실행 시 초기화되는 경우
 
@@ -47,18 +85,51 @@
 
 아래처럼 **고정 포트 + 고정 Chrome user-data-dir**로 실행하면 재실행 후에도 동일 저장소를 사용합니다.
 
-```bash
-flutter run -d chrome \
-  --web-hostname localhost \
-  --web-port 7357 \
-  --web-browser-flag="--user-data-dir=$HOME/.config/summing-flutter-chrome"
+```powershell
+.\run_chrome.ps1
 ```
 
+`run_chrome.ps1`은 다음을 수행합니다.
+
+- 스크립트 위치를 프로젝트 루트로 설정
+- `web\index.html`이 없으면 `flutter create . --platforms web` 실행
+- 전용 Chrome 프로필(`$HOME\AppData\Local\summing-flutter-chrome`) 사용
+- 고정 포트 `7357`로 Chrome 실행
+
 > 참고: 실제 배포(고정 도메인)에서는 동일 Origin을 사용하므로 이 현상이 재현되지 않습니다.
+
+## 플랫폼 폴더 다시 추가하기
+
+현재는 Web 중심 구성이지만, 필요할 때 원하는 플랫폼 폴더를 다시 생성할 수 있습니다.
+
+```powershell
+# Android만 추가
+flutter create . --platforms android
+flutter pub get
+
+# iOS만 추가
+flutter create . --platforms ios
+flutter pub get
+
+# macOS만 추가
+flutter create . --platforms macos
+flutter pub get
+
+# Windows만 추가
+flutter create . --platforms windows
+flutter pub get
+
+# 여러 플랫폼을 한 번에 추가
+flutter create . --platforms android,ios,macos,windows
+flutter pub get
+```
+
+플랫폼 폴더를 다시 생성하면 Flutter 기본 템플릿 설정이 만들어집니다. 앱 아이콘, 패키지명, 권한, Gradle/Xcode 설정, 서명 설정처럼 플랫폼별로 직접 수정한 내용이 필요하면 별도로 다시 반영해야 합니다.
 
 ## 프로젝트 구조
 
 ```
+web/               # Flutter Web 플랫폼 설정
 lib/
   domain/          # 규칙 엔진·모델
   application/     # 게임 세션(배치·저장·클리어 처리)
@@ -67,6 +138,7 @@ lib/
 assets/audio/      # bg_music.mp3, tap_sound.wav, clap_sound.wav
 tools/             # AIFF → WAV 변환 스크립트(엔디안)
 test/              # domain·infrastructure·widget 스모크
+run_chrome.ps1     # 고정 포트/프로필로 Chrome 실행
 ```
 
 ## 오디오 에셋

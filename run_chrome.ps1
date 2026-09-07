@@ -1,4 +1,7 @@
-# Flutter Chrome 실행 스크립트 (고정 포트 + 고정 프로필)
+# Flutter Web Chrome 실행 스크립트 (고정 포트 + 고정 프로필)
+
+$ProjectRoot = $PSScriptRoot
+Set-Location -LiteralPath $ProjectRoot
 
 # Chrome 프로필 경로 설정
 $ChromeProfile = "$HOME\AppData\Local\summing-flutter-chrome"
@@ -13,6 +16,17 @@ if (!(Test-Path $ChromeProfile)) {
 if (-not (Get-Command flutter -ErrorAction SilentlyContinue)) {
   Write-Error "flutter command not found. Please add Flutter to PATH."
   exit 1
+}
+
+# Flutter Web 지원 확인 및 프로젝트 web 플랫폼 설정
+$webIndex = Join-Path $ProjectRoot "web\index.html"
+if (!(Test-Path $webIndex)) {
+  Write-Host "Configuring Flutter Web platform..."
+  & flutter create . --platforms web
+  if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to configure Flutter Web platform."
+    exit $LASTEXITCODE
+  }
 }
 
 # 동일 프로필로 실행된 Chrome만 종료 (프로필 충돌 방지)
