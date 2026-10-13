@@ -26,20 +26,16 @@
 - **shared_preferences** — 설정, 세이브, 하이스코어(JSON)
 - **audioplayers** — BGM / 효과음
 
-## 현재 플랫폼 구성
+## 플랫폼 구성
 
-현재 저장소에는 웹 실행/빌드에 필요한 플랫폼 폴더만 유지합니다.
+Web / Android / iOS 플랫폼 폴더를 모두 포함합니다.
 
 ```
-web/               # Flutter Web 플랫폼 설정
-lib/               # 앱 소스
-assets/            # 오디오 에셋
-test/              # 테스트
-run_chrome.ps1     # Windows용 Chrome 실행 스크립트
-pubspec.yaml       # Flutter/Dart 의존성 및 에셋 설정
+web/  android/  ios/   # 플랫폼 설정
+lib/                   # 앱 소스
+assets/                # 오디오 에셋
+test/                  # 테스트
 ```
-
-`android/`, `ios/`, `macos/`, `windows/` 플랫폼 폴더는 현재 웹 전용 운영을 위해 제거되어 있어도 정상입니다. 나중에 네이티브 빌드가 필요하면 `flutter create . --platforms ...` 명령으로 다시 생성할 수 있습니다.
 
 ## 시작하기
 
@@ -98,38 +94,32 @@ flutter run -d chrome
 
 > 참고: 실제 배포(고정 도메인)에서는 동일 Origin을 사용하므로 이 현상이 재현되지 않습니다.
 
-## 플랫폼 폴더 다시 추가하기
+## 릴리즈 빌드
 
-현재는 Web 중심 구성이지만, 필요할 때 원하는 플랫폼 폴더를 다시 생성할 수 있습니다.
+릴리즈 전 `flutter analyze && flutter test`를 통과시키세요.
 
-```powershell
-# Android만 추가
-flutter create . --platforms android
-flutter pub get
+| 플랫폼 | 명령 | 비고 |
+|--------|------|------|
+| Web | `flutter build web --release` | 결과: `build/web` |
+| Android | `flutter build appbundle --release` | 아래 서명 설정 필요 |
+| iOS | `flutter build ipa --release` | macOS + Xcode, Apple 서명 필요 |
 
-# iOS만 추가
-flutter create . --platforms ios
-flutter pub get
+### 릴리즈 전 필수 설정 (직접 해야 함)
 
-# macOS만 추가
-flutter create . --platforms macos
-flutter pub get
-
-# Windows만 추가
-flutter create . --platforms windows
-flutter pub get
-
-# 여러 플랫폼을 한 번에 추가
-flutter create . --platforms android,ios,macos,windows
-flutter pub get
-```
-
-플랫폼 폴더를 다시 생성하면 Flutter 기본 템플릿 설정이 만들어집니다. 앱 아이콘, 패키지명, 권한, Gradle/Xcode 설정, 서명 설정처럼 플랫폼별로 직접 수정한 내용이 필요하면 별도로 다시 반영해야 합니다.
+- **앱 ID**: 현재 `com.example.summing_flutter` 입니다. 스토어 제출 전
+  `android/app/build.gradle.kts`(`namespace`, `applicationId`)와
+  Xcode의 Bundle Identifier(`ios/Runner.xcodeproj`)를 본인 ID로 바꾸세요.
+- **Android 서명**: `android/key.properties`(git 제외)에
+  `storeFile`, `storePassword`, `keyAlias`, `keyPassword`를 넣으면 release 빌드에 사용됩니다.
+  없으면 debug 키로 서명되므로 스토어 업로드가 불가능합니다.
+- **iOS 서명**: Xcode에서 Team / Provisioning 설정.
+- **앱 아이콘**: 현재 Flutter 기본 아이콘입니다. `flutter_launcher_icons` 등으로 교체하세요.
+- **버전**: `pubspec.yaml`의 `version: x.y.z+build` (빌드 번호는 제출마다 증가).
 
 ## 프로젝트 구조
 
 ```
-web/               # Flutter Web 플랫폼 설정
+web/ android/ ios/ # 플랫폼 설정
 lib/
   domain/          # 규칙 엔진·모델
   application/     # 게임 세션(배치·저장·클리어 처리)

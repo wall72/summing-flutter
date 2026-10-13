@@ -3,17 +3,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../persistence/settings_store.dart';
-import 'audio_bundle_availability.dart';
 import 'game_audio_assets.dart';
 
 /// BGM loop + placement / match SFX (PRD §7.4).
 ///
-/// Only calls [AssetSource] when [AssetBundle.load] succeeds for each file.
-/// Otherwise skips native playback (no missing-asset / decoder errors).
-/// SFX falls back to [SystemSoundType.click] when tap/match assets are absent.
+/// Audio failures never propagate: SFX falls back to [SystemSoundType.click].
 class GameAudioService {
   GameAudioService({required SettingsStore settingsStore})
-    : _settings = settingsStore;
+      : _settings = settingsStore;
 
   final SettingsStore _settings;
 
@@ -21,149 +18,126 @@ class GameAudioService {
   AudioPlayer? _sfx;
   var _initialized = false;
   var _playersBroken = false;
-  AudioBundleAvailability? _bundle;
 
-  /// Web blocks autoplay until a user gesture; desktop/mobile can start BGM immediately.
+  /// True while the app is in the background; BGM must not play then.
+  var _suspended = false;
+
+  /// Web blocks autoplay until a user gesture; mobile can start BGM immediately.
   var _userGestureUnlockedAudio = !kIsWeb;
-
-  Future<AudioBundleAvailability> _availability() async {
-    return _bundle ??= await AudioBundleAvailability.load(rootBundle);
-  }
 
   Future<void> init() async {
     if (_initialized || _playersBroken) return;
     try {
-      _bgm = AudioPlayer(playerId: 'bgm');
-      _sfx = AudioPlayer(playerId: 'sfx');
-      await _bgm!.setPlayerMode(PlayerMode.mediaPlayer);
-      await _sfx!.setPlayerMode(PlayerMode.lowLatency);
-      await _bgm!.setReleaseMode(ReleaseMode.loop);
-      await _sfx!.setReleaseMode(ReleaseMode.release);
-      await _bgm!.setVolume(1);
-      await _sfx!.setVolume(1);
+      final bgm = AudioPlayer(playerId: 'bgm');
+      final sfx = AudioPlayer(playerId: 'sfx');
+      _bgm = bgm;
+      _sfx = sfx;
+      await bgm.setPlayerMode(PlayerMode.mediaPlayer);
+      await sfx.setPlayerMode(PlayerMode.lowLatency);
+      await bgm.setReleaseMode(ReleaseMode.loop);
+      await sfx.setReleaseMode(ReleaseMode.release);
       _initialized = true;
     } on Object catch (e, st) {
       _playersBroken = true;
       _bgm = null;
       _sfx = null;
-      if (kDebugMode) {
-        debugPrint('GameAudioService: AudioPlayer init failed: $e\n$st');
-      }
+      _log('AudioPlayer init failed', e, st);
     }
   }
 
   Future<void> dispose() async {
-    try {
-      await _bgm?.dispose();
-    } on Object {}
-    try {
-      await _sfx?.dispose();
-    } on Object {}
+    await _guard(() async => _bgm?.dispose());
+    await _guard(() async => _sfx?.dispose());
     _bgm = null;
     _sfx = null;
     _initialized = false;
     _playersBroken = false;
-    _bundle = null;
   }
 
-  /// Call after [SettingsStore.save] or on startup.
+  /// Call after [SettingsStore.save], on startup, or when returning to foreground.
   Future<void> applySettingsAndSyncBgm() async {
-    final bundle = await _availability();
     if (_playersBroken) return;
 
-    final musicOn = _settings.load().musicOn;
-    if (!musicOn) {
-      try {
-        await _bgm?.stop();
-      } on Object {}
-      return;
-    }
-
-    if (!bundle.bgm) {
-      try {
-        await _bgm?.stop();
-      } on Object {}
-      return;
-    }
-
-    if (kIsWeb && !_userGestureUnlockedAudio) {
-      if (kDebugMode) {
-        debugPrint(
-          'GameAudioService: BGM deferred (web autoplay — tap anywhere to start)',
-        );
-      }
+    final shouldPlay =
+        _settings.load().musicOn && !_suspended && _userGestureUnlockedAudio;
+    if (!shouldPlay) {
+      await stopBgm();
       return;
     }
 
     try {
       await init();
-      if (_playersBroken || _bgm == null) return;
-      await _bgm!.stop();
-      await _bgm!.play(AssetSource(GameAudioAssets.bgm));
+      final bgm = _bgm;
+      if (bgm == null) return;
+      if (bgm.state == PlayerState.playing) return;
+      await bgm.play(AssetSource(GameAudioAssets.bgm));
     } on Object catch (e, st) {
-      if (kDebugMode) {
-        debugPrint('GameAudioService: BGM play failed: $e\n$st');
-      }
+      _log('BGM play failed', e, st);
     }
   }
 
-  Future<void> stopBgm() async {
+  Future<void> stopBgm() => _guard(() async => _bgm?.stop());
+
+  /// App went to background: silence BGM (store policy / battery).
+  Future<void> suspend() async {
+    _suspended = true;
+    await _guard(() async => _bgm?.pause());
+  }
+
+  /// App returned to foreground.
+  Future<void> resume() async {
+    if (!_suspended) return;
+    _suspended = false;
+    await applySettingsAndSyncBgm();
+  }
+
+  Future<void> playTap() => _playSfx(GameAudioAssets.tap);
+
+  Future<void> playMatch() => _playSfx(GameAudioAssets.match);
+
+  Future<void> _playSfx(String assetPath) async {
+    if (!_settings.load().soundOn || _suspended) return;
+
     try {
-      await _bgm?.stop();
-    } on Object {}
-  }
-
-  Future<void> playTap() async => _playSfx(
-        hasAsset: (b) => b.tap,
-        assetPath: GameAudioAssets.tap,
-      );
-
-  Future<void> playMatch() async => _playSfx(
-        hasAsset: (b) => b.match,
-        assetPath: GameAudioAssets.match,
-      );
-
-  Future<void> _playSfx({
-    required bool Function(AudioBundleAvailability b) hasAsset,
-    required String assetPath,
-  }) async {
-    if (!_settings.load().soundOn) return;
-
-    final bundle = await _availability();
-
-    if (!_playersBroken && hasAsset(bundle)) {
-      try {
-        await init();
-        if (_playersBroken || _sfx == null) {
-          _systemClickFallback();
-          return;
-        }
-        await _sfx!.stop();
-        await _sfx!.play(AssetSource(assetPath));
-      } on Object catch (e, st) {
-        if (kDebugMode) {
-          debugPrint('GameAudioService: SFX play failed: $e\n$st');
-        }
+      await init();
+      final sfx = _sfx;
+      if (sfx == null) {
         _systemClickFallback();
+        return;
       }
-      return;
+      await sfx.stop();
+      await sfx.play(AssetSource(assetPath));
+    } on Object catch (e, st) {
+      _log('SFX play failed', e, st);
+      _systemClickFallback();
     }
-
-    _systemClickFallback();
   }
 
   void _systemClickFallback() {
     try {
       SystemSound.play(SystemSoundType.click);
-    } on Object {}
+    } on Object {
+      // Best effort only.
+    }
   }
 
   /// Call once after a pointer/keyboard interaction on web (e.g. first tap on the app).
   /// Idempotent; safe to call multiple times.
   Future<void> notifyUserGesture() async {
-    if (!kIsWeb) return;
     if (_userGestureUnlockedAudio) return;
     _userGestureUnlockedAudio = true;
     await applySettingsAndSyncBgm();
+  }
+
+  static Future<void> _guard(Future<void> Function() action) async {
+    try {
+      await action();
+    } on Object {
+      // Best effort only.
+    }
+  }
+
+  static void _log(String message, Object e, StackTrace st) {
+    if (kDebugMode) debugPrint('GameAudioService: $message: $e\n$st');
   }
 }

@@ -11,10 +11,7 @@ class GameSaveStore {
 
   final SharedPreferences _prefs;
 
-  bool get hasSaveGame {
-    final s = _prefs.getString(PersistenceKeys.saveGame);
-    return s != null && s.isNotEmpty && SaveGameCodec.decode(s) != null;
-  }
+  bool get hasSaveGame => load() != null;
 
   GameState? load() {
     return SaveGameCodec.decode(_prefs.getString(PersistenceKeys.saveGame));

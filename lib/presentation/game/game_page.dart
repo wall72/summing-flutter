@@ -33,16 +33,13 @@ class GamePage extends ConsumerWidget {
           title: const Text('Summing'),
           actions: [
             TextButton(
-              onPressed: () async {
-                await ref.read(gameSessionProvider.notifier).restartGame();
-              },
+              onPressed: () =>
+                  ref.read(gameSessionProvider.notifier).restartGame(),
               child: const Text('Restart'),
             ),
             TextButton(
-              onPressed: () {
-                ref.read(gameSessionProvider.notifier).clearSession();
-                Navigator.of(context).pop();
-              },
+              // PopScope below clears the session once the route pops.
+              onPressed: () => Navigator.of(context).pop(),
               child: const Text('Quit'),
             ),
           ],
@@ -118,23 +115,24 @@ class _EndOverlay extends ConsumerWidget {
                   Text(
                     title,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
-                  if (subtitle.isNotEmpty) ...[
-                    const SizedBox(height: 8),
-                    Text(
-                      subtitle,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  ],
+                  const SizedBox(height: 8),
+                  Text(
+                    subtitle,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
                   const SizedBox(height: 24),
                   FilledButton(
-                    onPressed: () {
-                      ref.read(gameSessionProvider.notifier).clearSession();
-                      Navigator.of(context).pop();
-                    },
+                    onPressed: () =>
+                        ref.read(gameSessionProvider.notifier).restartGame(),
+                    child: const Text('Play again'),
+                  ),
+                  const SizedBox(height: 8),
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(),
                     child: const Text('Back to menu'),
                   ),
                 ],

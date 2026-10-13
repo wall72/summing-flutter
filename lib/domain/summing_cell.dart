@@ -9,8 +9,8 @@ class SummingCell {
   static const SummingCell empty = SummingCell._(isAssigned: false, value: 0);
 
   const SummingCell.filled(this.value)
-    : isAssigned = true,
-      assert(value >= 0 && value <= 9);
+      : isAssigned = true,
+        assert(value >= 0 && value <= 9);
 
   final bool isAssigned;
   final int value;
@@ -25,6 +25,5 @@ class SummingCell {
   int get hashCode => Object.hash(isAssigned, value);
 
   @override
-  String toString() =>
-      isAssigned ? 'SummingCell($value)' : 'SummingCell.empty';
+  String toString() => isAssigned ? 'SummingCell($value)' : 'SummingCell.empty';
 }

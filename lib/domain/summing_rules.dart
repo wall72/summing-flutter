@@ -36,10 +36,7 @@ abstract final class SummingRules {
     final matched = digit == sum % 10;
     final Board nextBoard;
     if (matched) {
-      nextBoard = state.board.afterMatchClear(
-        placedLinear: linear,
-        neighborLinears: neighbors,
-      );
+      nextBoard = state.board.afterMatchClear(neighborLinears: neighbors);
     } else {
       nextBoard = state.board.withPlacedDigit(linear, digit);
     }

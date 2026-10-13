@@ -23,33 +23,26 @@ class HighScoresStore {
         if (e is int && e >= 0) list.add(e);
       }
       list.sort();
-      if (list.length > maxEntries) {
-        return list.sublist(0, maxEntries);
-      }
-      return list;
+      return list.length > maxEntries ? list.sublist(0, maxEntries) : list;
     } on Object {
       return [];
     }
   }
 
   Future<void> save(List<int> scores) async {
-    final sorted = List<int>.from(scores)..sort();
-    final trimmed = sorted.length <= maxEntries
-        ? sorted
-        : sorted.sublist(0, maxEntries);
-    await _prefs.setString(
-      PersistenceKeys.highScores,
-      jsonEncode(trimmed),
-    );
+    final sorted = List<int>.of(scores)..sort();
+    final trimmed =
+        sorted.length <= maxEntries ? sorted : sorted.sublist(0, maxEntries);
+    await _prefs.setString(PersistenceKeys.highScores, jsonEncode(trimmed));
   }
 
   /// Inserts [turnCount], keeps lowest [maxEntries] scores, ascending.
   Future<List<int>> recordCompletedGame(int turnCount) async {
-    if (turnCount < 0) return load();
-    final next = [...load(), turnCount]..sort();
-    final trimmed = next.length <= maxEntries
-        ? next
-        : next.sublist(0, maxEntries);
+    final current = load();
+    if (turnCount < 0) return current;
+    final next = [...current, turnCount]..sort();
+    final trimmed =
+        next.length <= maxEntries ? next : next.sublist(0, maxEntries);
     await save(trimmed);
     return trimmed;
   }

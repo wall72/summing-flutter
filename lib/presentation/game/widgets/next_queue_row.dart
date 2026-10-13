@@ -40,11 +40,11 @@ class NextQueueRow extends StatelessWidget {
               child: Text(
                 '$d',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: isFirst
-                      ? scheme.onPrimaryContainer
-                      : scheme.onSurface,
-                ),
+                      fontWeight: FontWeight.bold,
+                      color: isFirst
+                          ? scheme.onPrimaryContainer
+                          : scheme.onSurface,
+                    ),
               ),
             ),
           );

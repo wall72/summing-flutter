@@ -20,8 +20,8 @@ Future<void> showHowToPlaySheet(BuildContext context) {
               Text(
                 'How to Play',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               const SizedBox(height: 16),
               const _RuleParagraph(
@@ -73,8 +73,8 @@ class _RuleParagraph extends StatelessWidget {
           Text(
             title,
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
+                  fontWeight: FontWeight.w600,
+                ),
           ),
           const SizedBox(height: 4),
           Text(body, style: Theme.of(context).textTheme.bodyMedium),
