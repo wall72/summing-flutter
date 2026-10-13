@@ -4,8 +4,8 @@
 /// (`linear`) for `List` access. Use [from1Based] / [to1Based] when bridging.
 class CellIndex {
   const CellIndex({required this.row, required this.col})
-    : assert(row >= 0 && row < size),
-      assert(col >= 0 && col < size);
+      : assert(row >= 0 && row < size),
+        assert(col >= 0 && col < size);
 
   static const int size = 9;
   static const int cellCount = size * size;

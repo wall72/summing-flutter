@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:summing_flutter/application/game_session_notifier.dart';
+import 'package:summing_flutter/domain/game_phase.dart';
 import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
 import 'package:summing_flutter/infrastructure/persistence/app_settings.dart';
 import 'package:summing_flutter/infrastructure/persistence/local_persistence.dart';
@@ -38,14 +39,13 @@ class _MenuPageState extends ConsumerState<MenuPage> {
 
   Future<void> _saveSettings(LocalPersistence p, AppSettings next) async {
     final prev = _settings!;
-    await p.settings.save(next);
     setState(() => _settings = next);
+    await p.settings.save(next);
     if (prev.musicOn != next.musicOn) {
-      await ref.read(gameAudioServiceProvider).when(
-        data: (svc) => svc.applySettingsAndSyncBgm(),
-        loading: () async {},
-        error: (_, __) async {},
-      );
+      await ref
+          .read(gameAudioServiceProvider)
+          .valueOrNull
+          ?.applySettingsAndSyncBgm();
     }
   }
 
@@ -63,7 +63,8 @@ class _MenuPageState extends ConsumerState<MenuPage> {
       data: (LocalPersistence p) {
         _settings ??= p.settings.load();
         final s = _settings!;
-        final savedGame = p.gameSave.load();
+        final saved = p.gameSave.load();
+        final savedGame = saved?.phase == GamePhase.playing ? saved : null;
         final canResume = savedGame != null;
 
         return Scaffold(
@@ -80,7 +81,9 @@ class _MenuPageState extends ConsumerState<MenuPage> {
                       Text(
                         'Summing',
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.headlineMedium
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 8),
@@ -88,13 +91,17 @@ class _MenuPageState extends ConsumerState<MenuPage> {
                         'Clear the board in as few turns as possible.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onSurfaceVariant,
-                        ),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant,
+                            ),
                       ),
                       const SizedBox(height: 32),
                       FilledButton(
                         onPressed: () => _openGame(
-                          () => ref.read(gameSessionProvider.notifier).startNewGame(),
+                          () => ref
+                              .read(gameSessionProvider.notifier)
+                              .startNewGame(),
                         ),
                         child: const Text('New Game'),
                       ),
@@ -102,12 +109,14 @@ class _MenuPageState extends ConsumerState<MenuPage> {
                       FilledButton.tonal(
                         onPressed: canResume
                             ? () => _openGame(
-                                () => ref.read(gameSessionProvider.notifier).resumeGame(),
-                              )
+                                  () => ref
+                                      .read(gameSessionProvider.notifier)
+                                      .resumeGame(),
+                                )
                             : null,
                         child: Text(
                           canResume
-                              ? 'Resume Game (${savedGame!.turnCount} turns)'
+                              ? 'Resume Game (${savedGame.turnCount} turns)'
                               : 'Resume Game',
                         ),
                       ),

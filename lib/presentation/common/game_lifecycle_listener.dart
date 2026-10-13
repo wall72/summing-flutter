@@ -4,8 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:summing_flutter/application/game_session_notifier.dart';
+import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
 
-/// Saves in-progress game when the app goes to background (PRD §8).
+/// Saves in-progress game and pauses BGM when the app goes to background (PRD §8).
 class GameLifecycleListener extends ConsumerStatefulWidget {
   const GameLifecycleListener({super.key, required this.child});
 
@@ -32,15 +33,17 @@ class _GameLifecycleListenerState extends ConsumerState<GameLifecycleListener>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    final audio = ref.read(gameAudioServiceProvider).valueOrNull;
     switch (state) {
       case AppLifecycleState.inactive:
+        unawaited(ref.read(gameSessionProvider.notifier).persistIfNeeded());
       case AppLifecycleState.paused:
       case AppLifecycleState.hidden:
       case AppLifecycleState.detached:
         unawaited(ref.read(gameSessionProvider.notifier).persistIfNeeded());
-        break;
+        if (audio != null) unawaited(audio.suspend());
       case AppLifecycleState.resumed:
-        break;
+        if (audio != null) unawaited(audio.resume());
     }
   }
 

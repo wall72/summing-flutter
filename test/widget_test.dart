@@ -6,7 +6,8 @@ import 'package:summing_flutter/main.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('App builds menu with Summing title', (WidgetTester tester) async {
+  testWidgets('App builds menu with Summing title',
+      (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
     await tester.pumpWidget(const ProviderScope(child: SummingApp()));
     await tester.pumpAndSettle();

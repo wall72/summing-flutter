@@ -8,8 +8,7 @@ import 'summing_cell.dart';
 /// 9×9 Summing board (PRD §5.1).
 @immutable
 class Board {
-  const Board._(this._cells)
-    : assert(_cells.length == CellIndex.cellCount);
+  const Board._(this._cells) : assert(_cells.length == CellIndex.cellCount);
 
   final List<SummingCell> _cells;
 
@@ -46,33 +45,23 @@ class Board {
 
   bool get isGameOver => _cells.every((c) => c.isAssigned);
 
-  Board _copyWithCell(int linear, SummingCell cell) {
-    final next = List<SummingCell>.from(_cells);
-    next[linear] = cell;
-    return Board._(List.unmodifiable(next));
-  }
-
   /// Place digit [value] on empty [linear] when there is no match (PRD §5.3).
   Board withPlacedDigit(int linear, int value) {
     assert(value >= 0 && value <= 9);
-    final current = cellAt(linear);
-    if (current.isAssigned) {
+    if (cellAt(linear).isAssigned) {
       throw StateError('Cannot place on assigned cell at $linear');
     }
-    return _copyWithCell(linear, SummingCell.filled(value));
+    final next = List<SummingCell>.of(_cells);
+    next[linear] = SummingCell.filled(value);
+    return Board._(List.unmodifiable(next));
   }
 
-  /// Clear placement cell (already empty after logic) and assigned neighbors.
-  Board afterMatchClear({
-    required int placedLinear,
-    required Iterable<int> neighborLinears,
-  }) {
-    var board = this;
+  /// Clears every assigned cell in [neighborLinears] (single list copy).
+  Board afterMatchClear({required Iterable<int> neighborLinears}) {
+    final next = List<SummingCell>.of(_cells);
     for (final n in neighborLinears) {
-      if (board.cellAt(n).isAssigned) {
-        board = board._copyWithCell(n, SummingCell.empty);
-      }
+      next[n] = SummingCell.empty;
     }
-    return board;
+    return Board._(List.unmodifiable(next));
   }
 }

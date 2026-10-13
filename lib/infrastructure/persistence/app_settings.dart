@@ -22,9 +22,9 @@ class AppSettings {
   }
 
   Map<String, dynamic> toJson() => {
-    'musicOn': musicOn,
-    'soundOn': soundOn,
-  };
+        'musicOn': musicOn,
+        'soundOn': soundOn,
+      };
 
   factory AppSettings.fromJson(Map<String, dynamic> json) {
     return AppSettings(

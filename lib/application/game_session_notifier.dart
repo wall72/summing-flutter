@@ -13,39 +13,42 @@ final gameSessionProvider =
     NotifierProvider<GameSessionNotifier, GameState?>(GameSessionNotifier.new);
 
 class GameSessionNotifier extends Notifier<GameState?> {
+  final _random = Random();
+
   @override
   GameState? build() => null;
 
   Future<void> startNewGame() async {
     final persistence = await ref.read(localPersistenceProvider.future);
-    final state = GameState.initial(Random());
-    await persistence.gameSave.save(state);
-    this.state = state;
+    final fresh = GameState.initial(_random);
+    state = fresh;
+    await persistence.gameSave.save(fresh);
   }
 
+  /// Loads the saved run. Finished runs are never resumable.
   Future<void> resumeGame() async {
     final persistence = await ref.read(localPersistenceProvider.future);
     final loaded = persistence.gameSave.load();
-    if (loaded != null) {
-      state = loaded;
+    if (loaded == null) return;
+    if (loaded.phase != GamePhase.playing) {
+      await persistence.gameSave.clear();
+      return;
     }
+    state = loaded;
   }
 
   /// New random board (same as PRD restart).
-  Future<void> restartGame() async {
-    await startNewGame();
-  }
+  Future<void> restartGame() => startNewGame();
 
   void clearSession() {
     state = null;
   }
 
   /// Writes current game to disk (PRD: background / consistency).
-  /// Skips when there is no session or the run is already cleared (complete).
+  /// Skips when there is no session or the run is already finished.
   Future<void> persistIfNeeded() async {
     final current = state;
-    if (current == null) return;
-    if (current.phase == GamePhase.complete) return;
+    if (current == null || current.phase != GamePhase.playing) return;
 
     final persistence = await ref.read(localPersistenceProvider.future);
     await persistence.gameSave.save(current);
@@ -55,31 +58,27 @@ class GameSessionNotifier extends Notifier<GameState?> {
     final current = state;
     if (current == null) return;
 
-    final outcome = SummingRules.place(current, linear, Random());
-    if (outcome is PlaceFailure) return;
+    final outcome = SummingRules.place(current, linear, _random);
+    if (outcome is! PlaceSuccess) return;
 
-    final success = outcome as PlaceSuccess;
-    state = success.state;
+    final next = outcome.state;
+    state = next;
 
-    final persistence = await ref.read(localPersistenceProvider.future);
-
-    if (success.state.phase == GamePhase.complete) {
-      await persistence.highScores.recordCompletedGame(success.state.turnCount);
-      await persistence.gameSave.clear();
-    } else {
-      await persistence.gameSave.save(success.state);
+    // Feedback first: don't make sound wait on disk I/O.
+    final audio = ref.read(gameAudioServiceProvider).valueOrNull;
+    if (audio != null) {
+      outcome.wasMatch ? audio.playMatch() : audio.playTap();
     }
 
-    await ref.read(gameAudioServiceProvider).when(
-      data: (svc) async {
-        if (success.wasMatch) {
-          await svc.playMatch();
-        } else {
-          await svc.playTap();
-        }
-      },
-      loading: () async {},
-      error: (_, __) async {},
-    );
+    final persistence = await ref.read(localPersistenceProvider.future);
+    if (next.phase == GamePhase.complete) {
+      await persistence.highScores.recordCompletedGame(next.turnCount);
+    }
+    if (next.phase == GamePhase.playing) {
+      await persistence.gameSave.save(next);
+    } else {
+      // Complete or game over: nothing to resume.
+      await persistence.gameSave.clear();
+    }
   }
 }

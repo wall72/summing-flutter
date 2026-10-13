@@ -50,4 +50,16 @@ void main() {
       expect(Board.fromCells(cells).isComplete, false);
     });
   });
+
+  test('afterMatchClear empties neighbors and leaves the original untouched',
+      () {
+    final board = Board.fromCells(
+      List.filled(CellIndex.cellCount, const SummingCell.filled(5)),
+    );
+    final cleared = board.afterMatchClear(neighborLinears: [0, 1, 9]);
+    expect(cleared.cellAt(0).isAssigned, false);
+    expect(cleared.cellAt(9).isAssigned, false);
+    expect(cleared.cellAt(2).isAssigned, true);
+    expect(board.cellAt(0).isAssigned, true);
+  });
 }

@@ -11,8 +11,8 @@ class NextQueue {
 
   /// Not `const`: `slots.length` is not a valid constant expression for asserts.
   NextQueue(List<int> slots)
-    : slots = List<int>.unmodifiable(slots),
-      assert(slots.length == length);
+      : slots = List<int>.unmodifiable(slots),
+        assert(slots.length == length);
 
   int get first => slots[0];
 

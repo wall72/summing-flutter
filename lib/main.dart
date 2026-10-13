@@ -6,6 +6,7 @@ import 'package:summing_flutter/presentation/common/game_lifecycle_listener.dart
 import 'package:summing_flutter/presentation/menu/menu_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     const ProviderScope(
       child: GameLifecycleListener(
@@ -15,38 +16,38 @@ void main() {
   );
 }
 
-class SummingApp extends ConsumerStatefulWidget {
+class SummingApp extends ConsumerWidget {
   const SummingApp({super.key});
 
-  @override
-  ConsumerState<SummingApp> createState() => _SummingAppState();
-}
-
-class _SummingAppState extends ConsumerState<SummingApp> {
-  void _onPointerDown() {
-    if (!kIsWeb) return;
-    ref.read(gameAudioServiceProvider.future).then((audio) => audio.notifyUserGesture());
-  }
+  static ThemeData _theme(Brightness brightness) => ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
+          brightness: brightness,
+        ),
+        useMaterial3: true,
+      );
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Start audio (and BGM) at launch rather than on the first move.
+    ref.watch(gameAudioServiceProvider);
+
     return MaterialApp(
       title: 'Summing',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: true,
-      ),
-      builder: (context, child) {
-        var content = child ?? const SizedBox.shrink();
-        if (kIsWeb) {
-          content = Listener(
-            behavior: HitTestBehavior.translucent,
-            onPointerDown: (_) => _onPointerDown(),
-            child: content,
-          );
-        }
-        return content;
-      },
+      debugShowCheckedModeBanner: false,
+      theme: _theme(Brightness.light),
+      darkTheme: _theme(Brightness.dark),
+      builder: kIsWeb
+          ? (context, child) => Listener(
+                behavior: HitTestBehavior.translucent,
+                // Browsers block autoplay until the first user gesture.
+                onPointerDown: (_) => ref
+                    .read(gameAudioServiceProvider)
+                    .valueOrNull
+                    ?.notifyUserGesture(),
+                child: child ?? const SizedBox.shrink(),
+              )
+          : null,
       home: const MenuPage(),
     );
   }
