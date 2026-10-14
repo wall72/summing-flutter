@@ -39,30 +39,33 @@ test/                  # 테스트
 
 ## 시작하기
 
-1. [Flutter SDK](https://docs.flutter.dev/get-started/install) 설치
+1. [Flutter SDK](https://docs.flutter.dev/get-started/install) 설치 (WSL에서는 Windows SDK가 아닌 **리눅스용 SDK**를 따로 설치하고 PATH 앞쪽에 둘 것)
 2. 프로젝트 루트로 이동:
-   ```powershell
-   cd C:\Users\user\Workspace\summing-flutter
+   ```bash
+   cd ~/workspace/summing-flutter   # Windows: cd C:\Users\user\Workspace\summing-flutter
    ```
 3. 웹 플랫폼 폴더가 없다면 생성:
-   ```powershell
+   ```bash
    flutter create . --platforms web
    ```
 4. 의존성 설치 및 테스트:
-   ```powershell
+   ```bash
    flutter pub get
    flutter test
    ```
 5. Chrome에서 실행:
+   ```bash
+   ./run_chrome.sh      # Linux / WSL
+   ```
    ```powershell
-   .\run_chrome.ps1
+   .\run_chrome.ps1     # Windows
    ```
 
 ## 웹 빌드
 
 릴리스용 웹 산출물은 아래 명령으로 생성합니다.
 
-```powershell
+```bash
 flutter build web
 ```
 
@@ -70,7 +73,7 @@ flutter build web
 
 Chrome에서 개발 실행만 할 때는 빌드 명령이 아니라 아래 실행 명령을 사용합니다.
 
-```powershell
+```bash
 flutter run -d chrome
 ```
 
@@ -81,16 +84,19 @@ flutter run -d chrome
 
 아래처럼 **고정 포트 + 고정 Chrome user-data-dir**로 실행하면 재실행 후에도 동일 저장소를 사용합니다.
 
+```bash
+./run_chrome.sh      # Linux / WSL
+```
 ```powershell
-.\run_chrome.ps1
+.\run_chrome.ps1     # Windows
 ```
 
-`run_chrome.ps1`은 다음을 수행합니다.
+`run_chrome.ps1` / `run_chrome.sh`는 다음을 수행합니다.
 
 - 스크립트 위치를 프로젝트 루트로 설정
 - `web\index.html`이 없으면 `flutter create . --platforms web` 실행
-- 전용 Chrome 프로필(`$HOME\AppData\Local\summing-flutter-chrome`) 사용
-- 고정 포트 `7357`로 Chrome 실행
+- 전용 Chrome 프로필 사용 (Windows: `$HOME\AppData\Local\summing-flutter-chrome`, Linux: `~/.local/share/summing-flutter-chrome`)
+- 고정 포트 `7357`로 Chrome 실행 (Linux에서 Chrome이 없으면 `web-server`로 띄우고 호스트 브라우저에서 `http://localhost:7357` 접속)
 
 > 참고: 실제 배포(고정 도메인)에서는 동일 Origin을 사용하므로 이 현상이 재현되지 않습니다.
 
@@ -128,7 +134,8 @@ lib/
 assets/audio/      # bg_music.mp3, tap_sound.wav, clap_sound.wav
 tools/             # AIFF → WAV 변환 스크립트(엔디안)
 test/              # domain·infrastructure·widget 스모크
-run_chrome.ps1     # 고정 포트/프로필로 Chrome 실행
+run_chrome.ps1     # 고정 포트/프로필로 Chrome 실행 (Windows)
+run_chrome.sh      # 동일 기능 (Linux/WSL)
 ```
 
 ## 오디오 에셋
