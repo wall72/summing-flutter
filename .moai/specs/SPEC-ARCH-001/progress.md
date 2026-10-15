@@ -17,6 +17,22 @@
 - 작업 위치: L1 worktree `.claude/worktrees/agent-aea9dbcb03413cb25` (브랜치 `worktree-agent-aea9dbcb03413cb25`, 기준 HEAD `8edb186`). push 없음
 - 기준선(오케스트레이터 실측, 재실행 안 함): `flutter analyze` exit 0, `flutter test` exit 0 (29 tests)
 
+### 오케스트레이터 사전 점검과 독립 재검증 (session 88ea0d23)
+
+- 기준선 (HEAD `8edb186`): `flutter analyze` exit 0 "No issues found!", `flutter test` exit 0 "+29: All tests passed!", Flutter 3.47.7 / Dart 3.13.5 (`~/flutter/bin`, PATH 밖). 증거: `.moai/state/verify/88ea0d23/baseline-{version,analyze,test}.txt`
+- plan-audit: PASS 0.91 (Tier M 기준 0.80), 감사 이후 plan 산출물 변경 없음 → 재감사 생략
+- 독립 재검증 (worktree 브랜치 HEAD `0c60011`): AC-01 0줄 / AC-02 diff exit 0·porcelain 0 / AC-11 `11`·`0` / AC-14 `4`·app_overrides 1개·`overrides: appOverrides`·구현체 4개 / `flutter analyze` exit 0 / `flutter test --coverage` exit 0 `+75` / pubspec diff 0줄. 증거: `.moai/state/verify/88ea0d23/post-{analyze,test}.txt`
+- 독립 재검증 Gap: AC-03~10·13·15·16 개별 명령 미실행(전체 테스트 통과로 갈음), 커버리지 수치는 보고 값
+- 통합: `main`은 `8edb186`이었고 사용자 승인 후 `git merge --ff-only worktree-agent-aea9dbcb03413cb25`로 `0c60011`까지 fast-forward (push 안 함)
+
+## §F Phase 4 Mode Selection
+
+- Input: tier M, scope ~30 files, domains 1 (Flutter/Dart), file language mix 100% Dart, concurrency benefit LOW (coding-heavy)
+- Mode evaluation: direct = not selected (non-trivial); serial = selected; fanout = not selected (coding-heavy); sweep = not selected (not uniform mechanical)
+- Decision: serial
+- Justification: 마일스톤 간 의존이 있는 동작 보존 리팩토링이라 순차 manager-develop 단일 spawn (coding-task parallelism caveat)
+- Kickoff 선택: cycle_type=ddd, main에 커밋만(push 없음), 진행 방식=자율
+
 ### §E.2.1 AC 판정과 검증 기록
 
 증거 기준: 아래 명령은 모두 이 실행에서 이 트리(lib는 `b1507cd`, test는 `b1507cd` + M5 테스트 2개 미커밋 상태)에 대해 실행한 결과입니다.
@@ -78,7 +94,7 @@
 
 ```yaml
 run_complete_at: 2026-10-16T08:36:03+09:00
-run_commit_sha: pending-backfill-M5  # M5 커밋 자신의 SHA는 커밋 후에만 알 수 있음
+run_commit_sha: 0c60011  # M5 커밋 SHA 후속 backfill (placeholder 완료, SPEC 본문 아님)
 run_status: audit-ready
 ac_pass_count: 16
 ac_fail_count: 0
