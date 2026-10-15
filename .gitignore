@@ -10,3 +10,12 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# MoAI runtime output (generated, not shared)
+.moai/state/
+.moai/cache/
+.moai/logs/
+.moai/reports/
+.moai/evolution/telemetry/usage-*.jsonl
+.moai/harness/usage-log.jsonl
+.moai/lessons-inbox.jsonl

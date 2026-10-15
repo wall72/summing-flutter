@@ -1,0 +1,12 @@
+# .moai/project/harness-spec.yaml — machine-readable harness generation input
+# Generated from .moai/project/interview.md by /moai project (Phase 8)
+
+domain: puzzle-game
+goal: "Web을 주 플랫폼으로 삼아 Summing 퍼즐 게임의 기능과 품질을 다듬는다 (Android/iOS 폴더는 유지하되 우선순위 낮음)"
+constraints: []
+scope: "IN: 현재 구현된 메뉴·게임·점수판·저장·오디오와 테스트·아키텍처 개선. OUT: 신규 게임 모드, 온라인 기능, 릴리스/배포 자동화."
+
+verification: "flutter analyze && flutter test"
+external_systems: []
+ui_surface: has-ui
+team_sharing: solo

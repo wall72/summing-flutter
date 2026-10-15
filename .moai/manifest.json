@@ -1,0 +1,2802 @@
+{
+  "version": "3.1.2",
+  "deployed_at": "2026-10-14T08:17:52Z",
+  "files": {
+    ".claude/agents/moai/e2e-tester.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:910a13c9857493611eb0ee6f434bc2b5abd40c49bc25df5d48bb2ab88bea87d8",
+      "deployed_hash": "sha256:910a13c9857493611eb0ee6f434bc2b5abd40c49bc25df5d48bb2ab88bea87d8",
+      "current_hash": "sha256:910a13c9857493611eb0ee6f434bc2b5abd40c49bc25df5d48bb2ab88bea87d8"
+    },
+    ".claude/agents/moai/manager-design.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fd753775af3dddb3a275f6b7294d1d1340c95e45b22b3eb8498e307233af4557",
+      "deployed_hash": "sha256:fd753775af3dddb3a275f6b7294d1d1340c95e45b22b3eb8498e307233af4557",
+      "current_hash": "sha256:fd753775af3dddb3a275f6b7294d1d1340c95e45b22b3eb8498e307233af4557"
+    },
+    ".claude/agents/moai/manager-develop.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:75cefcd1ba883ff32ee960661c0d932a679ba74b68451d40e1458e4c8c339858",
+      "deployed_hash": "sha256:75cefcd1ba883ff32ee960661c0d932a679ba74b68451d40e1458e4c8c339858",
+      "current_hash": "sha256:75cefcd1ba883ff32ee960661c0d932a679ba74b68451d40e1458e4c8c339858"
+    },
+    ".claude/agents/moai/manager-docs.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:27d6252a33131be637294ddced274213bb817012747731d08844becd7a3b7954",
+      "deployed_hash": "sha256:27d6252a33131be637294ddced274213bb817012747731d08844becd7a3b7954",
+      "current_hash": "sha256:27d6252a33131be637294ddced274213bb817012747731d08844becd7a3b7954"
+    },
+    ".claude/agents/moai/manager-git.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:56eb72557ec24c8907c8b260f1d829c2e0300c5f6eea352f898196db6a00e132",
+      "deployed_hash": "sha256:56eb72557ec24c8907c8b260f1d829c2e0300c5f6eea352f898196db6a00e132",
+      "current_hash": "sha256:56eb72557ec24c8907c8b260f1d829c2e0300c5f6eea352f898196db6a00e132"
+    },
+    ".claude/agents/moai/manager-lead.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0b6d4e56dc7ad73d7b6770d2815698a93962c010d504e126c81a64b4c614e86e",
+      "deployed_hash": "sha256:0b6d4e56dc7ad73d7b6770d2815698a93962c010d504e126c81a64b4c614e86e",
+      "current_hash": "sha256:0b6d4e56dc7ad73d7b6770d2815698a93962c010d504e126c81a64b4c614e86e"
+    },
+    ".claude/agents/moai/manager-spec.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d5a377f243daa6a1603fa932dc14a0599e205c65a20e288d56b861fbbe725c2b",
+      "deployed_hash": "sha256:d5a377f243daa6a1603fa932dc14a0599e205c65a20e288d56b861fbbe725c2b",
+      "current_hash": "sha256:d5a377f243daa6a1603fa932dc14a0599e205c65a20e288d56b861fbbe725c2b"
+    },
+    ".claude/agents/moai/plan-auditor.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7c02d565a82cebf2bb01cc91c2decd68de5ea2f949b60b63e9d84e4563c71e60",
+      "deployed_hash": "sha256:7c02d565a82cebf2bb01cc91c2decd68de5ea2f949b60b63e9d84e4563c71e60",
+      "current_hash": "sha256:7c02d565a82cebf2bb01cc91c2decd68de5ea2f949b60b63e9d84e4563c71e60"
+    },
+    ".claude/agents/moai/super-advisor.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e47c17c3753b4bc85243b462c491dfef72b2bdf9918f947fdc5fcc5bd35ada1e",
+      "deployed_hash": "sha256:e47c17c3753b4bc85243b462c491dfef72b2bdf9918f947fdc5fcc5bd35ada1e",
+      "current_hash": "sha256:e47c17c3753b4bc85243b462c491dfef72b2bdf9918f947fdc5fcc5bd35ada1e"
+    },
+    ".claude/agents/moai/sync-auditor.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:45ab492802668cba6188dc8c66a26eaae5d55de3a10bf4eebb59c0eb29cd8111",
+      "deployed_hash": "sha256:45ab492802668cba6188dc8c66a26eaae5d55de3a10bf4eebb59c0eb29cd8111",
+      "current_hash": "sha256:45ab492802668cba6188dc8c66a26eaae5d55de3a10bf4eebb59c0eb29cd8111"
+    },
+    ".claude/commands/moai/clean.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7672612262de98808e1a7a55388bed51830df74bf830df63a64c56a150706ab6",
+      "deployed_hash": "sha256:7672612262de98808e1a7a55388bed51830df74bf830df63a64c56a150706ab6",
+      "current_hash": "sha256:7672612262de98808e1a7a55388bed51830df74bf830df63a64c56a150706ab6"
+    },
+    ".claude/commands/moai/codemaps.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2a447c2436c61ac645b2cc71784011ad390e0cb8f9b968d81630e25e2a5ecf25",
+      "deployed_hash": "sha256:2a447c2436c61ac645b2cc71784011ad390e0cb8f9b968d81630e25e2a5ecf25",
+      "current_hash": "sha256:2a447c2436c61ac645b2cc71784011ad390e0cb8f9b968d81630e25e2a5ecf25"
+    },
+    ".claude/commands/moai/e2e.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5f3f3c5afaf287630d0ceb9e29f4a54a02613ffd6c8d46102d26cbf28a19316b",
+      "deployed_hash": "sha256:5f3f3c5afaf287630d0ceb9e29f4a54a02613ffd6c8d46102d26cbf28a19316b",
+      "current_hash": "sha256:5f3f3c5afaf287630d0ceb9e29f4a54a02613ffd6c8d46102d26cbf28a19316b"
+    },
+    ".claude/commands/moai/feedback.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6eb143f4c81991a733f334ce348a72088950bcc9bbb2ca772be5482ca48ab1dc",
+      "deployed_hash": "sha256:6eb143f4c81991a733f334ce348a72088950bcc9bbb2ca772be5482ca48ab1dc",
+      "current_hash": "sha256:6eb143f4c81991a733f334ce348a72088950bcc9bbb2ca772be5482ca48ab1dc"
+    },
+    ".claude/commands/moai/fix.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7098062bda7a48f651c0518970d28c8c835c6ba8ec1a28b466c1a0bda0d1f8f4",
+      "deployed_hash": "sha256:7098062bda7a48f651c0518970d28c8c835c6ba8ec1a28b466c1a0bda0d1f8f4",
+      "current_hash": "sha256:7098062bda7a48f651c0518970d28c8c835c6ba8ec1a28b466c1a0bda0d1f8f4"
+    },
+    ".claude/commands/moai/gate.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c1c423f7e9eb114e88fb494fb8307e676b7d8bbfcff1e305f40902d37cce1f40",
+      "deployed_hash": "sha256:c1c423f7e9eb114e88fb494fb8307e676b7d8bbfcff1e305f40902d37cce1f40",
+      "current_hash": "sha256:c1c423f7e9eb114e88fb494fb8307e676b7d8bbfcff1e305f40902d37cce1f40"
+    },
+    ".claude/commands/moai/goal.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6782fad180d20603a292bee7ba00a29b37cc09858d27ae2f28a594e04cc9a778",
+      "deployed_hash": "sha256:6782fad180d20603a292bee7ba00a29b37cc09858d27ae2f28a594e04cc9a778",
+      "current_hash": "sha256:6782fad180d20603a292bee7ba00a29b37cc09858d27ae2f28a594e04cc9a778"
+    },
+    ".claude/commands/moai/harness.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:87a04accebc184e93128b66074775e2e59fba8fef85a4fd937c14d6b507e5f6b",
+      "deployed_hash": "sha256:87a04accebc184e93128b66074775e2e59fba8fef85a4fd937c14d6b507e5f6b",
+      "current_hash": "sha256:87a04accebc184e93128b66074775e2e59fba8fef85a4fd937c14d6b507e5f6b"
+    },
+    ".claude/commands/moai/loop.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:19ee3413333c999fd8f67838fc477b4b96a4b5189414b75af2e6d9974467cf79",
+      "deployed_hash": "sha256:19ee3413333c999fd8f67838fc477b4b96a4b5189414b75af2e6d9974467cf79",
+      "current_hash": "sha256:19ee3413333c999fd8f67838fc477b4b96a4b5189414b75af2e6d9974467cf79"
+    },
+    ".claude/commands/moai/mx.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6d4c4b3a7a3c584e0283427372a7eaaef5c3481e8870f8964245b9676653c1dc",
+      "deployed_hash": "sha256:6d4c4b3a7a3c584e0283427372a7eaaef5c3481e8870f8964245b9676653c1dc",
+      "current_hash": "sha256:6d4c4b3a7a3c584e0283427372a7eaaef5c3481e8870f8964245b9676653c1dc"
+    },
+    ".claude/commands/moai/plan.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:67f1ed902594ecc313055f7968ed27cb136747b780ccf2e94f2e03970c95106a",
+      "deployed_hash": "sha256:67f1ed902594ecc313055f7968ed27cb136747b780ccf2e94f2e03970c95106a",
+      "current_hash": "sha256:67f1ed902594ecc313055f7968ed27cb136747b780ccf2e94f2e03970c95106a"
+    },
+    ".claude/commands/moai/project.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f80582a4dd51cd8c5cf441bf2570d3c4f542013d185b590ffae567f578375ff7",
+      "deployed_hash": "sha256:f80582a4dd51cd8c5cf441bf2570d3c4f542013d185b590ffae567f578375ff7",
+      "current_hash": "sha256:f80582a4dd51cd8c5cf441bf2570d3c4f542013d185b590ffae567f578375ff7"
+    },
+    ".claude/commands/moai/review.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:958fc15f65f0ec2aaf174d3e4d4f84bd1f5d33bc13981720bb722f156d640ea3",
+      "deployed_hash": "sha256:958fc15f65f0ec2aaf174d3e4d4f84bd1f5d33bc13981720bb722f156d640ea3",
+      "current_hash": "sha256:958fc15f65f0ec2aaf174d3e4d4f84bd1f5d33bc13981720bb722f156d640ea3"
+    },
+    ".claude/commands/moai/run.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d6df7ebd6e1d5d6ad39f2958a937b48126f5221be335a4281c354236b6f747f1",
+      "deployed_hash": "sha256:d6df7ebd6e1d5d6ad39f2958a937b48126f5221be335a4281c354236b6f747f1",
+      "current_hash": "sha256:d6df7ebd6e1d5d6ad39f2958a937b48126f5221be335a4281c354236b6f747f1"
+    },
+    ".claude/commands/moai/sync.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6a488501706c48e61792fcdffd0714d0c0daa8d632a8783f75050f29445e8fd3",
+      "deployed_hash": "sha256:6a488501706c48e61792fcdffd0714d0c0daa8d632a8783f75050f29445e8fd3",
+      "current_hash": "sha256:6a488501706c48e61792fcdffd0714d0c0daa8d632a8783f75050f29445e8fd3"
+    },
+    ".claude/commands/moai/todo.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8cbf6a728ff61477ad8fe2d89971e1d6b5bbeb45e492cc5ecf7ef61b884ce2c5",
+      "deployed_hash": "sha256:8cbf6a728ff61477ad8fe2d89971e1d6b5bbeb45e492cc5ecf7ef61b884ce2c5",
+      "current_hash": "sha256:8cbf6a728ff61477ad8fe2d89971e1d6b5bbeb45e492cc5ecf7ef61b884ce2c5"
+    },
+    ".claude/hooks/moai/chain-event.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ec36521adc99f986ed9ed8c942174e8eaf7dea18f44f0a1bf6decb4ec551dda4",
+      "deployed_hash": "sha256:ec36521adc99f986ed9ed8c942174e8eaf7dea18f44f0a1bf6decb4ec551dda4",
+      "current_hash": "sha256:ec36521adc99f986ed9ed8c942174e8eaf7dea18f44f0a1bf6decb4ec551dda4"
+    },
+    ".claude/hooks/moai/handle-agent-hook.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7cb76b755f4abe446c1c02d9dd0b9cd8f0143ae4a42256038b8469141778367e",
+      "deployed_hash": "sha256:7cb76b755f4abe446c1c02d9dd0b9cd8f0143ae4a42256038b8469141778367e",
+      "current_hash": "sha256:7cb76b755f4abe446c1c02d9dd0b9cd8f0143ae4a42256038b8469141778367e"
+    },
+    ".claude/hooks/moai/handle-codex-review-gate.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b6c5cda3370c7843d049e4a358305b6606c5ee4d6a149c105139b97f012ba52b",
+      "deployed_hash": "sha256:b6c5cda3370c7843d049e4a358305b6606c5ee4d6a149c105139b97f012ba52b",
+      "current_hash": "sha256:b6c5cda3370c7843d049e4a358305b6606c5ee4d6a149c105139b97f012ba52b"
+    },
+    ".claude/hooks/moai/handle-compact.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:712aea9c19363f35604666019612d2589cb6b3cbc18932267ce36cfcecf39104",
+      "deployed_hash": "sha256:712aea9c19363f35604666019612d2589cb6b3cbc18932267ce36cfcecf39104",
+      "current_hash": "sha256:712aea9c19363f35604666019612d2589cb6b3cbc18932267ce36cfcecf39104"
+    },
+    ".claude/hooks/moai/handle-config-change.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:59d0c8b2e18ef3b480c77c901566598cf0b7d3f4ae960ae9362c808eccb5c221",
+      "deployed_hash": "sha256:59d0c8b2e18ef3b480c77c901566598cf0b7d3f4ae960ae9362c808eccb5c221",
+      "current_hash": "sha256:59d0c8b2e18ef3b480c77c901566598cf0b7d3f4ae960ae9362c808eccb5c221"
+    },
+    ".claude/hooks/moai/handle-cwd-changed.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:dd66578bd7d50a68e43ff75c9aa3f170c51319ef874c806f775c4a7509656535",
+      "deployed_hash": "sha256:dd66578bd7d50a68e43ff75c9aa3f170c51319ef874c806f775c4a7509656535",
+      "current_hash": "sha256:dd66578bd7d50a68e43ff75c9aa3f170c51319ef874c806f775c4a7509656535"
+    },
+    ".claude/hooks/moai/handle-elicitation-result.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:be7a8e708c395583350902e59b2593ae85e157e238eb613abca2d7ae5da52ab5",
+      "deployed_hash": "sha256:be7a8e708c395583350902e59b2593ae85e157e238eb613abca2d7ae5da52ab5",
+      "current_hash": "sha256:be7a8e708c395583350902e59b2593ae85e157e238eb613abca2d7ae5da52ab5"
+    },
+    ".claude/hooks/moai/handle-elicitation.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9a2c48b16eb02edbba0c234815d9662e624cbf3ae01297794b200cd3c911a109",
+      "deployed_hash": "sha256:9a2c48b16eb02edbba0c234815d9662e624cbf3ae01297794b200cd3c911a109",
+      "current_hash": "sha256:9a2c48b16eb02edbba0c234815d9662e624cbf3ae01297794b200cd3c911a109"
+    },
+    ".claude/hooks/moai/handle-file-changed.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2cffb9137e2e07a590e94830544ef9b0b11f57d8c7ea93998b310cdb31696ad4",
+      "deployed_hash": "sha256:2cffb9137e2e07a590e94830544ef9b0b11f57d8c7ea93998b310cdb31696ad4",
+      "current_hash": "sha256:2cffb9137e2e07a590e94830544ef9b0b11f57d8c7ea93998b310cdb31696ad4"
+    },
+    ".claude/hooks/moai/handle-harness-observe-stop.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:00223bd34847c25132cee6b92dddce818556cf4515992136177d6d0fd7044f7e",
+      "deployed_hash": "sha256:00223bd34847c25132cee6b92dddce818556cf4515992136177d6d0fd7044f7e",
+      "current_hash": "sha256:00223bd34847c25132cee6b92dddce818556cf4515992136177d6d0fd7044f7e"
+    },
+    ".claude/hooks/moai/handle-harness-observe-subagent-stop.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:df434f623748fed329dc9ee377f510fd06c9a0b75015adf0f242e606769eb79a",
+      "deployed_hash": "sha256:df434f623748fed329dc9ee377f510fd06c9a0b75015adf0f242e606769eb79a",
+      "current_hash": "sha256:df434f623748fed329dc9ee377f510fd06c9a0b75015adf0f242e606769eb79a"
+    },
+    ".claude/hooks/moai/handle-harness-observe-user-prompt-submit.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9a94f2e1c636279ef34282bc0cf58f1ad0a7f081ab01cd5d46fcdb4ca00a3567",
+      "deployed_hash": "sha256:9a94f2e1c636279ef34282bc0cf58f1ad0a7f081ab01cd5d46fcdb4ca00a3567",
+      "current_hash": "sha256:9a94f2e1c636279ef34282bc0cf58f1ad0a7f081ab01cd5d46fcdb4ca00a3567"
+    },
+    ".claude/hooks/moai/handle-harness-observe.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:10d2dc18c50b72c7e1fedb100bd778671e5fdf030b19eed42981425a467a25bf",
+      "deployed_hash": "sha256:10d2dc18c50b72c7e1fedb100bd778671e5fdf030b19eed42981425a467a25bf",
+      "current_hash": "sha256:10d2dc18c50b72c7e1fedb100bd778671e5fdf030b19eed42981425a467a25bf"
+    },
+    ".claude/hooks/moai/handle-instructions-loaded.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:469583652641496ae2ea4a97e051da4e42d1c2f2dd75ef77b2a6b32e84ac9288",
+      "deployed_hash": "sha256:469583652641496ae2ea4a97e051da4e42d1c2f2dd75ef77b2a6b32e84ac9288",
+      "current_hash": "sha256:469583652641496ae2ea4a97e051da4e42d1c2f2dd75ef77b2a6b32e84ac9288"
+    },
+    ".claude/hooks/moai/handle-multi-review-gate.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2c2601fbc6777427894fa3f4855509f1ce9812f4bfcf706bab723694fdc7b0bc",
+      "deployed_hash": "sha256:2c2601fbc6777427894fa3f4855509f1ce9812f4bfcf706bab723694fdc7b0bc",
+      "current_hash": "sha256:2c2601fbc6777427894fa3f4855509f1ce9812f4bfcf706bab723694fdc7b0bc"
+    },
+    ".claude/hooks/moai/handle-notification.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:100044509278c27a6405e5a9051febcfccd8a0e6c8d3074a60bda368b56ad37e",
+      "deployed_hash": "sha256:100044509278c27a6405e5a9051febcfccd8a0e6c8d3074a60bda368b56ad37e",
+      "current_hash": "sha256:100044509278c27a6405e5a9051febcfccd8a0e6c8d3074a60bda368b56ad37e"
+    },
+    ".claude/hooks/moai/handle-permission-denied.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ffac03fa3b76cdf56f4e4d52f6eed98c9d9de26a7c80c9cb150e69fbf228457c",
+      "deployed_hash": "sha256:ffac03fa3b76cdf56f4e4d52f6eed98c9d9de26a7c80c9cb150e69fbf228457c",
+      "current_hash": "sha256:ffac03fa3b76cdf56f4e4d52f6eed98c9d9de26a7c80c9cb150e69fbf228457c"
+    },
+    ".claude/hooks/moai/handle-permission-request.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9e593fbb02dd9de1177bbd102fa3093cd9d66f010ec87fd07bf981122c4ede13",
+      "deployed_hash": "sha256:9e593fbb02dd9de1177bbd102fa3093cd9d66f010ec87fd07bf981122c4ede13",
+      "current_hash": "sha256:9e593fbb02dd9de1177bbd102fa3093cd9d66f010ec87fd07bf981122c4ede13"
+    },
+    ".claude/hooks/moai/handle-post-compact.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9026c25d19d087d1de9f0a4d32f3b8b80cfe6eb229580bf8e0a354ac9084a1a3",
+      "deployed_hash": "sha256:9026c25d19d087d1de9f0a4d32f3b8b80cfe6eb229580bf8e0a354ac9084a1a3",
+      "current_hash": "sha256:9026c25d19d087d1de9f0a4d32f3b8b80cfe6eb229580bf8e0a354ac9084a1a3"
+    },
+    ".claude/hooks/moai/handle-post-tool-failure.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8b0d438e6c8054df91a4418f2fc7abda22e7249ecd85af81f1ff870b08c43b68",
+      "deployed_hash": "sha256:8b0d438e6c8054df91a4418f2fc7abda22e7249ecd85af81f1ff870b08c43b68",
+      "current_hash": "sha256:8b0d438e6c8054df91a4418f2fc7abda22e7249ecd85af81f1ff870b08c43b68"
+    },
+    ".claude/hooks/moai/handle-post-tool.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ab8866e7161d0747949d214b12bccb804ed96d4ddb64a8727aaa8c693d4d43eb",
+      "deployed_hash": "sha256:ab8866e7161d0747949d214b12bccb804ed96d4ddb64a8727aaa8c693d4d43eb",
+      "current_hash": "sha256:ab8866e7161d0747949d214b12bccb804ed96d4ddb64a8727aaa8c693d4d43eb"
+    },
+    ".claude/hooks/moai/handle-pre-tool.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b67e9c729b0554a300e86ddb84f10a8d1ee053c6c729822011170c00fd5aedfd",
+      "deployed_hash": "sha256:b67e9c729b0554a300e86ddb84f10a8d1ee053c6c729822011170c00fd5aedfd",
+      "current_hash": "sha256:b67e9c729b0554a300e86ddb84f10a8d1ee053c6c729822011170c00fd5aedfd"
+    },
+    ".claude/hooks/moai/handle-security-commit.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7290390059f4e8e1f1018afce8d4099d6aabf6f945561beb860bc6024d4238d9",
+      "deployed_hash": "sha256:7290390059f4e8e1f1018afce8d4099d6aabf6f945561beb860bc6024d4238d9",
+      "current_hash": "sha256:7290390059f4e8e1f1018afce8d4099d6aabf6f945561beb860bc6024d4238d9"
+    },
+    ".claude/hooks/moai/handle-security-scan.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:26197bd4f5431363730453735ff850302c7c9d0e1d0bfdcdb75d6f6801524bef",
+      "deployed_hash": "sha256:26197bd4f5431363730453735ff850302c7c9d0e1d0bfdcdb75d6f6801524bef",
+      "current_hash": "sha256:26197bd4f5431363730453735ff850302c7c9d0e1d0bfdcdb75d6f6801524bef"
+    },
+    ".claude/hooks/moai/handle-security-turn.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9d6983097096bbea1b20a1a188926034a055f8267d2d87649a22abb2384fd12e",
+      "deployed_hash": "sha256:9d6983097096bbea1b20a1a188926034a055f8267d2d87649a22abb2384fd12e",
+      "current_hash": "sha256:9d6983097096bbea1b20a1a188926034a055f8267d2d87649a22abb2384fd12e"
+    },
+    ".claude/hooks/moai/handle-session-end.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e36b67cedce2bec92dc8e91e2328c415ce0379b03b7f7b49fcef7370daf6fe2e",
+      "deployed_hash": "sha256:e36b67cedce2bec92dc8e91e2328c415ce0379b03b7f7b49fcef7370daf6fe2e",
+      "current_hash": "sha256:e36b67cedce2bec92dc8e91e2328c415ce0379b03b7f7b49fcef7370daf6fe2e"
+    },
+    ".claude/hooks/moai/handle-session-start-compact.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:bebbfbc36751bda7e8ed68b05110dfa677d3147f112001fad4ca30c3aa09f321",
+      "deployed_hash": "sha256:bebbfbc36751bda7e8ed68b05110dfa677d3147f112001fad4ca30c3aa09f321",
+      "current_hash": "sha256:bebbfbc36751bda7e8ed68b05110dfa677d3147f112001fad4ca30c3aa09f321"
+    },
+    ".claude/hooks/moai/handle-session-start-navigator.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:946c61cfa5ed30c16222ea61979b4f92c5fa2f935db108b30789425e96816902",
+      "deployed_hash": "sha256:946c61cfa5ed30c16222ea61979b4f92c5fa2f935db108b30789425e96816902",
+      "current_hash": "sha256:946c61cfa5ed30c16222ea61979b4f92c5fa2f935db108b30789425e96816902"
+    },
+    ".claude/hooks/moai/handle-session-start.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5fa116a9a6213785140ffc57ee55b01f810740a3f4b077d82b8f1d80626b8aad",
+      "deployed_hash": "sha256:5fa116a9a6213785140ffc57ee55b01f810740a3f4b077d82b8f1d80626b8aad",
+      "current_hash": "sha256:5fa116a9a6213785140ffc57ee55b01f810740a3f4b077d82b8f1d80626b8aad"
+    },
+    ".claude/hooks/moai/handle-stop-failure.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0afdaa154ceaaffdc6a90dfffe6eccb02952633e044458d56032134b4aac89e4",
+      "deployed_hash": "sha256:0afdaa154ceaaffdc6a90dfffe6eccb02952633e044458d56032134b4aac89e4",
+      "current_hash": "sha256:0afdaa154ceaaffdc6a90dfffe6eccb02952633e044458d56032134b4aac89e4"
+    },
+    ".claude/hooks/moai/handle-stop-goal.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:868cc080bde868606cc04b11e7f60190e7055d607e971357fdacd47333e487bd",
+      "deployed_hash": "sha256:868cc080bde868606cc04b11e7f60190e7055d607e971357fdacd47333e487bd",
+      "current_hash": "sha256:868cc080bde868606cc04b11e7f60190e7055d607e971357fdacd47333e487bd"
+    },
+    ".claude/hooks/moai/handle-stop.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:211a4ac36c977c2c549a1732ad0a03f52a33298a2f9d5e7b356de5816ab0aab0",
+      "deployed_hash": "sha256:211a4ac36c977c2c549a1732ad0a03f52a33298a2f9d5e7b356de5816ab0aab0",
+      "current_hash": "sha256:211a4ac36c977c2c549a1732ad0a03f52a33298a2f9d5e7b356de5816ab0aab0"
+    },
+    ".claude/hooks/moai/handle-subagent-start.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a4622b7a9cb70b51634b154a30526084e9cf05c1b1e91cc64584ccb628fa6975",
+      "deployed_hash": "sha256:a4622b7a9cb70b51634b154a30526084e9cf05c1b1e91cc64584ccb628fa6975",
+      "current_hash": "sha256:a4622b7a9cb70b51634b154a30526084e9cf05c1b1e91cc64584ccb628fa6975"
+    },
+    ".claude/hooks/moai/handle-subagent-stop.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5a07594f8421f371990eed65a765b50ba2df15e58ec486e3b8a2ec4e8de58833",
+      "deployed_hash": "sha256:5a07594f8421f371990eed65a765b50ba2df15e58ec486e3b8a2ec4e8de58833",
+      "current_hash": "sha256:5a07594f8421f371990eed65a765b50ba2df15e58ec486e3b8a2ec4e8de58833"
+    },
+    ".claude/hooks/moai/handle-task-completed.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:daf1f99fb7e30bb6308ed7e95415d8bff92f556a1f9eb807c00fc975c5eb41cf",
+      "deployed_hash": "sha256:daf1f99fb7e30bb6308ed7e95415d8bff92f556a1f9eb807c00fc975c5eb41cf",
+      "current_hash": "sha256:daf1f99fb7e30bb6308ed7e95415d8bff92f556a1f9eb807c00fc975c5eb41cf"
+    },
+    ".claude/hooks/moai/handle-task-created.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b5ea18db0a4d5b158310f004c23d13aa37bd39cad11b51ff6de657f4edf499e5",
+      "deployed_hash": "sha256:b5ea18db0a4d5b158310f004c23d13aa37bd39cad11b51ff6de657f4edf499e5",
+      "current_hash": "sha256:b5ea18db0a4d5b158310f004c23d13aa37bd39cad11b51ff6de657f4edf499e5"
+    },
+    ".claude/hooks/moai/handle-teammate-idle.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:984f995f6c033964f6691a6eeff74bf4f67b13b534af5890946d0c01b2f99a84",
+      "deployed_hash": "sha256:984f995f6c033964f6691a6eeff74bf4f67b13b534af5890946d0c01b2f99a84",
+      "current_hash": "sha256:984f995f6c033964f6691a6eeff74bf4f67b13b534af5890946d0c01b2f99a84"
+    },
+    ".claude/hooks/moai/handle-user-prompt-submit.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f4cfb68925c298a646d8becac5eb1c1ddb7fc5bb2360ff8ea2724333d54ca0d0",
+      "deployed_hash": "sha256:f4cfb68925c298a646d8becac5eb1c1ddb7fc5bb2360ff8ea2724333d54ca0d0",
+      "current_hash": "sha256:f4cfb68925c298a646d8becac5eb1c1ddb7fc5bb2360ff8ea2724333d54ca0d0"
+    },
+    ".claude/hooks/moai/handle-worktree-create.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ca0913d6f8b2fc13edee3c23ed48d0fdb52d864d22e074ce821f711877438386",
+      "deployed_hash": "sha256:ca0913d6f8b2fc13edee3c23ed48d0fdb52d864d22e074ce821f711877438386",
+      "current_hash": "sha256:ca0913d6f8b2fc13edee3c23ed48d0fdb52d864d22e074ce821f711877438386"
+    },
+    ".claude/hooks/moai/handle-worktree-remove.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:81422d7cd09fc9c2ad47935ffa15cf9a078ee36417059128fde2f86e93598d91",
+      "deployed_hash": "sha256:81422d7cd09fc9c2ad47935ffa15cf9a078ee36417059128fde2f86e93598d91",
+      "current_hash": "sha256:81422d7cd09fc9c2ad47935ffa15cf9a078ee36417059128fde2f86e93598d91"
+    },
+    ".claude/hooks/moai/status-transition-ownership.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9eecf2209dd9e6c8adf3c5ee0b868c5d8269493ddf2dc3a5ccb38f543411123c",
+      "deployed_hash": "sha256:9eecf2209dd9e6c8adf3c5ee0b868c5d8269493ddf2dc3a5ccb38f543411123c",
+      "current_hash": "sha256:9eecf2209dd9e6c8adf3c5ee0b868c5d8269493ddf2dc3a5ccb38f543411123c"
+    },
+    ".claude/hooks/moai/sync-phase-quality-gate.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:38ccf70ebe6968782356d490e5462c84bd13b897a27aa5b4d12bc41ebe0f7d15",
+      "deployed_hash": "sha256:38ccf70ebe6968782356d490e5462c84bd13b897a27aa5b4d12bc41ebe0f7d15",
+      "current_hash": "sha256:38ccf70ebe6968782356d490e5462c84bd13b897a27aa5b4d12bc41ebe0f7d15"
+    },
+    ".claude/hooks/moai/team-ac-verify.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c901780d9246f92852368e45c9f324021e448ccacef8a355a05330575e4f055c",
+      "deployed_hash": "sha256:c901780d9246f92852368e45c9f324021e448ccacef8a355a05330575e4f055c",
+      "current_hash": "sha256:c901780d9246f92852368e45c9f324021e448ccacef8a355a05330575e4f055c"
+    },
+    ".claude/loop.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1078cf9cf1949bd9723e44f8a0b0550ac3c99de55cd9f9aa50b28204005dab9d",
+      "deployed_hash": "sha256:1078cf9cf1949bd9723e44f8a0b0550ac3c99de55cd9f9aa50b28204005dab9d",
+      "current_hash": "sha256:1078cf9cf1949bd9723e44f8a0b0550ac3c99de55cd9f9aa50b28204005dab9d"
+    },
+    ".claude/output-styles/moai/moai-easy.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:71b413bbaa9ac249ede3cd77223e3c8cf9e1a7ba41b51f9b6a14e3be988c3b98",
+      "deployed_hash": "sha256:71b413bbaa9ac249ede3cd77223e3c8cf9e1a7ba41b51f9b6a14e3be988c3b98",
+      "current_hash": "sha256:71b413bbaa9ac249ede3cd77223e3c8cf9e1a7ba41b51f9b6a14e3be988c3b98"
+    },
+    ".claude/output-styles/moai/moai-learn.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7a9020d172fe420e160826fd3d18b7709a669b0f071ed39e1e0a01549a662151",
+      "deployed_hash": "sha256:7a9020d172fe420e160826fd3d18b7709a669b0f071ed39e1e0a01549a662151",
+      "current_hash": "sha256:7a9020d172fe420e160826fd3d18b7709a669b0f071ed39e1e0a01549a662151"
+    },
+    ".claude/output-styles/moai/moai.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:62bdc8d2934115d985a3e1f7e971d8cd0d54493f43e4950deab5264a041a2cb3",
+      "deployed_hash": "sha256:62bdc8d2934115d985a3e1f7e971d8cd0d54493f43e4950deab5264a041a2cb3",
+      "current_hash": "sha256:62bdc8d2934115d985a3e1f7e971d8cd0d54493f43e4950deab5264a041a2cb3"
+    },
+    ".claude/rules/moai/NOTICE.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:db4f80de4b2613fb5d1ad19b6cd548f80baabe1b199fb97333b776c90b6ec430",
+      "deployed_hash": "sha256:db4f80de4b2613fb5d1ad19b6cd548f80baabe1b199fb97333b776c90b6ec430",
+      "current_hash": "sha256:db4f80de4b2613fb5d1ad19b6cd548f80baabe1b199fb97333b776c90b6ec430"
+    },
+    ".claude/rules/moai/core/agent-common-protocol-reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c4137da6dddc78a72b22632633752aec9d4e77db413c09a7f3397e7bb9c379c2",
+      "deployed_hash": "sha256:c4137da6dddc78a72b22632633752aec9d4e77db413c09a7f3397e7bb9c379c2",
+      "current_hash": "sha256:c4137da6dddc78a72b22632633752aec9d4e77db413c09a7f3397e7bb9c379c2"
+    },
+    ".claude/rules/moai/core/agent-common-protocol.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3e8368d8f23249b6be8984bb315affef67925a94b7cce2bb7c92ad70998fc62b",
+      "deployed_hash": "sha256:3e8368d8f23249b6be8984bb315affef67925a94b7cce2bb7c92ad70998fc62b",
+      "current_hash": "sha256:3e8368d8f23249b6be8984bb315affef67925a94b7cce2bb7c92ad70998fc62b"
+    },
+    ".claude/rules/moai/core/agent-hooks.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:76685ab984d62066d74639780ceb2335cc6a806eb710e78c382109021e85154e",
+      "deployed_hash": "sha256:76685ab984d62066d74639780ceb2335cc6a806eb710e78c382109021e85154e",
+      "current_hash": "sha256:76685ab984d62066d74639780ceb2335cc6a806eb710e78c382109021e85154e"
+    },
+    ".claude/rules/moai/core/askuser-protocol-reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e2afe5d37ffe64fb10e54423a750a9a040e380dc69c4e07a30834e33201a1275",
+      "deployed_hash": "sha256:e2afe5d37ffe64fb10e54423a750a9a040e380dc69c4e07a30834e33201a1275",
+      "current_hash": "sha256:e2afe5d37ffe64fb10e54423a750a9a040e380dc69c4e07a30834e33201a1275"
+    },
+    ".claude/rules/moai/core/askuser-protocol.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:bbb36bc7aa31148d6548457c793f6fef01b33c927f294e97394e40d3f55d4bfa",
+      "deployed_hash": "sha256:bbb36bc7aa31148d6548457c793f6fef01b33c927f294e97394e40d3f55d4bfa",
+      "current_hash": "sha256:bbb36bc7aa31148d6548457c793f6fef01b33c927f294e97394e40d3f55d4bfa"
+    },
+    ".claude/rules/moai/core/glm-web-tooling.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3e937bf1083d8807a46ff7d371a2160a82371b58946ba2c87ef165db2f79ece9",
+      "deployed_hash": "sha256:3e937bf1083d8807a46ff7d371a2160a82371b58946ba2c87ef165db2f79ece9",
+      "current_hash": "sha256:3e937bf1083d8807a46ff7d371a2160a82371b58946ba2c87ef165db2f79ece9"
+    },
+    ".claude/rules/moai/core/hooks-system.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:cd6f1a4cc78957862aab94a3e694c0fde2677434954f8c0ea052ee32187e7408",
+      "deployed_hash": "sha256:cd6f1a4cc78957862aab94a3e694c0fde2677434954f8c0ea052ee32187e7408",
+      "current_hash": "sha256:cd6f1a4cc78957862aab94a3e694c0fde2677434954f8c0ea052ee32187e7408"
+    },
+    ".claude/rules/moai/core/moai-constitution.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:05da39fe44ce5de6058faa7fbe9bdb663e09d74b2a5dc28ac117f0aa3a43360e",
+      "deployed_hash": "sha256:05da39fe44ce5de6058faa7fbe9bdb663e09d74b2a5dc28ac117f0aa3a43360e",
+      "current_hash": "sha256:05da39fe44ce5de6058faa7fbe9bdb663e09d74b2a5dc28ac117f0aa3a43360e"
+    },
+    ".claude/rules/moai/core/moai-mcp-tools.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:24c2284d80c690cba1b4ccffaab7b3e76f9195987a4d7d2b3761da911ae8d9a4",
+      "deployed_hash": "sha256:24c2284d80c690cba1b4ccffaab7b3e76f9195987a4d7d2b3761da911ae8d9a4",
+      "current_hash": "sha256:24c2284d80c690cba1b4ccffaab7b3e76f9195987a4d7d2b3761da911ae8d9a4"
+    },
+    ".claude/rules/moai/core/native-idiom-and-register.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:50036aae79485593d6a284eefc6631f274e854893c7b01655607b03cb636f495",
+      "deployed_hash": "sha256:50036aae79485593d6a284eefc6631f274e854893c7b01655607b03cb636f495",
+      "current_hash": "sha256:50036aae79485593d6a284eefc6631f274e854893c7b01655607b03cb636f495"
+    },
+    ".claude/rules/moai/core/settings-management.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7539d9f0be825b48c6e4fd33186b8b4275613e3cb279487a4d532073e124ca8d",
+      "deployed_hash": "sha256:7539d9f0be825b48c6e4fd33186b8b4275613e3cb279487a4d532073e124ca8d",
+      "current_hash": "sha256:7539d9f0be825b48c6e4fd33186b8b4275613e3cb279487a4d532073e124ca8d"
+    },
+    ".claude/rules/moai/core/verification-claim-integrity.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:30d2ebd9ed9f574748357e8b12657ab5e1a3a67141387932293e9e8d44d7b4f5",
+      "deployed_hash": "sha256:30d2ebd9ed9f574748357e8b12657ab5e1a3a67141387932293e9e8d44d7b4f5",
+      "current_hash": "sha256:30d2ebd9ed9f574748357e8b12657ab5e1a3a67141387932293e9e8d44d7b4f5"
+    },
+    ".claude/rules/moai/core/zone-registry.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7a2db36e056149c3c622840232a95c9a5dadb2c322a26a68c19f8315115ddf24",
+      "deployed_hash": "sha256:7a2db36e056149c3c622840232a95c9a5dadb2c322a26a68c19f8315115ddf24",
+      "current_hash": "sha256:7a2db36e056149c3c622840232a95c9a5dadb2c322a26a68c19f8315115ddf24"
+    },
+    ".claude/rules/moai/design/constitution.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e9eed00903845786eb906f9bc601e1ca0b1d5f80d3dbdb5f5a42a5b3af9434f2",
+      "deployed_hash": "sha256:e9eed00903845786eb906f9bc601e1ca0b1d5f80d3dbdb5f5a42a5b3af9434f2",
+      "current_hash": "sha256:e9eed00903845786eb906f9bc601e1ca0b1d5f80d3dbdb5f5a42a5b3af9434f2"
+    },
+    ".claude/rules/moai/development/agent-authoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:910044d3e5ac089000d8548652115682f02510575fa2a78a006bc7baa790a4aa",
+      "deployed_hash": "sha256:910044d3e5ac089000d8548652115682f02510575fa2a78a006bc7baa790a4aa",
+      "current_hash": "sha256:910044d3e5ac089000d8548652115682f02510575fa2a78a006bc7baa790a4aa"
+    },
+    ".claude/rules/moai/development/agent-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b2a1dd31d88776926845697fd5802332b3c253bbfa92c97b4d54bbfec8902919",
+      "deployed_hash": "sha256:b2a1dd31d88776926845697fd5802332b3c253bbfa92c97b4d54bbfec8902919",
+      "current_hash": "sha256:b2a1dd31d88776926845697fd5802332b3c253bbfa92c97b4d54bbfec8902919"
+    },
+    ".claude/rules/moai/development/branch-origin-protocol.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4d54ed76beed7e14b6af9d96458ecb1987eaf231ac3c1fb581623d6d40ca6f8f",
+      "deployed_hash": "sha256:4d54ed76beed7e14b6af9d96458ecb1987eaf231ac3c1fb581623d6d40ca6f8f",
+      "current_hash": "sha256:4d54ed76beed7e14b6af9d96458ecb1987eaf231ac3c1fb581623d6d40ca6f8f"
+    },
+    ".claude/rules/moai/development/coding-standards.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:92c54129b2142f9dddea6acbc5cb6d43bd3f5ebd286e647b890cad33049f4e6a",
+      "deployed_hash": "sha256:92c54129b2142f9dddea6acbc5cb6d43bd3f5ebd286e647b890cad33049f4e6a",
+      "current_hash": "sha256:92c54129b2142f9dddea6acbc5cb6d43bd3f5ebd286e647b890cad33049f4e6a"
+    },
+    ".claude/rules/moai/development/hook-independence.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f1f3fc13590ac50ffd298f02ec731efc60d6e222042cf8575294abd1f67d7e3b",
+      "deployed_hash": "sha256:f1f3fc13590ac50ffd298f02ec731efc60d6e222042cf8575294abd1f67d7e3b",
+      "current_hash": "sha256:f1f3fc13590ac50ffd298f02ec731efc60d6e222042cf8575294abd1f67d7e3b"
+    },
+    ".claude/rules/moai/development/karpathy-quickref.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f201b96de8889a21ac6f267897c42a6a1d234cc88168dc189f2d261a1105310c",
+      "deployed_hash": "sha256:f201b96de8889a21ac6f267897c42a6a1d234cc88168dc189f2d261a1105310c",
+      "current_hash": "sha256:f201b96de8889a21ac6f267897c42a6a1d234cc88168dc189f2d261a1105310c"
+    },
+    ".claude/rules/moai/development/manager-develop-prompt-template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c83c7149b7e655a93d64b9941547d9a98c42d494838f53cdde0331458c6e0776",
+      "deployed_hash": "sha256:c83c7149b7e655a93d64b9941547d9a98c42d494838f53cdde0331458c6e0776",
+      "current_hash": "sha256:c83c7149b7e655a93d64b9941547d9a98c42d494838f53cdde0331458c6e0776"
+    },
+    ".claude/rules/moai/development/model-policy.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8b5dad57d958da49f7fc2f17a923a34922da9403307dfc98d14b62801d1be08f",
+      "deployed_hash": "sha256:8b5dad57d958da49f7fc2f17a923a34922da9403307dfc98d14b62801d1be08f",
+      "current_hash": "sha256:8b5dad57d958da49f7fc2f17a923a34922da9403307dfc98d14b62801d1be08f"
+    },
+    ".claude/rules/moai/development/orchestrator-templates.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2044c3a28e8887602df2e1f3383679b5fa2eb9783618f23cf0c5aa494617df1c",
+      "deployed_hash": "sha256:2044c3a28e8887602df2e1f3383679b5fa2eb9783618f23cf0c5aa494617df1c",
+      "current_hash": "sha256:2044c3a28e8887602df2e1f3383679b5fa2eb9783618f23cf0c5aa494617df1c"
+    },
+    ".claude/rules/moai/development/prompting-best-practices.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:bebc77f53781427104ecae5d0690040210ff37685753f7e0e4be2243e704d159",
+      "deployed_hash": "sha256:bebc77f53781427104ecae5d0690040210ff37685753f7e0e4be2243e704d159",
+      "current_hash": "sha256:bebc77f53781427104ecae5d0690040210ff37685753f7e0e4be2243e704d159"
+    },
+    ".claude/rules/moai/development/rule-authoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:835526d852d7fb18139355900f4111701044c01265e0301e1a99f66c2f0be554",
+      "deployed_hash": "sha256:835526d852d7fb18139355900f4111701044c01265e0301e1a99f66c2f0be554",
+      "current_hash": "sha256:835526d852d7fb18139355900f4111701044c01265e0301e1a99f66c2f0be554"
+    },
+    ".claude/rules/moai/development/skill-ab-testing.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:51ef408e2579f77897ba0cbf932cd23cd3396ca13464966c7288d21efb94a3f1",
+      "deployed_hash": "sha256:51ef408e2579f77897ba0cbf932cd23cd3396ca13464966c7288d21efb94a3f1",
+      "current_hash": "sha256:51ef408e2579f77897ba0cbf932cd23cd3396ca13464966c7288d21efb94a3f1"
+    },
+    ".claude/rules/moai/development/skill-authoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e19621f4fb01aaebf3151bda21f6081bdc4bba54f4480eb5bc2f411b82780cae",
+      "deployed_hash": "sha256:e19621f4fb01aaebf3151bda21f6081bdc4bba54f4480eb5bc2f411b82780cae",
+      "current_hash": "sha256:e19621f4fb01aaebf3151bda21f6081bdc4bba54f4480eb5bc2f411b82780cae"
+    },
+    ".claude/rules/moai/development/skill-writing-craft.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b89a4c0a0fe254a5735328bea186bda91f7d2e9f21e9ac6dec74c39adb21da3b",
+      "deployed_hash": "sha256:b89a4c0a0fe254a5735328bea186bda91f7d2e9f21e9ac6dec74c39adb21da3b",
+      "current_hash": "sha256:b89a4c0a0fe254a5735328bea186bda91f7d2e9f21e9ac6dec74c39adb21da3b"
+    },
+    ".claude/rules/moai/development/spec-frontmatter-schema.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:edb3b86648b4e39c2617dd17ff6c95f0011b4b11f588692968d9f86b99615500",
+      "deployed_hash": "sha256:edb3b86648b4e39c2617dd17ff6c95f0011b4b11f588692968d9f86b99615500",
+      "current_hash": "sha256:edb3b86648b4e39c2617dd17ff6c95f0011b4b11f588692968d9f86b99615500"
+    },
+    ".claude/rules/moai/development/sprint-round-naming.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:095aa9b63419e758c48f22090f5202c4de66409c88b7475762ae8a78eb78b431",
+      "deployed_hash": "sha256:095aa9b63419e758c48f22090f5202c4de66409c88b7475762ae8a78eb78b431",
+      "current_hash": "sha256:095aa9b63419e758c48f22090f5202c4de66409c88b7475762ae8a78eb78b431"
+    },
+    ".claude/rules/moai/languages/cpp.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ad22cb0a4ee3706b282d9fbefb31396925c30a8e282e76486386757e79bbaa3f",
+      "deployed_hash": "sha256:ad22cb0a4ee3706b282d9fbefb31396925c30a8e282e76486386757e79bbaa3f",
+      "current_hash": "sha256:ad22cb0a4ee3706b282d9fbefb31396925c30a8e282e76486386757e79bbaa3f"
+    },
+    ".claude/rules/moai/languages/csharp.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7f6e84718ad9cbd91177a4367de3e7fc34d179365669a5d06894a8905eb0bfcc",
+      "deployed_hash": "sha256:7f6e84718ad9cbd91177a4367de3e7fc34d179365669a5d06894a8905eb0bfcc",
+      "current_hash": "sha256:7f6e84718ad9cbd91177a4367de3e7fc34d179365669a5d06894a8905eb0bfcc"
+    },
+    ".claude/rules/moai/languages/elixir.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1589ce99bd9ae5b762036ae545f1bd0c6537357377f31762bb351f7866802a62",
+      "deployed_hash": "sha256:1589ce99bd9ae5b762036ae545f1bd0c6537357377f31762bb351f7866802a62",
+      "current_hash": "sha256:1589ce99bd9ae5b762036ae545f1bd0c6537357377f31762bb351f7866802a62"
+    },
+    ".claude/rules/moai/languages/flutter.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1dc9d5cd01dfa789f53f8051b7a1f3a8feb703005d8fd438d3520d458e5c3523",
+      "deployed_hash": "sha256:1dc9d5cd01dfa789f53f8051b7a1f3a8feb703005d8fd438d3520d458e5c3523",
+      "current_hash": "sha256:1dc9d5cd01dfa789f53f8051b7a1f3a8feb703005d8fd438d3520d458e5c3523"
+    },
+    ".claude/rules/moai/languages/go.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0e01d180f3a9827dc1aec847f862b192576aeb02d9f348d5d3c62dbdcd0e0a1a",
+      "deployed_hash": "sha256:0e01d180f3a9827dc1aec847f862b192576aeb02d9f348d5d3c62dbdcd0e0a1a",
+      "current_hash": "sha256:0e01d180f3a9827dc1aec847f862b192576aeb02d9f348d5d3c62dbdcd0e0a1a"
+    },
+    ".claude/rules/moai/languages/java.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2444a0e702f5fff4f744cdc5ca4dd75ab2807167fa3211357f6c29c6f6cb3a95",
+      "deployed_hash": "sha256:2444a0e702f5fff4f744cdc5ca4dd75ab2807167fa3211357f6c29c6f6cb3a95",
+      "current_hash": "sha256:2444a0e702f5fff4f744cdc5ca4dd75ab2807167fa3211357f6c29c6f6cb3a95"
+    },
+    ".claude/rules/moai/languages/javascript.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0672754a9b73d3714871a5e75e38c15cb265e7beb61c7eae3643b9ccd18de6b6",
+      "deployed_hash": "sha256:0672754a9b73d3714871a5e75e38c15cb265e7beb61c7eae3643b9ccd18de6b6",
+      "current_hash": "sha256:0672754a9b73d3714871a5e75e38c15cb265e7beb61c7eae3643b9ccd18de6b6"
+    },
+    ".claude/rules/moai/languages/kotlin.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b216658397f67010c8060e39ea142a9509ef47c0b759bdf57ceeab6f3bf26c65",
+      "deployed_hash": "sha256:b216658397f67010c8060e39ea142a9509ef47c0b759bdf57ceeab6f3bf26c65",
+      "current_hash": "sha256:b216658397f67010c8060e39ea142a9509ef47c0b759bdf57ceeab6f3bf26c65"
+    },
+    ".claude/rules/moai/languages/php.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9a77509bb13827e5a0ef89065d6f4a13884751ae120fc6697882398e320122ff",
+      "deployed_hash": "sha256:9a77509bb13827e5a0ef89065d6f4a13884751ae120fc6697882398e320122ff",
+      "current_hash": "sha256:9a77509bb13827e5a0ef89065d6f4a13884751ae120fc6697882398e320122ff"
+    },
+    ".claude/rules/moai/languages/python.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b94957d57e99b9fa33357aa2ceebd05c2859078f35b21b6cf9c05fec618b1713",
+      "deployed_hash": "sha256:b94957d57e99b9fa33357aa2ceebd05c2859078f35b21b6cf9c05fec618b1713",
+      "current_hash": "sha256:b94957d57e99b9fa33357aa2ceebd05c2859078f35b21b6cf9c05fec618b1713"
+    },
+    ".claude/rules/moai/languages/r.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9af0e878f3e5010f3f7e618c35e45777f3d55a21951b4d899f747bfab7f50c5a",
+      "deployed_hash": "sha256:9af0e878f3e5010f3f7e618c35e45777f3d55a21951b4d899f747bfab7f50c5a",
+      "current_hash": "sha256:9af0e878f3e5010f3f7e618c35e45777f3d55a21951b4d899f747bfab7f50c5a"
+    },
+    ".claude/rules/moai/languages/ruby.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b089a2328cc8c5e8a81ac182722aa96a2c921d1e220fba5c3268c182ca659e01",
+      "deployed_hash": "sha256:b089a2328cc8c5e8a81ac182722aa96a2c921d1e220fba5c3268c182ca659e01",
+      "current_hash": "sha256:b089a2328cc8c5e8a81ac182722aa96a2c921d1e220fba5c3268c182ca659e01"
+    },
+    ".claude/rules/moai/languages/rust.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3b11352f73dc5fb19f5b9b28409722c1a19d0079f593658ebbdc54e2e39c326c",
+      "deployed_hash": "sha256:3b11352f73dc5fb19f5b9b28409722c1a19d0079f593658ebbdc54e2e39c326c",
+      "current_hash": "sha256:3b11352f73dc5fb19f5b9b28409722c1a19d0079f593658ebbdc54e2e39c326c"
+    },
+    ".claude/rules/moai/languages/scala.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7bd6116f2032965d19f93c3e6eeffa0cc7ad5f3b82918f84803d30f9f1d173ac",
+      "deployed_hash": "sha256:7bd6116f2032965d19f93c3e6eeffa0cc7ad5f3b82918f84803d30f9f1d173ac",
+      "current_hash": "sha256:7bd6116f2032965d19f93c3e6eeffa0cc7ad5f3b82918f84803d30f9f1d173ac"
+    },
+    ".claude/rules/moai/languages/swift.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:def2f54bc8250e1c41e8170b54dfdd1a4f8f8c1e7598a65e08df5827cca8756c",
+      "deployed_hash": "sha256:def2f54bc8250e1c41e8170b54dfdd1a4f8f8c1e7598a65e08df5827cca8756c",
+      "current_hash": "sha256:def2f54bc8250e1c41e8170b54dfdd1a4f8f8c1e7598a65e08df5827cca8756c"
+    },
+    ".claude/rules/moai/languages/typescript.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c8a24dff5885f7e3be9e60b56af2f5ecc3220b9424a9cbb35c31a8f18e1c8970",
+      "deployed_hash": "sha256:c8a24dff5885f7e3be9e60b56af2f5ecc3220b9424a9cbb35c31a8f18e1c8970",
+      "current_hash": "sha256:c8a24dff5885f7e3be9e60b56af2f5ecc3220b9424a9cbb35c31a8f18e1c8970"
+    },
+    ".claude/rules/moai/quality/boundary-verification.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a56ad464f832b1ed1e40d0390edf73284207f1b6da8a8a48e2d0c95e18d1f3c3",
+      "deployed_hash": "sha256:a56ad464f832b1ed1e40d0390edf73284207f1b6da8a8a48e2d0c95e18d1f3c3",
+      "current_hash": "sha256:a56ad464f832b1ed1e40d0390edf73284207f1b6da8a8a48e2d0c95e18d1f3c3"
+    },
+    ".claude/rules/moai/workflow/archived-agent-rejection.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6360111133857452222eef58567ef98de4a53d4d9b9177ebfaccc48e7a66ac89",
+      "deployed_hash": "sha256:6360111133857452222eef58567ef98de4a53d4d9b9177ebfaccc48e7a66ac89",
+      "current_hash": "sha256:6360111133857452222eef58567ef98de4a53d4d9b9177ebfaccc48e7a66ac89"
+    },
+    ".claude/rules/moai/workflow/cache-aware-execution-reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5bda837b913a35f04fb30883c0a0d3d32270e2e9efb8ef50748e762da7c08614",
+      "deployed_hash": "sha256:5bda837b913a35f04fb30883c0a0d3d32270e2e9efb8ef50748e762da7c08614",
+      "current_hash": "sha256:5bda837b913a35f04fb30883c0a0d3d32270e2e9efb8ef50748e762da7c08614"
+    },
+    ".claude/rules/moai/workflow/cache-aware-execution.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:bb5c99a6190be8be5a1bbdc3d720c0092e4133095ae9680b33006bc0efa4f117",
+      "deployed_hash": "sha256:bb5c99a6190be8be5a1bbdc3d720c0092e4133095ae9680b33006bc0efa4f117",
+      "current_hash": "sha256:bb5c99a6190be8be5a1bbdc3d720c0092e4133095ae9680b33006bc0efa4f117"
+    },
+    ".claude/rules/moai/workflow/cadence-bridge.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1fc6a99fe5ffebea3a156f41adc85d1d739d11cd35e4f5f6abe04514cfd472d5",
+      "deployed_hash": "sha256:1fc6a99fe5ffebea3a156f41adc85d1d739d11cd35e4f5f6abe04514cfd472d5",
+      "current_hash": "sha256:1fc6a99fe5ffebea3a156f41adc85d1d739d11cd35e4f5f6abe04514cfd472d5"
+    },
+    ".claude/rules/moai/workflow/ci-autofix-protocol.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8c99f7757463fdd2065e1074414c6812da0f65e611a861269a0959487380ddac",
+      "deployed_hash": "sha256:8c99f7757463fdd2065e1074414c6812da0f65e611a861269a0959487380ddac",
+      "current_hash": "sha256:8c99f7757463fdd2065e1074414c6812da0f65e611a861269a0959487380ddac"
+    },
+    ".claude/rules/moai/workflow/context-window-management.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c841277c77d1a46c83873c629875ce80a1cd672a87d14e80e5a251041c7b8798",
+      "deployed_hash": "sha256:c841277c77d1a46c83873c629875ce80a1cd672a87d14e80e5a251041c7b8798",
+      "current_hash": "sha256:c841277c77d1a46c83873c629875ce80a1cd672a87d14e80e5a251041c7b8798"
+    },
+    ".claude/rules/moai/workflow/cross-session-messaging.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1bd0be460d8b18efc6625e4d712cba73c50d2d90a3657631776f47a727c4e23b",
+      "deployed_hash": "sha256:1bd0be460d8b18efc6625e4d712cba73c50d2d90a3657631776f47a727c4e23b",
+      "current_hash": "sha256:1bd0be460d8b18efc6625e4d712cba73c50d2d90a3657631776f47a727c4e23b"
+    },
+    ".claude/rules/moai/workflow/dynamic-workflows.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:198e74cf3236ba08cf88057512c7322d1f02ee068e984d1b418b88c4d75e36ad",
+      "deployed_hash": "sha256:198e74cf3236ba08cf88057512c7322d1f02ee068e984d1b418b88c4d75e36ad",
+      "current_hash": "sha256:198e74cf3236ba08cf88057512c7322d1f02ee068e984d1b418b88c4d75e36ad"
+    },
+    ".claude/rules/moai/workflow/goal-directive-detail.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:041f03455aa00e5bdca49586af387d7d0e29bf3ee3c36e5eb8bfd828dcc04932",
+      "deployed_hash": "sha256:041f03455aa00e5bdca49586af387d7d0e29bf3ee3c36e5eb8bfd828dcc04932",
+      "current_hash": "sha256:041f03455aa00e5bdca49586af387d7d0e29bf3ee3c36e5eb8bfd828dcc04932"
+    },
+    ".claude/rules/moai/workflow/goal-directive.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:02e2feae82c85a97c01f74eb862fd963ff402fd6b9562a0a47961168f61730f4",
+      "deployed_hash": "sha256:02e2feae82c85a97c01f74eb862fd963ff402fd6b9562a0a47961168f61730f4",
+      "current_hash": "sha256:02e2feae82c85a97c01f74eb862fd963ff402fd6b9562a0a47961168f61730f4"
+    },
+    ".claude/rules/moai/workflow/kanban-dispatch-detail.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a19e66a3efb557301c87a9c72d427582f4e10e365c87d13c2e77133c793bc78e",
+      "deployed_hash": "sha256:a19e66a3efb557301c87a9c72d427582f4e10e365c87d13c2e77133c793bc78e",
+      "current_hash": "sha256:a19e66a3efb557301c87a9c72d427582f4e10e365c87d13c2e77133c793bc78e"
+    },
+    ".claude/rules/moai/workflow/kanban-dispatch.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5ef26fb2c0cc905f77960b1ccfe4d5749686db851270e3a575921c83e7ebf170",
+      "deployed_hash": "sha256:5ef26fb2c0cc905f77960b1ccfe4d5749686db851270e3a575921c83e7ebf170",
+      "current_hash": "sha256:5ef26fb2c0cc905f77960b1ccfe4d5749686db851270e3a575921c83e7ebf170"
+    },
+    ".claude/rules/moai/workflow/main-checkout-branch-guard.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:90f3750dae01064ccfb21441d0300261bacfe477d58e7aee0a74114589b661f8",
+      "deployed_hash": "sha256:90f3750dae01064ccfb21441d0300261bacfe477d58e7aee0a74114589b661f8",
+      "current_hash": "sha256:90f3750dae01064ccfb21441d0300261bacfe477d58e7aee0a74114589b661f8"
+    },
+    ".claude/rules/moai/workflow/moai-memory.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4536193fe9b8a3eaf386a16ccbc687f9575ae4de4c374510d22bd9d3c0b519f0",
+      "deployed_hash": "sha256:4536193fe9b8a3eaf386a16ccbc687f9575ae4de4c374510d22bd9d3c0b519f0",
+      "current_hash": "sha256:4536193fe9b8a3eaf386a16ccbc687f9575ae4de4c374510d22bd9d3c0b519f0"
+    },
+    ".claude/rules/moai/workflow/mx-tag-protocol.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e900736c677a5a69a004cefc798f59509e335a0f7712c4f2dc1d9bae5cb8e13f",
+      "deployed_hash": "sha256:e900736c677a5a69a004cefc798f59509e335a0f7712c4f2dc1d9bae5cb8e13f",
+      "current_hash": "sha256:e900736c677a5a69a004cefc798f59509e335a0f7712c4f2dc1d9bae5cb8e13f"
+    },
+    ".claude/rules/moai/workflow/native-invocation-model.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a30f0f956a6daed39020937613ef5155d2ae0389489e3fc6b7d2acdd7fa3c660",
+      "deployed_hash": "sha256:a30f0f956a6daed39020937613ef5155d2ae0389489e3fc6b7d2acdd7fa3c660",
+      "current_hash": "sha256:a30f0f956a6daed39020937613ef5155d2ae0389489e3fc6b7d2acdd7fa3c660"
+    },
+    ".claude/rules/moai/workflow/nav-tokens.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:50756b1b0408c7b7bff04bc2e6be3c1bf259274e50c8129fbdf8fc72879a1ba6",
+      "deployed_hash": "sha256:50756b1b0408c7b7bff04bc2e6be3c1bf259274e50c8129fbdf8fc72879a1ba6",
+      "current_hash": "sha256:50756b1b0408c7b7bff04bc2e6be3c1bf259274e50c8129fbdf8fc72879a1ba6"
+    },
+    ".claude/rules/moai/workflow/orchestration-mode-selection.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1c578b8beb75d80d52a2670d0991d568005cb8e80be66cf0e4348a4c9baee3c7",
+      "deployed_hash": "sha256:1c578b8beb75d80d52a2670d0991d568005cb8e80be66cf0e4348a4c9baee3c7",
+      "current_hash": "sha256:1c578b8beb75d80d52a2670d0991d568005cb8e80be66cf0e4348a4c9baee3c7"
+    },
+    ".claude/rules/moai/workflow/runtime-recovery-doctrine.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:16a6f35375e4a5700b7e8f5d72df300bbeec06905803d19c15fd15c2d6ffb03d",
+      "deployed_hash": "sha256:16a6f35375e4a5700b7e8f5d72df300bbeec06905803d19c15fd15c2d6ffb03d",
+      "current_hash": "sha256:16a6f35375e4a5700b7e8f5d72df300bbeec06905803d19c15fd15c2d6ffb03d"
+    },
+    ".claude/rules/moai/workflow/session-handoff-examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c2b21eee0b32602cab9a06cea287c8461de9e6aaed9668a061e7e04a58c57dc8",
+      "deployed_hash": "sha256:c2b21eee0b32602cab9a06cea287c8461de9e6aaed9668a061e7e04a58c57dc8",
+      "current_hash": "sha256:c2b21eee0b32602cab9a06cea287c8461de9e6aaed9668a061e7e04a58c57dc8"
+    },
+    ".claude/rules/moai/workflow/session-handoff.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:426731f3b1a66a7c8e5aa9cdee341af7055da6565cce2e649b2b01d2a247b8b7",
+      "deployed_hash": "sha256:426731f3b1a66a7c8e5aa9cdee341af7055da6565cce2e649b2b01d2a247b8b7",
+      "current_hash": "sha256:426731f3b1a66a7c8e5aa9cdee341af7055da6565cce2e649b2b01d2a247b8b7"
+    },
+    ".claude/rules/moai/workflow/skill-routing.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0f28c20d186283dbcb6f902429de19a99b48742e7317d73c0f22babae73dcdeb",
+      "deployed_hash": "sha256:0f28c20d186283dbcb6f902429de19a99b48742e7317d73c0f22babae73dcdeb",
+      "current_hash": "sha256:0f28c20d186283dbcb6f902429de19a99b48742e7317d73c0f22babae73dcdeb"
+    },
+    ".claude/rules/moai/workflow/spec-workflow.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:53ab9ace3512b9e7740e02c45fdb9e033173348e96baa08e220fed09bcd0aa8e",
+      "deployed_hash": "sha256:53ab9ace3512b9e7740e02c45fdb9e033173348e96baa08e220fed09bcd0aa8e",
+      "current_hash": "sha256:53ab9ace3512b9e7740e02c45fdb9e033173348e96baa08e220fed09bcd0aa8e"
+    },
+    ".claude/rules/moai/workflow/verification-batch-pattern.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4a46cdaa164b1dbff5de77446d8f69e069149313cc5a8887488278edb1163496",
+      "deployed_hash": "sha256:4a46cdaa164b1dbff5de77446d8f69e069149313cc5a8887488278edb1163496",
+      "current_hash": "sha256:4a46cdaa164b1dbff5de77446d8f69e069149313cc5a8887488278edb1163496"
+    },
+    ".claude/rules/moai/workflow/worktree-integration.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9ee3cadf2c8fe7a8861b7329dbe21aa1a6190cb7942dd1e089b302e83bc3ace3",
+      "deployed_hash": "sha256:9ee3cadf2c8fe7a8861b7329dbe21aa1a6190cb7942dd1e089b302e83bc3ace3",
+      "current_hash": "sha256:9ee3cadf2c8fe7a8861b7329dbe21aa1a6190cb7942dd1e089b302e83bc3ace3"
+    },
+    ".claude/rules/moai/workflow/worktree-state-guard.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:13a1820a60576b29a0b6b3561c0d53001d79c0b64af0f4b882527a32d18399bb",
+      "deployed_hash": "sha256:13a1820a60576b29a0b6b3561c0d53001d79c0b64af0f4b882527a32d18399bb",
+      "current_hash": "sha256:13a1820a60576b29a0b6b3561c0d53001d79c0b64af0f4b882527a32d18399bb"
+    },
+    ".claude/settings.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:feb043c850c11601462dd15e976d18a736f3508c8b0e83903e98876365eda9fc",
+      "deployed_hash": "sha256:feb043c850c11601462dd15e976d18a736f3508c8b0e83903e98876365eda9fc",
+      "current_hash": "sha256:feb043c850c11601462dd15e976d18a736f3508c8b0e83903e98876365eda9fc"
+    },
+    ".claude/skills/moai-domain-design-dna/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ec96c86bbead5e69c2f68b53cec2b2bb3dd4a6ac5ffcfe4c61f72767a0d29750",
+      "deployed_hash": "sha256:ec96c86bbead5e69c2f68b53cec2b2bb3dd4a6ac5ffcfe4c61f72767a0d29750",
+      "current_hash": "sha256:ec96c86bbead5e69c2f68b53cec2b2bb3dd4a6ac5ffcfe4c61f72767a0d29750"
+    },
+    ".claude/skills/moai-domain-design-dna/references/dna-schema.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8faf5165c351bcfd09ff861e4f12aa45dc482e99160e8c3b2d32cc4d2f0fa566",
+      "deployed_hash": "sha256:8faf5165c351bcfd09ff861e4f12aa45dc482e99160e8c3b2d32cc4d2f0fa566",
+      "current_hash": "sha256:8faf5165c351bcfd09ff861e4f12aa45dc482e99160e8c3b2d32cc4d2f0fa566"
+    },
+    ".claude/skills/moai-domain-design-dna/references/effects-implementation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e5910e34b40036a950a39e7a6da55b9b058da8759b3cdfbf7c450bf62af718a",
+      "deployed_hash": "sha256:4e5910e34b40036a950a39e7a6da55b9b058da8759b3cdfbf7c450bf62af718a",
+      "current_hash": "sha256:4e5910e34b40036a950a39e7a6da55b9b058da8759b3cdfbf7c450bf62af718a"
+    },
+    ".claude/skills/moai-domain-html-report/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6f476ef31c000cb8468944fcdcb6e17da4454131b00810de7edd7b685f49b69d",
+      "deployed_hash": "sha256:6f476ef31c000cb8468944fcdcb6e17da4454131b00810de7edd7b685f49b69d",
+      "current_hash": "sha256:6f476ef31c000cb8468944fcdcb6e17da4454131b00810de7edd7b685f49b69d"
+    },
+    ".claude/skills/moai-domain-html-report/references/craft-fundamentals.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4560f7400c15c17bd1091f9f8e8a8c73bc1ea7f43953f3fcc0107fde93f3820b",
+      "deployed_hash": "sha256:4560f7400c15c17bd1091f9f8e8a8c73bc1ea7f43953f3fcc0107fde93f3820b",
+      "current_hash": "sha256:4560f7400c15c17bd1091f9f8e8a8c73bc1ea7f43953f3fcc0107fde93f3820b"
+    },
+    ".claude/skills/moai-domain-html-report/references/fonts.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:efc2494856a996bc40fb7b72b38a609499c27861ad04409db6f313c445fcd142",
+      "deployed_hash": "sha256:efc2494856a996bc40fb7b72b38a609499c27861ad04409db6f313c445fcd142",
+      "current_hash": "sha256:efc2494856a996bc40fb7b72b38a609499c27861ad04409db6f313c445fcd142"
+    },
+    ".claude/skills/moai-domain-html-report/references/templates/explainer.html.mustache": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ad5f22f5e3719b648bff3b8a89e39a81dfd9806e892cfaab8cbfb646fd83e4cd",
+      "deployed_hash": "sha256:ad5f22f5e3719b648bff3b8a89e39a81dfd9806e892cfaab8cbfb646fd83e4cd",
+      "current_hash": "sha256:ad5f22f5e3719b648bff3b8a89e39a81dfd9806e892cfaab8cbfb646fd83e4cd"
+    },
+    ".claude/skills/moai-domain-html-report/references/templates/financial.html.mustache": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:65b2fb18046ff8380673573f2e9e4b5b7b0d82929c31327a42d1c83af31a0e2c",
+      "deployed_hash": "sha256:65b2fb18046ff8380673573f2e9e4b5b7b0d82929c31327a42d1c83af31a0e2c",
+      "current_hash": "sha256:65b2fb18046ff8380673573f2e9e4b5b7b0d82929c31327a42d1c83af31a0e2c"
+    },
+    ".claude/skills/moai-domain-html-report/references/templates/incident.html.mustache": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c35272b61718878a2324b0838773d4eebeaa677b6f954d488a2a55deb9e55e93",
+      "deployed_hash": "sha256:c35272b61718878a2324b0838773d4eebeaa677b6f954d488a2a55deb9e55e93",
+      "current_hash": "sha256:c35272b61718878a2324b0838773d4eebeaa677b6f954d488a2a55deb9e55e93"
+    },
+    ".claude/skills/moai-domain-html-report/references/templates/plan.html.mustache": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:db0899a9403ab2c5497a0c72a0d3ff491fc8f3d304481f5cd6dc67bf9e3dff8f",
+      "deployed_hash": "sha256:db0899a9403ab2c5497a0c72a0d3ff491fc8f3d304481f5cd6dc67bf9e3dff8f",
+      "current_hash": "sha256:db0899a9403ab2c5497a0c72a0d3ff491fc8f3d304481f5cd6dc67bf9e3dff8f"
+    },
+    ".claude/skills/moai-domain-html-report/references/templates/pr.html.mustache": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:856aa4f1cfca84a7539ec5e6acec08b0cf48a65afa626aeb5405f7ae2104af6e",
+      "deployed_hash": "sha256:856aa4f1cfca84a7539ec5e6acec08b0cf48a65afa626aeb5405f7ae2104af6e",
+      "current_hash": "sha256:856aa4f1cfca84a7539ec5e6acec08b0cf48a65afa626aeb5405f7ae2104af6e"
+    },
+    ".claude/skills/moai-domain-html-report/references/templates/status.html.mustache": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d42ed5a5cd42e5566cc5d3c2c6a01a2eb934721fdb66adada468173d099e3414",
+      "deployed_hash": "sha256:d42ed5a5cd42e5566cc5d3c2c6a01a2eb934721fdb66adada468173d099e3414",
+      "current_hash": "sha256:d42ed5a5cd42e5566cc5d3c2c6a01a2eb934721fdb66adada468173d099e3414"
+    },
+    ".claude/skills/moai-domain-svg-infographic/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:04e15e8246939a28712efcf8969d58a483002e3d7f7e5efb458effd7c64e3b6b",
+      "deployed_hash": "sha256:04e15e8246939a28712efcf8969d58a483002e3d7f7e5efb458effd7c64e3b6b",
+      "current_hash": "sha256:04e15e8246939a28712efcf8969d58a483002e3d7f7e5efb458effd7c64e3b6b"
+    },
+    ".claude/skills/moai-domain-svg-infographic/references/archetypes.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:79e1198c734f5b01f044b6a2d759aa95c4cf5e19008987e3d376cba3db8f7979",
+      "deployed_hash": "sha256:79e1198c734f5b01f044b6a2d759aa95c4cf5e19008987e3d376cba3db8f7979",
+      "current_hash": "sha256:79e1198c734f5b01f044b6a2d759aa95c4cf5e19008987e3d376cba3db8f7979"
+    },
+    ".claude/skills/moai-domain-svg-infographic/references/authoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:85a444554decbccb407eb17529824f5c6bab3f0a6c6a79b05f5344ab05de9723",
+      "deployed_hash": "sha256:85a444554decbccb407eb17529824f5c6bab3f0a6c6a79b05f5344ab05de9723",
+      "current_hash": "sha256:85a444554decbccb407eb17529824f5c6bab3f0a6c6a79b05f5344ab05de9723"
+    },
+    ".claude/skills/moai-domain-svg-infographic/references/sketch.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:84d6891050498c0162b0eef2cc1bfeb5472c9fdfeb6445652ac712c260829adb",
+      "deployed_hash": "sha256:84d6891050498c0162b0eef2cc1bfeb5472c9fdfeb6445652ac712c260829adb",
+      "current_hash": "sha256:84d6891050498c0162b0eef2cc1bfeb5472c9fdfeb6445652ac712c260829adb"
+    },
+    ".claude/skills/moai-domain-svg-infographic/scripts/check-svg.mjs": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:325be56eee1eb55c9faa7f6c1e328e0de8640e633696bb2608f75eceb30c22f3",
+      "deployed_hash": "sha256:325be56eee1eb55c9faa7f6c1e328e0de8640e633696bb2608f75eceb30c22f3",
+      "current_hash": "sha256:325be56eee1eb55c9faa7f6c1e328e0de8640e633696bb2608f75eceb30c22f3"
+    },
+    ".claude/skills/moai-domain-svg-infographic/scripts/render.mjs": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:98bbb16dc18d8c2b8cdec180ffbe8d9b5e12e6c89bb6b95d446947a804828da1",
+      "deployed_hash": "sha256:98bbb16dc18d8c2b8cdec180ffbe8d9b5e12e6c89bb6b95d446947a804828da1",
+      "current_hash": "sha256:98bbb16dc18d8c2b8cdec180ffbe8d9b5e12e6c89bb6b95d446947a804828da1"
+    },
+    ".claude/skills/moai-foundation-cc/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3660b0f1cad233c282d74a22a4e32932ed101da3cdd54cea0c87fb717bff52d3",
+      "deployed_hash": "sha256:3660b0f1cad233c282d74a22a4e32932ed101da3cdd54cea0c87fb717bff52d3",
+      "current_hash": "sha256:3660b0f1cad233c282d74a22a4e32932ed101da3cdd54cea0c87fb717bff52d3"
+    },
+    ".claude/skills/moai-foundation-cc/reference/advanced-agent-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:84a96eb22e0230d533b1bc5c70a79c34e6e6300f25fae577f49d5390ecbcb4d5",
+      "deployed_hash": "sha256:84a96eb22e0230d533b1bc5c70a79c34e6e6300f25fae577f49d5390ecbcb4d5",
+      "current_hash": "sha256:84a96eb22e0230d533b1bc5c70a79c34e6e6300f25fae577f49d5390ecbcb4d5"
+    },
+    ".claude/skills/moai-foundation-cc/reference/best-practices-checklist.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ba607e1a3f9894523f6ba7017dd38d7e9602d7f2231f87b99263ffb3c274b9ce",
+      "deployed_hash": "sha256:ba607e1a3f9894523f6ba7017dd38d7e9602d7f2231f87b99263ffb3c274b9ce",
+      "current_hash": "sha256:ba607e1a3f9894523f6ba7017dd38d7e9602d7f2231f87b99263ffb3c274b9ce"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-cli-reference-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b497c9168d85d26d12207404260ec7dde9f095df03f83d241448519f9f5d9132",
+      "deployed_hash": "sha256:b497c9168d85d26d12207404260ec7dde9f095df03f83d241448519f9f5d9132",
+      "current_hash": "sha256:b497c9168d85d26d12207404260ec7dde9f095df03f83d241448519f9f5d9132"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-custom-slash-commands-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:89a0187af3c7bd0dd8fd9b7d51abc32374eae01dfdfe57bed5d7d34158903365",
+      "deployed_hash": "sha256:89a0187af3c7bd0dd8fd9b7d51abc32374eae01dfdfe57bed5d7d34158903365",
+      "current_hash": "sha256:89a0187af3c7bd0dd8fd9b7d51abc32374eae01dfdfe57bed5d7d34158903365"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-devcontainers-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:01221645b09f5704cbd2621b557fc3c12ef1ff60bdef072f2fd88af896916193",
+      "deployed_hash": "sha256:01221645b09f5704cbd2621b557fc3c12ef1ff60bdef072f2fd88af896916193",
+      "current_hash": "sha256:01221645b09f5704cbd2621b557fc3c12ef1ff60bdef072f2fd88af896916193"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-discover-plugins-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:07f843d654746f17e1c393b60d4ede4cb804c8e6ba7d7eabb53f1247e409cef9",
+      "deployed_hash": "sha256:07f843d654746f17e1c393b60d4ede4cb804c8e6ba7d7eabb53f1247e409cef9",
+      "current_hash": "sha256:07f843d654746f17e1c393b60d4ede4cb804c8e6ba7d7eabb53f1247e409cef9"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-headless-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8520bd44d445ba803b46be523790e4d900e78c71380a44747347eee60ab90999",
+      "deployed_hash": "sha256:8520bd44d445ba803b46be523790e4d900e78c71380a44747347eee60ab90999",
+      "current_hash": "sha256:8520bd44d445ba803b46be523790e4d900e78c71380a44747347eee60ab90999"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-hooks-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c20333f513e9cce71b542533129e841ea8517a47059cfe1e27e425ab303b3581",
+      "deployed_hash": "sha256:c20333f513e9cce71b542533129e841ea8517a47059cfe1e27e425ab303b3581",
+      "current_hash": "sha256:c20333f513e9cce71b542533129e841ea8517a47059cfe1e27e425ab303b3581"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-iam-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4ef44880f0b049e29b01c5168966eb1d888166b3599c911bfef3cac862dd334f",
+      "deployed_hash": "sha256:4ef44880f0b049e29b01c5168966eb1d888166b3599c911bfef3cac862dd334f",
+      "current_hash": "sha256:4ef44880f0b049e29b01c5168966eb1d888166b3599c911bfef3cac862dd334f"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-memory-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:cce2db1249f417c8f166811a40875b2308f814bddb0caf331dd69cdf6c08da3b",
+      "deployed_hash": "sha256:cce2db1249f417c8f166811a40875b2308f814bddb0caf331dd69cdf6c08da3b",
+      "current_hash": "sha256:cce2db1249f417c8f166811a40875b2308f814bddb0caf331dd69cdf6c08da3b"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-plugin-marketplaces-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8768192042eededda8288ef3d0e78773e5aa732cd45350d03488e425c4db7c6a",
+      "deployed_hash": "sha256:8768192042eededda8288ef3d0e78773e5aa732cd45350d03488e425c4db7c6a",
+      "current_hash": "sha256:8768192042eededda8288ef3d0e78773e5aa732cd45350d03488e425c4db7c6a"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-plugins-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:10c178588a5dba3a5f679b3147e390378315c5ef984e3000d5f5acbe97fed991",
+      "deployed_hash": "sha256:10c178588a5dba3a5f679b3147e390378315c5ef984e3000d5f5acbe97fed991",
+      "current_hash": "sha256:10c178588a5dba3a5f679b3147e390378315c5ef984e3000d5f5acbe97fed991"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-sandboxing-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e87994f075466fe5e790e0aa0df7f91bbfa834e62b5a542b2b34f1189d8778cb",
+      "deployed_hash": "sha256:e87994f075466fe5e790e0aa0df7f91bbfa834e62b5a542b2b34f1189d8778cb",
+      "current_hash": "sha256:e87994f075466fe5e790e0aa0df7f91bbfa834e62b5a542b2b34f1189d8778cb"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-settings-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2d4fffb73bf518ff84f72950ae6c71df52abb2bfd27d13eca04ba94d63bf04b4",
+      "deployed_hash": "sha256:2d4fffb73bf518ff84f72950ae6c71df52abb2bfd27d13eca04ba94d63bf04b4",
+      "current_hash": "sha256:2d4fffb73bf518ff84f72950ae6c71df52abb2bfd27d13eca04ba94d63bf04b4"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-skills-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2b71944a756f7ce449753d9409e0787a37d81ec9c4e00467f5dcc11737d8a90e",
+      "deployed_hash": "sha256:2b71944a756f7ce449753d9409e0787a37d81ec9c4e00467f5dcc11737d8a90e",
+      "current_hash": "sha256:2b71944a756f7ce449753d9409e0787a37d81ec9c4e00467f5dcc11737d8a90e"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-statusline-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:35e07280bc73770b4def49c2653397ad96209cbcb2b46cef390d946f79a33701",
+      "deployed_hash": "sha256:35e07280bc73770b4def49c2653397ad96209cbcb2b46cef390d946f79a33701",
+      "current_hash": "sha256:35e07280bc73770b4def49c2653397ad96209cbcb2b46cef390d946f79a33701"
+    },
+    ".claude/skills/moai-foundation-cc/reference/claude-code-sub-agents-official.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:be62235ce63f39015ad6397c9df51e39bfbc7c44d5dc3ed0bd836cc8640d89b3",
+      "deployed_hash": "sha256:be62235ce63f39015ad6397c9df51e39bfbc7c44d5dc3ed0bd836cc8640d89b3",
+      "current_hash": "sha256:be62235ce63f39015ad6397c9df51e39bfbc7c44d5dc3ed0bd836cc8640d89b3"
+    },
+    ".claude/skills/moai-foundation-cc/reference/complete-configuration-guide.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b2ac4d65adadea9bbe079332124f4c781da5770fc1ef49bbe8c94597cda52237",
+      "deployed_hash": "sha256:b2ac4d65adadea9bbe079332124f4c781da5770fc1ef49bbe8c94597cda52237",
+      "current_hash": "sha256:b2ac4d65adadea9bbe079332124f4c781da5770fc1ef49bbe8c94597cda52237"
+    },
+    ".claude/skills/moai-foundation-cc/reference/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5f42fc022d1c5db64f703ddd3604e3db2e377fd0c7306e502d0165a5284f0087",
+      "deployed_hash": "sha256:5f42fc022d1c5db64f703ddd3604e3db2e377fd0c7306e502d0165a5284f0087",
+      "current_hash": "sha256:5f42fc022d1c5db64f703ddd3604e3db2e377fd0c7306e502d0165a5284f0087"
+    },
+    ".claude/skills/moai-foundation-cc/reference/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:760eff78519c6678ccd8cfdb7f557c408d0647c6437b39cddc718a55611d36e4",
+      "deployed_hash": "sha256:760eff78519c6678ccd8cfdb7f557c408d0647c6437b39cddc718a55611d36e4",
+      "current_hash": "sha256:760eff78519c6678ccd8cfdb7f557c408d0647c6437b39cddc718a55611d36e4"
+    },
+    ".claude/skills/moai-foundation-cc/reference/skill-examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:eac0a351426640d9bd3ae1081fde44224204187f70ef38bd445b43c23bd86764",
+      "deployed_hash": "sha256:eac0a351426640d9bd3ae1081fde44224204187f70ef38bd445b43c23bd86764",
+      "current_hash": "sha256:eac0a351426640d9bd3ae1081fde44224204187f70ef38bd445b43c23bd86764"
+    },
+    ".claude/skills/moai-foundation-cc/reference/skill-formatting-guide.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7458ac8ced4c2b8e453e0ab0bd9e2cce79ad0221cf148337924154c248136f91",
+      "deployed_hash": "sha256:7458ac8ced4c2b8e453e0ab0bd9e2cce79ad0221cf148337924154c248136f91",
+      "current_hash": "sha256:7458ac8ced4c2b8e453e0ab0bd9e2cce79ad0221cf148337924154c248136f91"
+    },
+    ".claude/skills/moai-foundation-cc/reference/sub-agents/sub-agent-examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:30887e5bd4d32a6d27fd2043936c603438381020f8bbc87b8e7c6cd626595570",
+      "deployed_hash": "sha256:30887e5bd4d32a6d27fd2043936c603438381020f8bbc87b8e7c6cd626595570",
+      "current_hash": "sha256:30887e5bd4d32a6d27fd2043936c603438381020f8bbc87b8e7c6cd626595570"
+    },
+    ".claude/skills/moai-foundation-cc/reference/sub-agents/sub-agent-formatting-guide.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f1fddf9aa23803192f9e47177b471f990f7c74f156e9c9a13186efe229533123",
+      "deployed_hash": "sha256:f1fddf9aa23803192f9e47177b471f990f7c74f156e9c9a13186efe229533123",
+      "current_hash": "sha256:f1fddf9aa23803192f9e47177b471f990f7c74f156e9c9a13186efe229533123"
+    },
+    ".claude/skills/moai-foundation-cc/reference/sub-agents/sub-agent-integration-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:07d6b86ae744ce97ea6b79409afc64652fd1e35c9d93976516155a7c8d67904c",
+      "deployed_hash": "sha256:07d6b86ae744ce97ea6b79409afc64652fd1e35c9d93976516155a7c8d67904c",
+      "current_hash": "sha256:07d6b86ae744ce97ea6b79409afc64652fd1e35c9d93976516155a7c8d67904c"
+    },
+    ".claude/skills/moai-foundation-core/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f9abe12668904cc90c1cb424a00fa84e9db927ea5396ab852bbb10bf8a02c7fb",
+      "deployed_hash": "sha256:f9abe12668904cc90c1cb424a00fa84e9db927ea5396ab852bbb10bf8a02c7fb",
+      "current_hash": "sha256:f9abe12668904cc90c1cb424a00fa84e9db927ea5396ab852bbb10bf8a02c7fb"
+    },
+    ".claude/skills/moai-foundation-core/modules/INDEX.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4647c9d3b02d9d08b4f3feb7ae617bd5da863ee40f878440ad2f3fae57e71cbf",
+      "deployed_hash": "sha256:4647c9d3b02d9d08b4f3feb7ae617bd5da863ee40f878440ad2f3fae57e71cbf",
+      "current_hash": "sha256:4647c9d3b02d9d08b4f3feb7ae617bd5da863ee40f878440ad2f3fae57e71cbf"
+    },
+    ".claude/skills/moai-foundation-core/modules/agents-reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2e096109b73928a44a38c20373d105bb738d804ffa7f7eee88cc18131e1e9ac4",
+      "deployed_hash": "sha256:2e096109b73928a44a38c20373d105bb738d804ffa7f7eee88cc18131e1e9ac4",
+      "current_hash": "sha256:2e096109b73928a44a38c20373d105bb738d804ffa7f7eee88cc18131e1e9ac4"
+    },
+    ".claude/skills/moai-foundation-core/modules/commands-reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3db0a3f3f7d256ee2f8913061f448abd76a54a057fb5978085318165f8b4dbad",
+      "deployed_hash": "sha256:3db0a3f3f7d256ee2f8913061f448abd76a54a057fb5978085318165f8b4dbad",
+      "current_hash": "sha256:3db0a3f3f7d256ee2f8913061f448abd76a54a057fb5978085318165f8b4dbad"
+    },
+    ".claude/skills/moai-foundation-core/modules/delegation-advanced.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:19b184ebfa9aa64b91d4a42de563ea4534f1ce96540e9590843c4105eadaefb5",
+      "deployed_hash": "sha256:19b184ebfa9aa64b91d4a42de563ea4534f1ce96540e9590843c4105eadaefb5",
+      "current_hash": "sha256:19b184ebfa9aa64b91d4a42de563ea4534f1ce96540e9590843c4105eadaefb5"
+    },
+    ".claude/skills/moai-foundation-core/modules/delegation-implementation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e924c48d0ab15cf9bebe4fcf52fefd050d0a3b1a0614f8ce77826717e0d2579e",
+      "deployed_hash": "sha256:e924c48d0ab15cf9bebe4fcf52fefd050d0a3b1a0614f8ce77826717e0d2579e",
+      "current_hash": "sha256:e924c48d0ab15cf9bebe4fcf52fefd050d0a3b1a0614f8ce77826717e0d2579e"
+    },
+    ".claude/skills/moai-foundation-core/modules/delegation-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:bc1a8192ce654f8ec9dcc3b80a21ad6add08aaae7b1bd22677c1bd8f5dd40b81",
+      "deployed_hash": "sha256:bc1a8192ce654f8ec9dcc3b80a21ad6add08aaae7b1bd22677c1bd8f5dd40b81",
+      "current_hash": "sha256:bc1a8192ce654f8ec9dcc3b80a21ad6add08aaae7b1bd22677c1bd8f5dd40b81"
+    },
+    ".claude/skills/moai-foundation-core/modules/execution-rules.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:49ca584133d6f0a234da6a2c1700a6ac5557a3c30541d88e6763875493b7ad6e",
+      "deployed_hash": "sha256:49ca584133d6f0a234da6a2c1700a6ac5557a3c30541d88e6763875493b7ad6e",
+      "current_hash": "sha256:49ca584133d6f0a234da6a2c1700a6ac5557a3c30541d88e6763875493b7ad6e"
+    },
+    ".claude/skills/moai-foundation-core/modules/modular-system.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d090c174229468a8a5ea8370518165e10cabde56931096c528f420df730432f3",
+      "deployed_hash": "sha256:d090c174229468a8a5ea8370518165e10cabde56931096c528f420df730432f3",
+      "current_hash": "sha256:d090c174229468a8a5ea8370518165e10cabde56931096c528f420df730432f3"
+    },
+    ".claude/skills/moai-foundation-core/modules/patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e403403eff390081dd1e4c7e597a97e5507de895c1431e37f209f3971616e5c3",
+      "deployed_hash": "sha256:e403403eff390081dd1e4c7e597a97e5507de895c1431e37f209f3971616e5c3",
+      "current_hash": "sha256:e403403eff390081dd1e4c7e597a97e5507de895c1431e37f209f3971616e5c3"
+    },
+    ".claude/skills/moai-foundation-core/modules/progressive-disclosure.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:723326ebd5b06285ef69ec10da7c3eb52034e616871977e0994032f87b5847cf",
+      "deployed_hash": "sha256:723326ebd5b06285ef69ec10da7c3eb52034e616871977e0994032f87b5847cf",
+      "current_hash": "sha256:723326ebd5b06285ef69ec10da7c3eb52034e616871977e0994032f87b5847cf"
+    },
+    ".claude/skills/moai-foundation-core/modules/spec-ddd-implementation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e4be8cc23ac1db69693fc5e82b4cf43f225658a9f22060f87e609eda4bf8982",
+      "deployed_hash": "sha256:4e4be8cc23ac1db69693fc5e82b4cf43f225658a9f22060f87e609eda4bf8982",
+      "current_hash": "sha256:4e4be8cc23ac1db69693fc5e82b4cf43f225658a9f22060f87e609eda4bf8982"
+    },
+    ".claude/skills/moai-foundation-core/modules/spec-ears-format.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:eedb87619d11b4db1a2d66b0fbf3b286198c67d87db5dabfd9e4a2ba629a8142",
+      "deployed_hash": "sha256:eedb87619d11b4db1a2d66b0fbf3b286198c67d87db5dabfd9e4a2ba629a8142",
+      "current_hash": "sha256:eedb87619d11b4db1a2d66b0fbf3b286198c67d87db5dabfd9e4a2ba629a8142"
+    },
+    ".claude/skills/moai-foundation-core/modules/spec-first-ddd.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:570c2c649d76c899596443f15449ec2c4e1fff4e2ade8dea967fdd2134f5c2ed",
+      "deployed_hash": "sha256:570c2c649d76c899596443f15449ec2c4e1fff4e2ade8dea967fdd2134f5c2ed",
+      "current_hash": "sha256:570c2c649d76c899596443f15449ec2c4e1fff4e2ade8dea967fdd2134f5c2ed"
+    },
+    ".claude/skills/moai-foundation-core/modules/token-optimization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0805672e16c2df28e075c0c652be8f9f6690b57c7a53474738769425f7d68309",
+      "deployed_hash": "sha256:0805672e16c2df28e075c0c652be8f9f6690b57c7a53474738769425f7d68309",
+      "current_hash": "sha256:0805672e16c2df28e075c0c652be8f9f6690b57c7a53474738769425f7d68309"
+    },
+    ".claude/skills/moai-foundation-core/modules/trust-5-framework.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6cfb5e45566bedfc93613d83207cb18feb10f45b4f50b4531443f1d65c899c83",
+      "deployed_hash": "sha256:6cfb5e45566bedfc93613d83207cb18feb10f45b4f50b4531443f1d65c899c83",
+      "current_hash": "sha256:6cfb5e45566bedfc93613d83207cb18feb10f45b4f50b4531443f1d65c899c83"
+    },
+    ".claude/skills/moai-foundation-core/modules/trust-5-implementation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:70f2f565fc8c05ae690b6e20440753bf44d4c4d0cc0e292f1ccb04ea94a19c3b",
+      "deployed_hash": "sha256:70f2f565fc8c05ae690b6e20440753bf44d4c4d0cc0e292f1ccb04ea94a19c3b",
+      "current_hash": "sha256:70f2f565fc8c05ae690b6e20440753bf44d4c4d0cc0e292f1ccb04ea94a19c3b"
+    },
+    ".claude/skills/moai-foundation-core/modules/trust-5-validation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0648a6b57c295bc3d1f2ac6dcd242bb9fd0d5a2ad3aa69c2a0244094fd52ff57",
+      "deployed_hash": "sha256:0648a6b57c295bc3d1f2ac6dcd242bb9fd0d5a2ad3aa69c2a0244094fd52ff57",
+      "current_hash": "sha256:0648a6b57c295bc3d1f2ac6dcd242bb9fd0d5a2ad3aa69c2a0244094fd52ff57"
+    },
+    ".claude/skills/moai-foundation-core/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d05fd7736a0ac62c6d06961edf8ea55ed60efcf7b511344f3e78389bc992dafa",
+      "deployed_hash": "sha256:d05fd7736a0ac62c6d06961edf8ea55ed60efcf7b511344f3e78389bc992dafa",
+      "current_hash": "sha256:d05fd7736a0ac62c6d06961edf8ea55ed60efcf7b511344f3e78389bc992dafa"
+    },
+    ".claude/skills/moai-foundation-core/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ab0b6c9b13d0e7731020366e10792771f9a601664771e43f627fda6d3b6e78a4",
+      "deployed_hash": "sha256:ab0b6c9b13d0e7731020366e10792771f9a601664771e43f627fda6d3b6e78a4",
+      "current_hash": "sha256:ab0b6c9b13d0e7731020366e10792771f9a601664771e43f627fda6d3b6e78a4"
+    },
+    ".claude/skills/moai-foundation-quality/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:10af2b7a9ec94a27913e562c4824357d00044a0fc1e736b620b1d1a75b8c17d1",
+      "deployed_hash": "sha256:10af2b7a9ec94a27913e562c4824357d00044a0fc1e736b620b1d1a75b8c17d1",
+      "current_hash": "sha256:10af2b7a9ec94a27913e562c4824357d00044a0fc1e736b620b1d1a75b8c17d1"
+    },
+    ".claude/skills/moai-foundation-quality/modules/best-practices.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:20edaf35feb221812a60b050ac38b84383915837c246b5a0f3ea20c57dd937e8",
+      "deployed_hash": "sha256:20edaf35feb221812a60b050ac38b84383915837c246b5a0f3ea20c57dd937e8",
+      "current_hash": "sha256:20edaf35feb221812a60b050ac38b84383915837c246b5a0f3ea20c57dd937e8"
+    },
+    ".claude/skills/moai-foundation-quality/modules/integration-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9ec7d7fb009e82a5bed74202f7f146e0e1002b3dfd88927aada60a4693e219f0",
+      "deployed_hash": "sha256:9ec7d7fb009e82a5bed74202f7f146e0e1002b3dfd88927aada60a4693e219f0",
+      "current_hash": "sha256:9ec7d7fb009e82a5bed74202f7f146e0e1002b3dfd88927aada60a4693e219f0"
+    },
+    ".claude/skills/moai-foundation-quality/modules/proactive-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:80f39926fcbeb3f2f09f9de715e3655cb6580735bbd1282d6d2d91d4bf94978b",
+      "deployed_hash": "sha256:80f39926fcbeb3f2f09f9de715e3655cb6580735bbd1282d6d2d91d4bf94978b",
+      "current_hash": "sha256:80f39926fcbeb3f2f09f9de715e3655cb6580735bbd1282d6d2d91d4bf94978b"
+    },
+    ".claude/skills/moai-foundation-quality/modules/trust5-validation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:77cc03f4dd63f6aac629d0c97ed486ae8e189c76012a746bf6ab9e8f1ba5fe9a",
+      "deployed_hash": "sha256:77cc03f4dd63f6aac629d0c97ed486ae8e189c76012a746bf6ab9e8f1ba5fe9a",
+      "current_hash": "sha256:77cc03f4dd63f6aac629d0c97ed486ae8e189c76012a746bf6ab9e8f1ba5fe9a"
+    },
+    ".claude/skills/moai-foundation-quality/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:40a8de8064cdbd06f1e485d9febb984436e84603d7a064ae3c894c8dcde02fa1",
+      "deployed_hash": "sha256:40a8de8064cdbd06f1e485d9febb984436e84603d7a064ae3c894c8dcde02fa1",
+      "current_hash": "sha256:40a8de8064cdbd06f1e485d9febb984436e84603d7a064ae3c894c8dcde02fa1"
+    },
+    ".claude/skills/moai-foundation-quality/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:04fb7121932c1b73305ff2332c1687a1f97e8b8e85aa7982fd367a1c7b3e2d47",
+      "deployed_hash": "sha256:04fb7121932c1b73305ff2332c1687a1f97e8b8e85aa7982fd367a1c7b3e2d47",
+      "current_hash": "sha256:04fb7121932c1b73305ff2332c1687a1f97e8b8e85aa7982fd367a1c7b3e2d47"
+    },
+    ".claude/skills/moai-foundation-thinking/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c11cee93d9cb943207c19fffb4a23eb82ad9762d4fc923801c808970bba39ef8",
+      "deployed_hash": "sha256:c11cee93d9cb943207c19fffb4a23eb82ad9762d4fc923801c808970bba39ef8",
+      "current_hash": "sha256:c11cee93d9cb943207c19fffb4a23eb82ad9762d4fc923801c808970bba39ef8"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/assumption-matrix.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0570af8f5ebd7fbb859a0b1828e40095991f27feac4a12fcc4aac576f31c6a92",
+      "deployed_hash": "sha256:0570af8f5ebd7fbb859a0b1828e40095991f27feac4a12fcc4aac576f31c6a92",
+      "current_hash": "sha256:0570af8f5ebd7fbb859a0b1828e40095991f27feac4a12fcc4aac576f31c6a92"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/cognitive-bias.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:628fb16ac1258b5b1ce8306508200d21e4ff755b7cd9bfce0283088157ad0ba8",
+      "deployed_hash": "sha256:628fb16ac1258b5b1ce8306508200d21e4ff755b7cd9bfce0283088157ad0ba8",
+      "current_hash": "sha256:628fb16ac1258b5b1ce8306508200d21e4ff755b7cd9bfce0283088157ad0ba8"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/critical-evaluation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f827cf3e7295641470978f7cdc6cf04a116de4beea424b11ff560d251929ebbc",
+      "deployed_hash": "sha256:f827cf3e7295641470978f7cdc6cf04a116de4beea424b11ff560d251929ebbc",
+      "current_hash": "sha256:f827cf3e7295641470978f7cdc6cf04a116de4beea424b11ff560d251929ebbc"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/deep-questioning.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e591fddb26a5edcbd9f4d45e3e8885f021cce933449c4eec7b1b2b4261de60f",
+      "deployed_hash": "sha256:4e591fddb26a5edcbd9f4d45e3e8885f021cce933449c4eec7b1b2b4261de60f",
+      "current_hash": "sha256:4e591fddb26a5edcbd9f4d45e3e8885f021cce933449c4eec7b1b2b4261de60f"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/diverge-converge.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d6ff919fbe6d245c31f2892dbb71e031b07d7dc1aaa10ae23c6ecbe038aaced5",
+      "deployed_hash": "sha256:d6ff919fbe6d245c31f2892dbb71e031b07d7dc1aaa10ae23c6ecbe038aaced5",
+      "current_hash": "sha256:d6ff919fbe6d245c31f2892dbb71e031b07d7dc1aaa10ae23c6ecbe038aaced5"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/first-principles.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2c16b790782004e1ef428766a5287e8ee02beaf1311a3b8ca3d837c1b4938161",
+      "deployed_hash": "sha256:2c16b790782004e1ef428766a5287e8ee02beaf1311a3b8ca3d837c1b4938161",
+      "current_hash": "sha256:2c16b790782004e1ef428766a5287e8ee02beaf1311a3b8ca3d837c1b4938161"
+    },
+    ".claude/skills/moai-foundation-thinking/modules/trade-off-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5910c5cb235db8ac7e21b2c9e77ee42d32ccbb321e18cf3d8429b618020d635f",
+      "deployed_hash": "sha256:5910c5cb235db8ac7e21b2c9e77ee42d32ccbb321e18cf3d8429b618020d635f",
+      "current_hash": "sha256:5910c5cb235db8ac7e21b2c9e77ee42d32ccbb321e18cf3d8429b618020d635f"
+    },
+    ".claude/skills/moai-foundation-thinking/references/philosopher-examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:12298a585f3b0b3268ec91c4649703fa9ddf21a94c60ba5bab2a1cf07276123c",
+      "deployed_hash": "sha256:12298a585f3b0b3268ec91c4649703fa9ddf21a94c60ba5bab2a1cf07276123c",
+      "current_hash": "sha256:12298a585f3b0b3268ec91c4649703fa9ddf21a94c60ba5bab2a1cf07276123c"
+    },
+    ".claude/skills/moai-foundation-thinking/references/philosopher-reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:549991c44ef1949056534ea8e0da19ca9462e539afc62d58f6c9f50f0a71214b",
+      "deployed_hash": "sha256:549991c44ef1949056534ea8e0da19ca9462e539afc62d58f6c9f50f0a71214b",
+      "current_hash": "sha256:549991c44ef1949056534ea8e0da19ca9462e539afc62d58f6c9f50f0a71214b"
+    },
+    ".claude/skills/moai-foundation-thinking/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2b9c043243349ece17065b424d989a03ebe6aac586e741f43ade77a38fbcbde8",
+      "deployed_hash": "sha256:2b9c043243349ece17065b424d989a03ebe6aac586e741f43ade77a38fbcbde8",
+      "current_hash": "sha256:2b9c043243349ece17065b424d989a03ebe6aac586e741f43ade77a38fbcbde8"
+    },
+    ".claude/skills/moai-harness-learner/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fd82c49101e9a85057c765c0a3e81a7c643dbd8f039e1f5d860b20af988da1c0",
+      "deployed_hash": "sha256:fd82c49101e9a85057c765c0a3e81a7c643dbd8f039e1f5d860b20af988da1c0",
+      "current_hash": "sha256:fd82c49101e9a85057c765c0a3e81a7c643dbd8f039e1f5d860b20af988da1c0"
+    },
+    ".claude/skills/moai-kanban-foreman/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fdae87cb7228172ebc29e289f8d6c71c2fd6d70a1a9ed6a14560c6de21e4c6a6",
+      "deployed_hash": "sha256:fdae87cb7228172ebc29e289f8d6c71c2fd6d70a1a9ed6a14560c6de21e4c6a6",
+      "current_hash": "sha256:fdae87cb7228172ebc29e289f8d6c71c2fd6d70a1a9ed6a14560c6de21e4c6a6"
+    },
+    ".claude/skills/moai-meta-harness/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5886878a3f0a6d6282caa2912d201f785e3c70a175012731f05f194325d60acd",
+      "deployed_hash": "sha256:5886878a3f0a6d6282caa2912d201f785e3c70a175012731f05f194325d60acd",
+      "current_hash": "sha256:5886878a3f0a6d6282caa2912d201f785e3c70a175012731f05f194325d60acd"
+    },
+    ".claude/skills/moai-meta-harness/references/agent-cross-references.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:da8a6d1566c58f50e93b1855996f8d23424a67d3a882e5d7f7eff88e122ac50d",
+      "deployed_hash": "sha256:da8a6d1566c58f50e93b1855996f8d23424a67d3a882e5d7f7eff88e122ac50d",
+      "current_hash": "sha256:da8a6d1566c58f50e93b1855996f8d23424a67d3a882e5d7f7eff88e122ac50d"
+    },
+    ".claude/skills/moai-meta-harness/references/hierarchical-scoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:edb21e94e199ea874a4f7e9b2f26f87022379e4a71a62c750cf85b39e81eaac5",
+      "deployed_hash": "sha256:edb21e94e199ea874a4f7e9b2f26f87022379e4a71a62c750cf85b39e81eaac5",
+      "current_hash": "sha256:edb21e94e199ea874a4f7e9b2f26f87022379e4a71a62c750cf85b39e81eaac5"
+    },
+    ".claude/skills/moai-meta-harness/references/hrn-003-hierarchical-scoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9afcf0e5342fc68345b6277dde417d016f9a1f4f3b8715906b58e87a7f47ec95",
+      "deployed_hash": "sha256:9afcf0e5342fc68345b6277dde417d016f9a1f4f3b8715906b58e87a7f47ec95",
+      "current_hash": "sha256:9afcf0e5342fc68345b6277dde417d016f9a1f4f3b8715906b58e87a7f47ec95"
+    },
+    ".claude/skills/moai-meta-harness/references/seven-phase-workflow.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:610cab0d2d3cd80d0dad504a42c30267e2682834e52ac11888e8e1037e08bc9f",
+      "deployed_hash": "sha256:610cab0d2d3cd80d0dad504a42c30267e2682834e52ac11888e8e1037e08bc9f",
+      "current_hash": "sha256:610cab0d2d3cd80d0dad504a42c30267e2682834e52ac11888e8e1037e08bc9f"
+    },
+    ".claude/skills/moai-meta-harness/seeds/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".claude/skills/moai-ref-git-workflow/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:36f24400e70b6fdbcbe1960e93cd3cfb28103468a09a719dae3fb1f1968584f9",
+      "deployed_hash": "sha256:36f24400e70b6fdbcbe1960e93cd3cfb28103468a09a719dae3fb1f1968584f9",
+      "current_hash": "sha256:36f24400e70b6fdbcbe1960e93cd3cfb28103468a09a719dae3fb1f1968584f9"
+    },
+    ".claude/skills/moai-ref-testing-pyramid/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e91eee5176af271e253392b2f5d427c328f15be2d417b4acee09990bb105e75",
+      "deployed_hash": "sha256:4e91eee5176af271e253392b2f5d427c328f15be2d417b4acee09990bb105e75",
+      "current_hash": "sha256:4e91eee5176af271e253392b2f5d427c328f15be2d417b4acee09990bb105e75"
+    },
+    ".claude/skills/moai-workflow-ddd/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:321e1ab6d8732377c7c58aeb591020faf07a93f99ad0bba99b5854ab20d19c3c",
+      "deployed_hash": "sha256:321e1ab6d8732377c7c58aeb591020faf07a93f99ad0bba99b5854ab20d19c3c",
+      "current_hash": "sha256:321e1ab6d8732377c7c58aeb591020faf07a93f99ad0bba99b5854ab20d19c3c"
+    },
+    ".claude/skills/moai-workflow-docs-claim-check/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:662166edc5f5d59e961e407214b1c87f1e67267405410da3660c920173d4300b",
+      "deployed_hash": "sha256:662166edc5f5d59e961e407214b1c87f1e67267405410da3660c920173d4300b",
+      "current_hash": "sha256:662166edc5f5d59e961e407214b1c87f1e67267405410da3660c920173d4300b"
+    },
+    ".claude/skills/moai-workflow-docs-claim-check/references/label-decision-tree.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:07127c600209e78cf724bb24aaae297f6820dcffefe09498f091b697fd8f551b",
+      "deployed_hash": "sha256:07127c600209e78cf724bb24aaae297f6820dcffefe09498f091b697fd8f551b",
+      "current_hash": "sha256:07127c600209e78cf724bb24aaae297f6820dcffefe09498f091b697fd8f551b"
+    },
+    ".claude/skills/moai-workflow-docs-claim-check/references/worked-examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:42a869c7a8aff8152d966f78cea2747ea8fc22e691b7b8b8daebba8fb309f7c6",
+      "deployed_hash": "sha256:42a869c7a8aff8152d966f78cea2747ea8fc22e691b7b8b8daebba8fb309f7c6",
+      "current_hash": "sha256:42a869c7a8aff8152d966f78cea2747ea8fc22e691b7b8b8daebba8fb309f7c6"
+    },
+    ".claude/skills/moai-workflow-loop/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3196f439da2cf2fdb9d31436abd01e3858cf2fbb76d45ceb4ab856ad7fb8748a",
+      "deployed_hash": "sha256:3196f439da2cf2fdb9d31436abd01e3858cf2fbb76d45ceb4ab856ad7fb8748a",
+      "current_hash": "sha256:3196f439da2cf2fdb9d31436abd01e3858cf2fbb76d45ceb4ab856ad7fb8748a"
+    },
+    ".claude/skills/moai-workflow-loop/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7121da9e2d5688bb50f5e6734ea52e52d7be62f511114e52ecf61a3cb7e57d4c",
+      "deployed_hash": "sha256:7121da9e2d5688bb50f5e6734ea52e52d7be62f511114e52ecf61a3cb7e57d4c",
+      "current_hash": "sha256:7121da9e2d5688bb50f5e6734ea52e52d7be62f511114e52ecf61a3cb7e57d4c"
+    },
+    ".claude/skills/moai-workflow-loop/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:80445b1b7d87f2b56870577b9ccebc5418587aa57abf95c2db35bb90c85f5581",
+      "deployed_hash": "sha256:80445b1b7d87f2b56870577b9ccebc5418587aa57abf95c2db35bb90c85f5581",
+      "current_hash": "sha256:80445b1b7d87f2b56870577b9ccebc5418587aa57abf95c2db35bb90c85f5581"
+    },
+    ".claude/skills/moai-workflow-project/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9e4f7a52b977e2a4014c321931aacdd8ebf04559b9e2b8ba26aa4ee9abb2dd16",
+      "deployed_hash": "sha256:9e4f7a52b977e2a4014c321931aacdd8ebf04559b9e2b8ba26aa4ee9abb2dd16",
+      "current_hash": "sha256:9e4f7a52b977e2a4014c321931aacdd8ebf04559b9e2b8ba26aa4ee9abb2dd16"
+    },
+    ".claude/skills/moai-workflow-project/references/configuration.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6538d6b643f273f577e55ca4a57016990ac6dee2c511314faff1dc4dedd2e750",
+      "deployed_hash": "sha256:6538d6b643f273f577e55ca4a57016990ac6dee2c511314faff1dc4dedd2e750",
+      "current_hash": "sha256:6538d6b643f273f577e55ca4a57016990ac6dee2c511314faff1dc4dedd2e750"
+    },
+    ".claude/skills/moai-workflow-project/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:af68d8310519e3f13fc5fbf28f12bb79d3bf5a023dc8adda22851b3bccd8f62b",
+      "deployed_hash": "sha256:af68d8310519e3f13fc5fbf28f12bb79d3bf5a023dc8adda22851b3bccd8f62b",
+      "current_hash": "sha256:af68d8310519e3f13fc5fbf28f12bb79d3bf5a023dc8adda22851b3bccd8f62b"
+    },
+    ".claude/skills/moai-workflow-project/references/language-localization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6b81f85196f874b9977dbad56a08676b26b31cee68e081e4c3c7fa9812901b7c",
+      "deployed_hash": "sha256:6b81f85196f874b9977dbad56a08676b26b31cee68e081e4c3c7fa9812901b7c",
+      "current_hash": "sha256:6b81f85196f874b9977dbad56a08676b26b31cee68e081e4c3c7fa9812901b7c"
+    },
+    ".claude/skills/moai-workflow-project/references/navigator-astx.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d6c0c7269f9956c53e994607b8ab2216aa30b0e6486402726390f133afd6de6a",
+      "deployed_hash": "sha256:d6c0c7269f9956c53e994607b8ab2216aa30b0e6486402726390f133afd6de6a",
+      "current_hash": "sha256:d6c0c7269f9956c53e994607b8ab2216aa30b0e6486402726390f133afd6de6a"
+    },
+    ".claude/skills/moai-workflow-project/references/navigator-audit.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:da52fb58ea654b974dad64e67e753960dc6fba7e2938216c70a4431509ee8cf1",
+      "deployed_hash": "sha256:da52fb58ea654b974dad64e67e753960dc6fba7e2938216c70a4431509ee8cf1",
+      "current_hash": "sha256:da52fb58ea654b974dad64e67e753960dc6fba7e2938216c70a4431509ee8cf1"
+    },
+    ".claude/skills/moai-workflow-project/references/navigator.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:07c1ef7deab738e8750e5a62443496fa9f2397139a390402a4de5aecfcde3c0a",
+      "deployed_hash": "sha256:07c1ef7deab738e8750e5a62443496fa9f2397139a390402a4de5aecfcde3c0a",
+      "current_hash": "sha256:07c1ef7deab738e8750e5a62443496fa9f2397139a390402a4de5aecfcde3c0a"
+    },
+    ".claude/skills/moai-workflow-project/references/overview.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d141ec4c17a5a2787e3452898ce65aaf6ee3ea76bcb40dce7aa0be475c53b076",
+      "deployed_hash": "sha256:d141ec4c17a5a2787e3452898ce65aaf6ee3ea76bcb40dce7aa0be475c53b076",
+      "current_hash": "sha256:d141ec4c17a5a2787e3452898ce65aaf6ee3ea76bcb40dce7aa0be475c53b076"
+    },
+    ".claude/skills/moai-workflow-project/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9af5215fe1c7f048bae92d0bb287a17a40ad22e2e69122b90651e154bcf3bafe",
+      "deployed_hash": "sha256:9af5215fe1c7f048bae92d0bb287a17a40ad22e2e69122b90651e154bcf3bafe",
+      "current_hash": "sha256:9af5215fe1c7f048bae92d0bb287a17a40ad22e2e69122b90651e154bcf3bafe"
+    },
+    ".claude/skills/moai-workflow-project/references/workflows.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fbd2be6f5a45caa27aa95fa2137dafad7245795ff632a374ac669839f972d08f",
+      "deployed_hash": "sha256:fbd2be6f5a45caa27aa95fa2137dafad7245795ff632a374ac669839f972d08f",
+      "current_hash": "sha256:fbd2be6f5a45caa27aa95fa2137dafad7245795ff632a374ac669839f972d08f"
+    },
+    ".claude/skills/moai-workflow-project/schemas/config-schema.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8d8dfc3c33cafe06dcf1edb3bdd812e1fff095d8ec24155736aa8e23162f115c",
+      "deployed_hash": "sha256:8d8dfc3c33cafe06dcf1edb3bdd812e1fff095d8ec24155736aa8e23162f115c",
+      "current_hash": "sha256:8d8dfc3c33cafe06dcf1edb3bdd812e1fff095d8ec24155736aa8e23162f115c"
+    },
+    ".claude/skills/moai-workflow-project/schemas/tab_schema.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6c1b2781234efff69e4f308576f951576485fdea18e77c78ee9bd3de6a795d34",
+      "deployed_hash": "sha256:6c1b2781234efff69e4f308576f951576485fdea18e77c78ee9bd3de6a795d34",
+      "current_hash": "sha256:6c1b2781234efff69e4f308576f951576485fdea18e77c78ee9bd3de6a795d34"
+    },
+    ".claude/skills/moai-workflow-project/scripts/navigator-audit.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:acf7e6493da90238e1125cd5beaa81b0a8eeef64948bbd9d05fc77079ddaa016",
+      "deployed_hash": "sha256:acf7e6493da90238e1125cd5beaa81b0a8eeef64948bbd9d05fc77079ddaa016",
+      "current_hash": "sha256:acf7e6493da90238e1125cd5beaa81b0a8eeef64948bbd9d05fc77079ddaa016"
+    },
+    ".claude/skills/moai-workflow-project/scripts/navigator-enrich.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0f59f901cd93c40d2df3140da86150f862abeedf36a0c423a67e78b0fb4d52bd",
+      "deployed_hash": "sha256:0f59f901cd93c40d2df3140da86150f862abeedf36a0c423a67e78b0fb4d52bd",
+      "current_hash": "sha256:0f59f901cd93c40d2df3140da86150f862abeedf36a0c423a67e78b0fb4d52bd"
+    },
+    ".claude/skills/moai-workflow-project/scripts/navigator-regen.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:77fd8f805e9311824f79717adb2da81b9ad57433096612b963ddd7a592955582",
+      "deployed_hash": "sha256:77fd8f805e9311824f79717adb2da81b9ad57433096612b963ddd7a592955582",
+      "current_hash": "sha256:77fd8f805e9311824f79717adb2da81b9ad57433096612b963ddd7a592955582"
+    },
+    ".claude/skills/moai-workflow-project/templates/config-template.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f85c895f691be40d2864d370d73f1e88c69942735475d250955d1be11c0535f8",
+      "deployed_hash": "sha256:f85c895f691be40d2864d370d73f1e88c69942735475d250955d1be11c0535f8",
+      "current_hash": "sha256:f85c895f691be40d2864d370d73f1e88c69942735475d250955d1be11c0535f8"
+    },
+    ".claude/skills/moai-workflow-project/templates/doc-templates/product-template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9d5ccc6257b7afce66f04f9caa2745c19c9f1c8cc0fb42899a104128f5e553d9",
+      "deployed_hash": "sha256:9d5ccc6257b7afce66f04f9caa2745c19c9f1c8cc0fb42899a104128f5e553d9",
+      "current_hash": "sha256:9d5ccc6257b7afce66f04f9caa2745c19c9f1c8cc0fb42899a104128f5e553d9"
+    },
+    ".claude/skills/moai-workflow-project/templates/doc-templates/structure-template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:599817361e8b781f700c7d908d9f7686e445adaec57ce97ab6f9dc5082bd3eec",
+      "deployed_hash": "sha256:599817361e8b781f700c7d908d9f7686e445adaec57ce97ab6f9dc5082bd3eec",
+      "current_hash": "sha256:599817361e8b781f700c7d908d9f7686e445adaec57ce97ab6f9dc5082bd3eec"
+    },
+    ".claude/skills/moai-workflow-project/templates/doc-templates/tech-template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:88abbf4cfac698fe73e5469c68c93136aab56f8c89c65da1522f4d813988cde7",
+      "deployed_hash": "sha256:88abbf4cfac698fe73e5469c68c93136aab56f8c89c65da1522f4d813988cde7",
+      "current_hash": "sha256:88abbf4cfac698fe73e5469c68c93136aab56f8c89c65da1522f4d813988cde7"
+    },
+    ".claude/skills/moai-workflow-project/templates/question-templates/config-manager-setup.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2bd6ace1b8fec60d6ae02bf753659b5f72963a1e3ef567dbb31e1b739c40df5e",
+      "deployed_hash": "sha256:2bd6ace1b8fec60d6ae02bf753659b5f72963a1e3ef567dbb31e1b739c40df5e",
+      "current_hash": "sha256:2bd6ace1b8fec60d6ae02bf753659b5f72963a1e3ef567dbb31e1b739c40df5e"
+    },
+    ".claude/skills/moai-workflow-project/templates/question-templates/language-initializer.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e6c8285e37d5db0e3a99eeba0f66279a3dbfbd9a8a5ce3926f2b2c8e4b65d6c",
+      "deployed_hash": "sha256:4e6c8285e37d5db0e3a99eeba0f66279a3dbfbd9a8a5ce3926f2b2c8e4b65d6c",
+      "current_hash": "sha256:4e6c8285e37d5db0e3a99eeba0f66279a3dbfbd9a8a5ce3926f2b2c8e4b65d6c"
+    },
+    ".claude/skills/moai-workflow-project/templates/question-templates/menu-project-config.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:377e2bbeaf2ec1dbe0fde3c8f7af1b5fa8eb8ad9024b8509549a592b2eee7362",
+      "deployed_hash": "sha256:377e2bbeaf2ec1dbe0fde3c8f7af1b5fa8eb8ad9024b8509549a592b2eee7362",
+      "current_hash": "sha256:377e2bbeaf2ec1dbe0fde3c8f7af1b5fa8eb8ad9024b8509549a592b2eee7362"
+    },
+    ".claude/skills/moai-workflow-project/templates/question-templates/project-batch-questions.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3ccd2b47727bc1db80a11b2027376c447184b9be1fe79b4ace19d32665f76c48",
+      "deployed_hash": "sha256:3ccd2b47727bc1db80a11b2027376c447184b9be1fe79b4ace19d32665f76c48",
+      "current_hash": "sha256:3ccd2b47727bc1db80a11b2027376c447184b9be1fe79b4ace19d32665f76c48"
+    },
+    ".claude/skills/moai-workflow-project/templates/question-templates/spec-workflow-setup.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3cf705fa7491baed0574197e293363b4df1e32d00b6e4812f7b35b61c12c925b",
+      "deployed_hash": "sha256:3cf705fa7491baed0574197e293363b4df1e32d00b6e4812f7b35b61c12c925b",
+      "current_hash": "sha256:3cf705fa7491baed0574197e293363b4df1e32d00b6e4812f7b35b61c12c925b"
+    },
+    ".claude/skills/moai-workflow-spec/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:dd485e0b0788cad569fd5691b2779d7bc58f9bccd1cc07d9f3bc1128ecc48af8",
+      "deployed_hash": "sha256:dd485e0b0788cad569fd5691b2779d7bc58f9bccd1cc07d9f3bc1128ecc48af8",
+      "current_hash": "sha256:dd485e0b0788cad569fd5691b2779d7bc58f9bccd1cc07d9f3bc1128ecc48af8"
+    },
+    ".claude/skills/moai-workflow-spec/modules/advanced-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c985ed8262f68b1ec852236261ef8bac3440d7ec07694bc389a9da421222cd13",
+      "deployed_hash": "sha256:c985ed8262f68b1ec852236261ef8bac3440d7ec07694bc389a9da421222cd13",
+      "current_hash": "sha256:c985ed8262f68b1ec852236261ef8bac3440d7ec07694bc389a9da421222cd13"
+    },
+    ".claude/skills/moai-workflow-spec/references/ears-deep-dive.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ef5ef5ba6dfda71b57dea41ee47990c903e1ba9ec40aa905b4c2280e947f3a9a",
+      "deployed_hash": "sha256:ef5ef5ba6dfda71b57dea41ee47990c903e1ba9ec40aa905b4c2280e947f3a9a",
+      "current_hash": "sha256:ef5ef5ba6dfda71b57dea41ee47990c903e1ba9ec40aa905b4c2280e947f3a9a"
+    },
+    ".claude/skills/moai-workflow-spec/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d8209acac3f820a3c0d92580301d7e8f5fbe022af0777c12d4aaa6c4de5d5d7d",
+      "deployed_hash": "sha256:d8209acac3f820a3c0d92580301d7e8f5fbe022af0777c12d4aaa6c4de5d5d7d",
+      "current_hash": "sha256:d8209acac3f820a3c0d92580301d7e8f5fbe022af0777c12d4aaa6c4de5d5d7d"
+    },
+    ".claude/skills/moai-workflow-spec/references/migration-guide.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:87bde42c61fe46564c48f973de2ef6d7acc8261af2a06273b9d9e5fd1e4f58d6",
+      "deployed_hash": "sha256:87bde42c61fe46564c48f973de2ef6d7acc8261af2a06273b9d9e5fd1e4f58d6",
+      "current_hash": "sha256:87bde42c61fe46564c48f973de2ef6d7acc8261af2a06273b9d9e5fd1e4f58d6"
+    },
+    ".claude/skills/moai-workflow-spec/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:cf4a88af385f021d3b55818055ed626705145be7875df996d0a210bd5562abe1",
+      "deployed_hash": "sha256:cf4a88af385f021d3b55818055ed626705145be7875df996d0a210bd5562abe1",
+      "current_hash": "sha256:cf4a88af385f021d3b55818055ed626705145be7875df996d0a210bd5562abe1"
+    },
+    ".claude/skills/moai-workflow-spec/references/requirement-clarification.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5b00c10652602891b442eb9d2cbd74be048678013ccc6fb4636ed8cc4c5b9389",
+      "deployed_hash": "sha256:5b00c10652602891b442eb9d2cbd74be048678013ccc6fb4636ed8cc4c5b9389",
+      "current_hash": "sha256:5b00c10652602891b442eb9d2cbd74be048678013ccc6fb4636ed8cc4c5b9389"
+    },
+    ".claude/skills/moai-workflow-spec/references/worktree-workflow.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:33e36e8394be35ccb77de24e3d1f89007d1c92106927ad73a87e76c0b1a25fef",
+      "deployed_hash": "sha256:33e36e8394be35ccb77de24e3d1f89007d1c92106927ad73a87e76c0b1a25fef",
+      "current_hash": "sha256:33e36e8394be35ccb77de24e3d1f89007d1c92106927ad73a87e76c0b1a25fef"
+    },
+    ".claude/skills/moai-workflow-tdd/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:51cab869c223c80b91ff8bdf8f3f32971b091e9bc3b1173290628eba8d75de25",
+      "deployed_hash": "sha256:51cab869c223c80b91ff8bdf8f3f32971b091e9bc3b1173290628eba8d75de25",
+      "current_hash": "sha256:51cab869c223c80b91ff8bdf8f3f32971b091e9bc3b1173290628eba8d75de25"
+    },
+    ".claude/skills/moai-workflow-tdd/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e6d5f2d414c3b4d163cfecbf5c253557a8dd15732347a4338098ee900e321c2d",
+      "deployed_hash": "sha256:e6d5f2d414c3b4d163cfecbf5c253557a8dd15732347a4338098ee900e321c2d",
+      "current_hash": "sha256:e6d5f2d414c3b4d163cfecbf5c253557a8dd15732347a4338098ee900e321c2d"
+    },
+    ".claude/skills/moai-workflow-tdd/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d232bac129a97c50e227566b64ac07d0921937ab8d3283627cdcefc71e50433e",
+      "deployed_hash": "sha256:d232bac129a97c50e227566b64ac07d0921937ab8d3283627cdcefc71e50433e",
+      "current_hash": "sha256:d232bac129a97c50e227566b64ac07d0921937ab8d3283627cdcefc71e50433e"
+    },
+    ".claude/skills/moai-workflow-testing/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:782f65ab2926e3f4b8ebb3eff96e57bb18df9824d8f63813ae85f1884a447274",
+      "deployed_hash": "sha256:782f65ab2926e3f4b8ebb3eff96e57bb18df9824d8f63813ae85f1884a447274",
+      "current_hash": "sha256:782f65ab2926e3f4b8ebb3eff96e57bb18df9824d8f63813ae85f1884a447274"
+    },
+    ".claude/skills/moai-workflow-testing/modules/INDEX.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4afc8ae999544fd3a3ce9987180f5eee78ba686b07baf92d2a07593c74902092",
+      "deployed_hash": "sha256:4afc8ae999544fd3a3ce9987180f5eee78ba686b07baf92d2a07593c74902092",
+      "current_hash": "sha256:4afc8ae999544fd3a3ce9987180f5eee78ba686b07baf92d2a07593c74902092"
+    },
+    ".claude/skills/moai-workflow-testing/modules/advanced-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4d0b6c4b764498cb0b3b61ad1c81142490239df834dff0260982fbb6ab49e053",
+      "deployed_hash": "sha256:4d0b6c4b764498cb0b3b61ad1c81142490239df834dff0260982fbb6ab49e053",
+      "current_hash": "sha256:4d0b6c4b764498cb0b3b61ad1c81142490239df834dff0260982fbb6ab49e053"
+    },
+    ".claude/skills/moai-workflow-testing/modules/ai-debugging.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e0b885f704bb597fbf01cc13fbb5f7fd05eeb5cda858b22148447e92c70e360a",
+      "deployed_hash": "sha256:e0b885f704bb597fbf01cc13fbb5f7fd05eeb5cda858b22148447e92c70e360a",
+      "current_hash": "sha256:e0b885f704bb597fbf01cc13fbb5f7fd05eeb5cda858b22148447e92c70e360a"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a90164d50b5f048d5c8224243dd8d5d5168f5d301eaf02a16cfac93cbf4cc8a2",
+      "deployed_hash": "sha256:a90164d50b5f048d5c8224243dd8d5d5168f5d301eaf02a16cfac93cbf4cc8a2",
+      "current_hash": "sha256:a90164d50b5f048d5c8224243dd8d5d5168f5d301eaf02a16cfac93cbf4cc8a2"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/review-workflows.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5abd42359d69c60b12fa81becefe289e04f4cc168f23095913460061d9af1351",
+      "deployed_hash": "sha256:5abd42359d69c60b12fa81becefe289e04f4cc168f23095913460061d9af1351",
+      "current_hash": "sha256:5abd42359d69c60b12fa81becefe289e04f4cc168f23095913460061d9af1351"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:972a4d43e02ab9c690b53e49fa68cf2d800b537ab56088276c7da7bd0321e5b1",
+      "deployed_hash": "sha256:972a4d43e02ab9c690b53e49fa68cf2d800b537ab56088276c7da7bd0321e5b1",
+      "current_hash": "sha256:972a4d43e02ab9c690b53e49fa68cf2d800b537ab56088276c7da7bd0321e5b1"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework/relevance-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e4c67c40ec1dfce766eb6b1e6be73e2fee004ca49eaeefebd6ce14646dd721e2",
+      "deployed_hash": "sha256:e4c67c40ec1dfce766eb6b1e6be73e2fee004ca49eaeefebd6ce14646dd721e2",
+      "current_hash": "sha256:e4c67c40ec1dfce766eb6b1e6be73e2fee004ca49eaeefebd6ce14646dd721e2"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework/safety-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7a17e30dc8e59d658bdfae05a1b4235be996f6936200574def46ecff5a0cffa7",
+      "deployed_hash": "sha256:7a17e30dc8e59d658bdfae05a1b4235be996f6936200574def46ecff5a0cffa7",
+      "current_hash": "sha256:7a17e30dc8e59d658bdfae05a1b4235be996f6936200574def46ecff5a0cffa7"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework/scoring-algorithms.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:cc139a898d887f015812796a91740e85af57d6100fa229f09079fb2b1b2454bf",
+      "deployed_hash": "sha256:cc139a898d887f015812796a91740e85af57d6100fa229f09079fb2b1b2454bf",
+      "current_hash": "sha256:cc139a898d887f015812796a91740e85af57d6100fa229f09079fb2b1b2454bf"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework/timeliness-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f43d7c6200e2a5cf4db9597e1cddbbdd25094076a3a8886a4549534e4b0bc3e7",
+      "deployed_hash": "sha256:f43d7c6200e2a5cf4db9597e1cddbbdd25094076a3a8886a4549534e4b0bc3e7",
+      "current_hash": "sha256:f43d7c6200e2a5cf4db9597e1cddbbdd25094076a3a8886a4549534e4b0bc3e7"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework/truthfulness-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8c4dd7fa72b8144e6758887f457c72a601cd8f07b1b88b4ad4ee5d5fbbb1c645",
+      "deployed_hash": "sha256:8c4dd7fa72b8144e6758887f457c72a601cd8f07b1b88b4ad4ee5d5fbbb1c645",
+      "current_hash": "sha256:8c4dd7fa72b8144e6758887f457c72a601cd8f07b1b88b4ad4ee5d5fbbb1c645"
+    },
+    ".claude/skills/moai-workflow-testing/modules/automated-code-review/trust5-framework/usability-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b3dc9631367dae10e111cae4fea6aeb978adb84cb8ab71543de79e1b7b442a96",
+      "deployed_hash": "sha256:b3dc9631367dae10e111cae4fea6aeb978adb84cb8ab71543de79e1b7b442a96",
+      "current_hash": "sha256:b3dc9631367dae10e111cae4fea6aeb978adb84cb8ab71543de79e1b7b442a96"
+    },
+    ".claude/skills/moai-workflow-testing/modules/code-review/analysis-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2ba4a6212d69d9d954097aa1626b1fa4b69dfa5b2a6243ded1d8cf3487433b91",
+      "deployed_hash": "sha256:2ba4a6212d69d9d954097aa1626b1fa4b69dfa5b2a6243ded1d8cf3487433b91",
+      "current_hash": "sha256:2ba4a6212d69d9d954097aa1626b1fa4b69dfa5b2a6243ded1d8cf3487433b91"
+    },
+    ".claude/skills/moai-workflow-testing/modules/code-review/core-classes.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:94958922daf11a7e9931ae756d368a67e8d78048e86397c5968246e300ec0298",
+      "deployed_hash": "sha256:94958922daf11a7e9931ae756d368a67e8d78048e86397c5968246e300ec0298",
+      "current_hash": "sha256:94958922daf11a7e9931ae756d368a67e8d78048e86397c5968246e300ec0298"
+    },
+    ".claude/skills/moai-workflow-testing/modules/code-review/tool-integration.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7d69f936d7b1a4ef8a0e18338e73f2cbf8ac634662881cb2f3a4717876161a69",
+      "deployed_hash": "sha256:7d69f936d7b1a4ef8a0e18338e73f2cbf8ac634662881cb2f3a4717876161a69",
+      "current_hash": "sha256:7d69f936d7b1a4ef8a0e18338e73f2cbf8ac634662881cb2f3a4717876161a69"
+    },
+    ".claude/skills/moai-workflow-testing/modules/ddd/core-classes.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5e1e0da6ebda15cf21eb0f135942222b8ff29971d89d6b451b09f38085ed3edc",
+      "deployed_hash": "sha256:5e1e0da6ebda15cf21eb0f135942222b8ff29971d89d6b451b09f38085ed3edc",
+      "current_hash": "sha256:5e1e0da6ebda15cf21eb0f135942222b8ff29971d89d6b451b09f38085ed3edc"
+    },
+    ".claude/skills/moai-workflow-testing/modules/debugging/debugging-workflows.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1d39b9a9f5c40eea0a63d9bbcf03317415388bdb1d598b9f1fd828954b93fbf6",
+      "deployed_hash": "sha256:1d39b9a9f5c40eea0a63d9bbcf03317415388bdb1d598b9f1fd828954b93fbf6",
+      "current_hash": "sha256:1d39b9a9f5c40eea0a63d9bbcf03317415388bdb1d598b9f1fd828954b93fbf6"
+    },
+    ".claude/skills/moai-workflow-testing/modules/debugging/error-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a4f84ee22c873da6ada9f17811c427a7913e472ab8903a3d644905cbaec9e290",
+      "deployed_hash": "sha256:a4f84ee22c873da6ada9f17811c427a7913e472ab8903a3d644905cbaec9e290",
+      "current_hash": "sha256:a4f84ee22c873da6ada9f17811c427a7913e472ab8903a3d644905cbaec9e290"
+    },
+    ".claude/skills/moai-workflow-testing/modules/optimization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4d3d073d2fee9b1a56a175432b680ee85db1145fce56aac2c6a767b9cbe4be7a",
+      "deployed_hash": "sha256:4d3d073d2fee9b1a56a175432b680ee85db1145fce56aac2c6a767b9cbe4be7a",
+      "current_hash": "sha256:4d3d073d2fee9b1a56a175432b680ee85db1145fce56aac2c6a767b9cbe4be7a"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance-optimization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:106ba90f375db78db5e2d97966229f86fc86c2aa8638db7df2c6d06d408f53dc",
+      "deployed_hash": "sha256:106ba90f375db78db5e2d97966229f86fc86c2aa8638db7df2c6d06d408f53dc",
+      "current_hash": "sha256:106ba90f375db78db5e2d97966229f86fc86c2aa8638db7df2c6d06d408f53dc"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance-optimization/ai-optimization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4ac531e3901f8469bd32aa40a27b401371cf594e8ccb23e4212ec5772087a2e2",
+      "deployed_hash": "sha256:4ac531e3901f8469bd32aa40a27b401371cf594e8ccb23e4212ec5772087a2e2",
+      "current_hash": "sha256:4ac531e3901f8469bd32aa40a27b401371cf594e8ccb23e4212ec5772087a2e2"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance-optimization/bottleneck-detection.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ae7649526574b9601998358587cd076fa91465d95a29017c588d6cefe8cd346a",
+      "deployed_hash": "sha256:ae7649526574b9601998358587cd076fa91465d95a29017c588d6cefe8cd346a",
+      "current_hash": "sha256:ae7649526574b9601998358587cd076fa91465d95a29017c588d6cefe8cd346a"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance-optimization/optimization-plan.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:55c06302ae7a4e43c43abea0e0395a7c295a1dd91211e9d7df91ec7445bdf86c",
+      "deployed_hash": "sha256:55c06302ae7a4e43c43abea0e0395a7c295a1dd91211e9d7df91ec7445bdf86c",
+      "current_hash": "sha256:55c06302ae7a4e43c43abea0e0395a7c295a1dd91211e9d7df91ec7445bdf86c"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance-optimization/profiler-core.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:918b87121e02ce20872523d59bfa2168a9500fa38c0b9a568f1b5c6b3fb8df8b",
+      "deployed_hash": "sha256:918b87121e02ce20872523d59bfa2168a9500fa38c0b9a568f1b5c6b3fb8df8b",
+      "current_hash": "sha256:918b87121e02ce20872523d59bfa2168a9500fa38c0b9a568f1b5c6b3fb8df8b"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance-optimization/real-time-monitoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b6bf859488ab9a65e7cc8bc826936873588b895166ec954c0a5043af98e5dac0",
+      "deployed_hash": "sha256:b6bf859488ab9a65e7cc8bc826936873588b895166ec954c0a5043af98e5dac0",
+      "current_hash": "sha256:b6bf859488ab9a65e7cc8bc826936873588b895166ec954c0a5043af98e5dac0"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance/optimization-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:63610978b3ea6d62c0064f0fd69086d84684d6d4dd25d7dc84406d5a193b8a41",
+      "deployed_hash": "sha256:63610978b3ea6d62c0064f0fd69086d84684d6d4dd25d7dc84406d5a193b8a41",
+      "current_hash": "sha256:63610978b3ea6d62c0064f0fd69086d84684d6d4dd25d7dc84406d5a193b8a41"
+    },
+    ".claude/skills/moai-workflow-testing/modules/performance/profiling-techniques.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1f08688ad5a29e6d176c2f7a73e37574b8e31a6f1fd5268d6fec4a272271272c",
+      "deployed_hash": "sha256:1f08688ad5a29e6d176c2f7a73e37574b8e31a6f1fd5268d6fec4a272271272c",
+      "current_hash": "sha256:1f08688ad5a29e6d176c2f7a73e37574b8e31a6f1fd5268d6fec4a272271272c"
+    },
+    ".claude/skills/moai-workflow-testing/modules/quality-metrics.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0406337adf5d33605493bdccf31ba072c5ac80eb4cd37b9e80fd34cb2de91630",
+      "deployed_hash": "sha256:0406337adf5d33605493bdccf31ba072c5ac80eb4cd37b9e80fd34cb2de91630",
+      "current_hash": "sha256:0406337adf5d33605493bdccf31ba072c5ac80eb4cd37b9e80fd34cb2de91630"
+    },
+    ".claude/skills/moai-workflow-testing/modules/refactoring/ai-workflows.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:090d051c477abf8e85fcb8a1e2a69cf506546f6fced2fcf0984c2f8863fc4daf",
+      "deployed_hash": "sha256:090d051c477abf8e85fcb8a1e2a69cf506546f6fced2fcf0984c2f8863fc4daf",
+      "current_hash": "sha256:090d051c477abf8e85fcb8a1e2a69cf506546f6fced2fcf0984c2f8863fc4daf"
+    },
+    ".claude/skills/moai-workflow-testing/modules/refactoring/patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6aa7afedae51bc0ce5c2541a8f67b78e79fa56937a3f95a09ae1eb90ffb30d77",
+      "deployed_hash": "sha256:6aa7afedae51bc0ce5c2541a8f67b78e79fa56937a3f95a09ae1eb90ffb30d77",
+      "current_hash": "sha256:6aa7afedae51bc0ce5c2541a8f67b78e79fa56937a3f95a09ae1eb90ffb30d77"
+    },
+    ".claude/skills/moai-workflow-testing/modules/security-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3f8cd6909c70fbf7d84256483397704e106e6ec003d5ac02cd28cc9422daa214",
+      "deployed_hash": "sha256:3f8cd6909c70fbf7d84256483397704e106e6ec003d5ac02cd28cc9422daa214",
+      "current_hash": "sha256:3f8cd6909c70fbf7d84256483397704e106e6ec003d5ac02cd28cc9422daa214"
+    },
+    ".claude/skills/moai-workflow-testing/modules/smart-refactoring.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a7a64f010b11233be822adff22c06b73b562ad4220d9f333fc1b0d0551d7d61e",
+      "deployed_hash": "sha256:a7a64f010b11233be822adff22c06b73b562ad4220d9f333fc1b0d0551d7d61e",
+      "current_hash": "sha256:a7a64f010b11233be822adff22c06b73b562ad4220d9f333fc1b0d0551d7d61e"
+    },
+    ".claude/skills/moai-workflow-testing/modules/static-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:79e1be2e45a60955f4f3f34327d323e327b1ead59a2ae58b8b45127087b5b86d",
+      "deployed_hash": "sha256:79e1be2e45a60955f4f3f34327d323e327b1ead59a2ae58b8b45127087b5b86d",
+      "current_hash": "sha256:79e1be2e45a60955f4f3f34327d323e327b1ead59a2ae58b8b45127087b5b86d"
+    },
+    ".claude/skills/moai-workflow-testing/modules/trust5-validation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c02a405017f1bd2011ca2d7dba5b174d9167344cf59f75a8eba3bbfe875fc432",
+      "deployed_hash": "sha256:c02a405017f1bd2011ca2d7dba5b174d9167344cf59f75a8eba3bbfe875fc432",
+      "current_hash": "sha256:c02a405017f1bd2011ca2d7dba5b174d9167344cf59f75a8eba3bbfe875fc432"
+    },
+    ".claude/skills/moai-workflow-testing/references/e2e-desktop-native-recipes.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:972efe8a8f8104467c83c7467c51a8f94ceb379c2b9e394d9f50d33b37173658",
+      "deployed_hash": "sha256:972efe8a8f8104467c83c7467c51a8f94ceb379c2b9e394d9f50d33b37173658",
+      "current_hash": "sha256:972efe8a8f8104467c83c7467c51a8f94ceb379c2b9e394d9f50d33b37173658"
+    },
+    ".claude/skills/moai-workflow-testing/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0818e04f2567e1a3398d0c9b60b40ecc21ad653f2497c2f94d533a028ec102d9",
+      "deployed_hash": "sha256:0818e04f2567e1a3398d0c9b60b40ecc21ad653f2497c2f94d533a028ec102d9",
+      "current_hash": "sha256:0818e04f2567e1a3398d0c9b60b40ecc21ad653f2497c2f94d533a028ec102d9"
+    },
+    ".claude/skills/moai-workflow-testing/references/integration-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3b73cd9a74724aa25374aaa35c80627c0f3fef54326eb9a71f0a64e4263a84b1",
+      "deployed_hash": "sha256:3b73cd9a74724aa25374aaa35c80627c0f3fef54326eb9a71f0a64e4263a84b1",
+      "current_hash": "sha256:3b73cd9a74724aa25374aaa35c80627c0f3fef54326eb9a71f0a64e4263a84b1"
+    },
+    ".claude/skills/moai-workflow-testing/references/multi-language-support.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7d9cb63aac1e599b19c2032878546ca32317a78eb0a5832c85e3b94c5fb228e1",
+      "deployed_hash": "sha256:7d9cb63aac1e599b19c2032878546ca32317a78eb0a5832c85e3b94c5fb228e1",
+      "current_hash": "sha256:7d9cb63aac1e599b19c2032878546ca32317a78eb0a5832c85e3b94c5fb228e1"
+    },
+    ".claude/skills/moai-workflow-testing/references/playwright-best-practices.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f685bb7b8142770910dcaa48483605112ab30d35fd40857d37dcc241fca16ef7",
+      "deployed_hash": "sha256:f685bb7b8142770910dcaa48483605112ab30d35fd40857d37dcc241fca16ef7",
+      "current_hash": "sha256:f685bb7b8142770910dcaa48483605112ab30d35fd40857d37dcc241fca16ef7"
+    },
+    ".claude/skills/moai-workflow-testing/references/pr-review-multi-agent.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:74af75b29ed082c043114609e41a137a8e58a2ba1f00d99b5bf3ea042ce041bc",
+      "deployed_hash": "sha256:74af75b29ed082c043114609e41a137a8e58a2ba1f00d99b5bf3ea042ce041bc",
+      "current_hash": "sha256:74af75b29ed082c043114609e41a137a8e58a2ba1f00d99b5bf3ea042ce041bc"
+    },
+    ".claude/skills/moai-workflow-testing/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b10b4579a94188015e24297496eb51a54990ae443d673dabb5301057bc7f7749",
+      "deployed_hash": "sha256:b10b4579a94188015e24297496eb51a54990ae443d673dabb5301057bc7f7749",
+      "current_hash": "sha256:b10b4579a94188015e24297496eb51a54990ae443d673dabb5301057bc7f7749"
+    },
+    ".claude/skills/moai-workflow-testing/references/trust5-framework.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8137225a49b3bb9502842367c2a9e1d456647333049e9f41a0699b4e0a246b63",
+      "deployed_hash": "sha256:8137225a49b3bb9502842367c2a9e1d456647333049e9f41a0699b4e0a246b63",
+      "current_hash": "sha256:8137225a49b3bb9502842367c2a9e1d456647333049e9f41a0699b4e0a246b63"
+    },
+    ".claude/skills/moai-workflow-testing/references/workflow-processes.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0c2baa996d21bd2bb14a8438b49f47f814fbeb079932e81b3038f837ce966e4b",
+      "deployed_hash": "sha256:0c2baa996d21bd2bb14a8438b49f47f814fbeb079932e81b3038f837ce966e4b",
+      "current_hash": "sha256:0c2baa996d21bd2bb14a8438b49f47f814fbeb079932e81b3038f837ce966e4b"
+    },
+    ".claude/skills/moai-workflow-worktree/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6d1f41f301538bad3bba547cef19e84d609991c15936e1f06c0ea769fd7935ed",
+      "deployed_hash": "sha256:6d1f41f301538bad3bba547cef19e84d609991c15936e1f06c0ea769fd7935ed",
+      "current_hash": "sha256:6d1f41f301538bad3bba547cef19e84d609991c15936e1f06c0ea769fd7935ed"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/integration-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c5a9c353817de0e1f02fea850ec58610abd76247107984d437bec8a42c3e539e",
+      "deployed_hash": "sha256:c5a9c353817de0e1f02fea850ec58610abd76247107984d437bec8a42c3e539e",
+      "current_hash": "sha256:c5a9c353817de0e1f02fea850ec58610abd76247107984d437bec8a42c3e539e"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/moai-adk-integration.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e61350e61d746cdd2ae2fd2690c2424266c351b35a47db8689542c97b0b1ad35",
+      "deployed_hash": "sha256:e61350e61d746cdd2ae2fd2690c2424266c351b35a47db8689542c97b0b1ad35",
+      "current_hash": "sha256:e61350e61d746cdd2ae2fd2690c2424266c351b35a47db8689542c97b0b1ad35"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/parallel-advanced.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:75873b4f12e8dca79cf7fe542ece8685e742927df4e3c224e883b6b7f4ea959d",
+      "deployed_hash": "sha256:75873b4f12e8dca79cf7fe542ece8685e742927df4e3c224e883b6b7f4ea959d",
+      "current_hash": "sha256:75873b4f12e8dca79cf7fe542ece8685e742927df4e3c224e883b6b7f4ea959d"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/parallel-development.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9ea192f461453791ca75ad219e604d4f00d7916db5ccaf0865315f72d98d94ac",
+      "deployed_hash": "sha256:9ea192f461453791ca75ad219e604d4f00d7916db5ccaf0865315f72d98d94ac",
+      "current_hash": "sha256:9ea192f461453791ca75ad219e604d4f00d7916db5ccaf0865315f72d98d94ac"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/parallel-workflows.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9d3612fd89495cb87fe99a1bfd63953f2ff626947465ed0318709499750618f2",
+      "deployed_hash": "sha256:9d3612fd89495cb87fe99a1bfd63953f2ff626947465ed0318709499750618f2",
+      "current_hash": "sha256:9d3612fd89495cb87fe99a1bfd63953f2ff626947465ed0318709499750618f2"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/registry-architecture.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fbcb04484d50bad9aed2fd80fed1ce8978a1b0043e481c478d9cc35796375af2",
+      "deployed_hash": "sha256:fbcb04484d50bad9aed2fd80fed1ce8978a1b0043e481c478d9cc35796375af2",
+      "current_hash": "sha256:fbcb04484d50bad9aed2fd80fed1ce8978a1b0043e481c478d9cc35796375af2"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/resource-optimization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b74365a5263eaa2b730882653fc9e5f99ea706975d5e887815874e4fea61ba36",
+      "deployed_hash": "sha256:b74365a5263eaa2b730882653fc9e5f99ea706975d5e887815874e4fea61ba36",
+      "current_hash": "sha256:b74365a5263eaa2b730882653fc9e5f99ea706975d5e887815874e4fea61ba36"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/tools-integration.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:11c818040a012fa249e1e1bfdefa86043fe7102263420eda7687f0af2e02de30",
+      "deployed_hash": "sha256:11c818040a012fa249e1e1bfdefa86043fe7102263420eda7687f0af2e02de30",
+      "current_hash": "sha256:11c818040a012fa249e1e1bfdefa86043fe7102263420eda7687f0af2e02de30"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/troubleshooting.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7dc8a27461cf9288d55fd581a1cc9e42e808a0bdd3a4e0fcc5057c275fd10880",
+      "deployed_hash": "sha256:7dc8a27461cf9288d55fd581a1cc9e42e808a0bdd3a4e0fcc5057c275fd10880",
+      "current_hash": "sha256:7dc8a27461cf9288d55fd581a1cc9e42e808a0bdd3a4e0fcc5057c275fd10880"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/worktree-commands.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d9427bbb3c3c58c26bbeabb80eb0a98c9d3ef6b44aa3ebb1b9faaaa08ea024cf",
+      "deployed_hash": "sha256:d9427bbb3c3c58c26bbeabb80eb0a98c9d3ef6b44aa3ebb1b9faaaa08ea024cf",
+      "current_hash": "sha256:d9427bbb3c3c58c26bbeabb80eb0a98c9d3ef6b44aa3ebb1b9faaaa08ea024cf"
+    },
+    ".claude/skills/moai-workflow-worktree/modules/worktree-management.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0411011dae94ef093e2d7f3e2bae6c6a89767e36f1eda7f46cc1a1d071cef7fc",
+      "deployed_hash": "sha256:0411011dae94ef093e2d7f3e2bae6c6a89767e36f1eda7f46cc1a1d071cef7fc",
+      "current_hash": "sha256:0411011dae94ef093e2d7f3e2bae6c6a89767e36f1eda7f46cc1a1d071cef7fc"
+    },
+    ".claude/skills/moai-workflow-worktree/references/examples.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:533e12c6912f8128a3fe10c206ac8f596d416ffa24cd64b61609e59c00034508",
+      "deployed_hash": "sha256:533e12c6912f8128a3fe10c206ac8f596d416ffa24cd64b61609e59c00034508",
+      "current_hash": "sha256:533e12c6912f8128a3fe10c206ac8f596d416ffa24cd64b61609e59c00034508"
+    },
+    ".claude/skills/moai-workflow-worktree/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:255b394e0293f44300064d808c6548a5afbfd3ca24e0201dc5cba9cd81cdcfbc",
+      "deployed_hash": "sha256:255b394e0293f44300064d808c6548a5afbfd3ca24e0201dc5cba9cd81cdcfbc",
+      "current_hash": "sha256:255b394e0293f44300064d808c6548a5afbfd3ca24e0201dc5cba9cd81cdcfbc"
+    },
+    ".claude/skills/moai/SKILL.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:20188cc988320f3770e20d0fabeb90ecd1f881314df7aff325e4d037218aa522",
+      "deployed_hash": "sha256:20188cc988320f3770e20d0fabeb90ecd1f881314df7aff325e4d037218aa522",
+      "current_hash": "sha256:20188cc988320f3770e20d0fabeb90ecd1f881314df7aff325e4d037218aa522"
+    },
+    ".claude/skills/moai/references/anti-patterns.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:44651118c238ea718ee19c5d17c31033d3a7cf21a612a3159560ce003c9dd0c4",
+      "deployed_hash": "sha256:44651118c238ea718ee19c5d17c31033d3a7cf21a612a3159560ce003c9dd0c4",
+      "current_hash": "sha256:44651118c238ea718ee19c5d17c31033d3a7cf21a612a3159560ce003c9dd0c4"
+    },
+    ".claude/skills/moai/references/file-reading-optimization.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e7783d759a6940a67e2fa3e7b071b2d23f8ba03c4ee188f6aa9a90b91800086b",
+      "deployed_hash": "sha256:e7783d759a6940a67e2fa3e7b071b2d23f8ba03c4ee188f6aa9a90b91800086b",
+      "current_hash": "sha256:e7783d759a6940a67e2fa3e7b071b2d23f8ba03c4ee188f6aa9a90b91800086b"
+    },
+    ".claude/skills/moai/references/mx-tag.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b14c85c72225738f1fd9b5806311f02880ebff909f30f450b5be79113d07136d",
+      "deployed_hash": "sha256:b14c85c72225738f1fd9b5806311f02880ebff909f30f450b5be79113d07136d",
+      "current_hash": "sha256:b14c85c72225738f1fd9b5806311f02880ebff909f30f450b5be79113d07136d"
+    },
+    ".claude/skills/moai/references/reference.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:94956ec39c218c8cc411dc44e2d5ef682d2bc9017c65befdd374f547c6836980",
+      "deployed_hash": "sha256:94956ec39c218c8cc411dc44e2d5ef682d2bc9017c65befdd374f547c6836980",
+      "current_hash": "sha256:94956ec39c218c8cc411dc44e2d5ef682d2bc9017c65befdd374f547c6836980"
+    },
+    ".claude/skills/moai/workflows/clean.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9cf1f6cd8be4d5749653a9f2a0fa02c7325a63a457eed3c9e0f7485dd331e7b2",
+      "deployed_hash": "sha256:9cf1f6cd8be4d5749653a9f2a0fa02c7325a63a457eed3c9e0f7485dd331e7b2",
+      "current_hash": "sha256:9cf1f6cd8be4d5749653a9f2a0fa02c7325a63a457eed3c9e0f7485dd331e7b2"
+    },
+    ".claude/skills/moai/workflows/codemaps.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f84755f45d0fea70cea661fff60806b9ea17ae8da74e19a93dcdad6c12a92ae2",
+      "deployed_hash": "sha256:f84755f45d0fea70cea661fff60806b9ea17ae8da74e19a93dcdad6c12a92ae2",
+      "current_hash": "sha256:f84755f45d0fea70cea661fff60806b9ea17ae8da74e19a93dcdad6c12a92ae2"
+    },
+    ".claude/skills/moai/workflows/design.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6bb9b1a841d120439a0350c307331e831c5913c3572077b54ab6f865b26307ba",
+      "deployed_hash": "sha256:6bb9b1a841d120439a0350c307331e831c5913c3572077b54ab6f865b26307ba",
+      "current_hash": "sha256:6bb9b1a841d120439a0350c307331e831c5913c3572077b54ab6f865b26307ba"
+    },
+    ".claude/skills/moai/workflows/e2e.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7f3f0c6d413ec3d657a3d0addf81f78e9b0d95f5d94108bc7078b952b31e6f14",
+      "deployed_hash": "sha256:7f3f0c6d413ec3d657a3d0addf81f78e9b0d95f5d94108bc7078b952b31e6f14",
+      "current_hash": "sha256:7f3f0c6d413ec3d657a3d0addf81f78e9b0d95f5d94108bc7078b952b31e6f14"
+    },
+    ".claude/skills/moai/workflows/factory.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a93809d735999db1e89313465439a711f46dd9bb2764e33b49101c024fbe9c58",
+      "deployed_hash": "sha256:a93809d735999db1e89313465439a711f46dd9bb2764e33b49101c024fbe9c58",
+      "current_hash": "sha256:a93809d735999db1e89313465439a711f46dd9bb2764e33b49101c024fbe9c58"
+    },
+    ".claude/skills/moai/workflows/feedback.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:eb3657bab9764f9e87180c42fe34cfd63fe4676d94e8c79efe0f6867ee93c5ee",
+      "deployed_hash": "sha256:eb3657bab9764f9e87180c42fe34cfd63fe4676d94e8c79efe0f6867ee93c5ee",
+      "current_hash": "sha256:eb3657bab9764f9e87180c42fe34cfd63fe4676d94e8c79efe0f6867ee93c5ee"
+    },
+    ".claude/skills/moai/workflows/fix.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:55be58faf4bad2cd64ec2485412dcf50bff1e4acbe4077efec5bb4132a609301",
+      "deployed_hash": "sha256:55be58faf4bad2cd64ec2485412dcf50bff1e4acbe4077efec5bb4132a609301",
+      "current_hash": "sha256:55be58faf4bad2cd64ec2485412dcf50bff1e4acbe4077efec5bb4132a609301"
+    },
+    ".claude/skills/moai/workflows/gate.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:90fc920000dde1ab56eb5fa333bda53e3eef203f4564e5b9de5ec112e34cfdea",
+      "deployed_hash": "sha256:90fc920000dde1ab56eb5fa333bda53e3eef203f4564e5b9de5ec112e34cfdea",
+      "current_hash": "sha256:90fc920000dde1ab56eb5fa333bda53e3eef203f4564e5b9de5ec112e34cfdea"
+    },
+    ".claude/skills/moai/workflows/goal.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:497494174604561c555165571ff6ecc84a65e80c4f3f58236fe502895c290e76",
+      "deployed_hash": "sha256:497494174604561c555165571ff6ecc84a65e80c4f3f58236fe502895c290e76",
+      "current_hash": "sha256:497494174604561c555165571ff6ecc84a65e80c4f3f58236fe502895c290e76"
+    },
+    ".claude/skills/moai/workflows/harness-build-entry.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:09072165142b103201f5f6dc38add211f687e9211f916d12a9898341ba8a9960",
+      "deployed_hash": "sha256:09072165142b103201f5f6dc38add211f687e9211f916d12a9898341ba8a9960",
+      "current_hash": "sha256:09072165142b103201f5f6dc38add211f687e9211f916d12a9898341ba8a9960"
+    },
+    ".claude/skills/moai/workflows/harness-builder.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e3b4dd8572d98930e651b0f2ce6b7ac2c4b580f04e15192111ed2760f593c06",
+      "deployed_hash": "sha256:4e3b4dd8572d98930e651b0f2ce6b7ac2c4b580f04e15192111ed2760f593c06",
+      "current_hash": "sha256:4e3b4dd8572d98930e651b0f2ce6b7ac2c4b580f04e15192111ed2760f593c06"
+    },
+    ".claude/skills/moai/workflows/harness.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:14c02ed0a7e6d719382372fc4268086f7c96263613d84e1ae2817a0ec479dda9",
+      "deployed_hash": "sha256:14c02ed0a7e6d719382372fc4268086f7c96263613d84e1ae2817a0ec479dda9",
+      "current_hash": "sha256:14c02ed0a7e6d719382372fc4268086f7c96263613d84e1ae2817a0ec479dda9"
+    },
+    ".claude/skills/moai/workflows/loop.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b5e64553667c4bbce635a68730df3781bf904b6c7913031be4a782fdd1b5590e",
+      "deployed_hash": "sha256:b5e64553667c4bbce635a68730df3781bf904b6c7913031be4a782fdd1b5590e",
+      "current_hash": "sha256:b5e64553667c4bbce635a68730df3781bf904b6c7913031be4a782fdd1b5590e"
+    },
+    ".claude/skills/moai/workflows/moai.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:78167dd19fc67df5d9bbd82b91aadcebd7ff8bc73f52130e38477a0689c5762d",
+      "deployed_hash": "sha256:78167dd19fc67df5d9bbd82b91aadcebd7ff8bc73f52130e38477a0689c5762d",
+      "current_hash": "sha256:78167dd19fc67df5d9bbd82b91aadcebd7ff8bc73f52130e38477a0689c5762d"
+    },
+    ".claude/skills/moai/workflows/mx.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:49814960bef91d0404540f9a79b4e36b82a874f0eafc6a3ba210f190d46c642f",
+      "deployed_hash": "sha256:49814960bef91d0404540f9a79b4e36b82a874f0eafc6a3ba210f190d46c642f",
+      "current_hash": "sha256:49814960bef91d0404540f9a79b4e36b82a874f0eafc6a3ba210f190d46c642f"
+    },
+    ".claude/skills/moai/workflows/plan.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:b1e18a9f6c348f3ccceb23c5c61fa091edf6b22a3d9ee6f7b97d161e4519f040",
+      "deployed_hash": "sha256:b1e18a9f6c348f3ccceb23c5c61fa091edf6b22a3d9ee6f7b97d161e4519f040",
+      "current_hash": "sha256:b1e18a9f6c348f3ccceb23c5c61fa091edf6b22a3d9ee6f7b97d161e4519f040"
+    },
+    ".claude/skills/moai/workflows/plan/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".claude/skills/moai/workflows/plan/clarity-interview.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:885d23fab3b5d74ed951ad424e821efd8d82a701fc99c8c15cc9bc0844fbaffe",
+      "deployed_hash": "sha256:885d23fab3b5d74ed951ad424e821efd8d82a701fc99c8c15cc9bc0844fbaffe",
+      "current_hash": "sha256:885d23fab3b5d74ed951ad424e821efd8d82a701fc99c8c15cc9bc0844fbaffe"
+    },
+    ".claude/skills/moai/workflows/plan/context-discovery.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:eb7e8deb8f20d755f541488807620e0d231816b0a8d56a9cf972b068a558f2b8",
+      "deployed_hash": "sha256:eb7e8deb8f20d755f541488807620e0d231816b0a8d56a9cf972b068a558f2b8",
+      "current_hash": "sha256:eb7e8deb8f20d755f541488807620e0d231816b0a8d56a9cf972b068a558f2b8"
+    },
+    ".claude/skills/moai/workflows/plan/spec-assembly.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:bcdeec9d92c9f0b9835e69e327e7aef3c8779bf0f3a287150185c039b8ede4b7",
+      "deployed_hash": "sha256:bcdeec9d92c9f0b9835e69e327e7aef3c8779bf0f3a287150185c039b8ede4b7",
+      "current_hash": "sha256:bcdeec9d92c9f0b9835e69e327e7aef3c8779bf0f3a287150185c039b8ede4b7"
+    },
+    ".claude/skills/moai/workflows/project.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3ef9521e7a524a67174dc53357baeeaac0df1ffe1c2ee8333535a3e0b28ed62e",
+      "deployed_hash": "sha256:3ef9521e7a524a67174dc53357baeeaac0df1ffe1c2ee8333535a3e0b28ed62e",
+      "current_hash": "sha256:3ef9521e7a524a67174dc53357baeeaac0df1ffe1c2ee8333535a3e0b28ed62e"
+    },
+    ".claude/skills/moai/workflows/project/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".claude/skills/moai/workflows/project/codebase-analysis.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e4aaf9dbb49b79eb31171265742e837e7e9a6b6332e2bb5f3e0a3746b648320b",
+      "deployed_hash": "sha256:e4aaf9dbb49b79eb31171265742e837e7e9a6b6332e2bb5f3e0a3746b648320b",
+      "current_hash": "sha256:e4aaf9dbb49b79eb31171265742e837e7e9a6b6332e2bb5f3e0a3746b648320b"
+    },
+    ".claude/skills/moai/workflows/project/doc-generation.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c467fa2604cfa39d38f1a0d3c80ec01ea94847aa06bdf9146e6d64742cde5f19",
+      "deployed_hash": "sha256:c467fa2604cfa39d38f1a0d3c80ec01ea94847aa06bdf9146e6d64742cde5f19",
+      "current_hash": "sha256:c467fa2604cfa39d38f1a0d3c80ec01ea94847aa06bdf9146e6d64742cde5f19"
+    },
+    ".claude/skills/moai/workflows/project/meta-harness.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:065617558fa491d203dfc892f21c10886d67a4fc8c383d64e381d766d8f6846e",
+      "deployed_hash": "sha256:065617558fa491d203dfc892f21c10886d67a4fc8c383d64e381d766d8f6846e",
+      "current_hash": "sha256:065617558fa491d203dfc892f21c10886d67a4fc8c383d64e381d766d8f6846e"
+    },
+    ".claude/skills/moai/workflows/project/mode-detection.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d982b3b9ff0303940c3af3358001be7b5a68c7e78531e057ba11098ebdff177f",
+      "deployed_hash": "sha256:d982b3b9ff0303940c3af3358001be7b5a68c7e78531e057ba11098ebdff177f",
+      "current_hash": "sha256:d982b3b9ff0303940c3af3358001be7b5a68c7e78531e057ba11098ebdff177f"
+    },
+    ".claude/skills/moai/workflows/references/shadcn-component-catalog.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:049cde5b4e4be1350d9ba9a7b489850fae4a3919a5a156df515d6af7fd20fd20",
+      "deployed_hash": "sha256:049cde5b4e4be1350d9ba9a7b489850fae4a3919a5a156df515d6af7fd20fd20",
+      "current_hash": "sha256:049cde5b4e4be1350d9ba9a7b489850fae4a3919a5a156df515d6af7fd20fd20"
+    },
+    ".claude/skills/moai/workflows/review.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6623cbeea64a1cdcaa951e1bccd96e670f4ca9b5dc282d0ad8ee8c0bc59967c4",
+      "deployed_hash": "sha256:6623cbeea64a1cdcaa951e1bccd96e670f4ca9b5dc282d0ad8ee8c0bc59967c4",
+      "current_hash": "sha256:6623cbeea64a1cdcaa951e1bccd96e670f4ca9b5dc282d0ad8ee8c0bc59967c4"
+    },
+    ".claude/skills/moai/workflows/run.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:95291e95efa45f21a247c99461163b8e791361210b135f57797689f68b2cd36d",
+      "deployed_hash": "sha256:95291e95efa45f21a247c99461163b8e791361210b135f57797689f68b2cd36d",
+      "current_hash": "sha256:95291e95efa45f21a247c99461163b8e791361210b135f57797689f68b2cd36d"
+    },
+    ".claude/skills/moai/workflows/run/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".claude/skills/moai/workflows/run/context-loading.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c98e3aafbf8c7364777246b0241b816bd713f7ddcee540e9c8af1bce406aee33",
+      "deployed_hash": "sha256:c98e3aafbf8c7364777246b0241b816bd713f7ddcee540e9c8af1bce406aee33",
+      "current_hash": "sha256:c98e3aafbf8c7364777246b0241b816bd713f7ddcee540e9c8af1bce406aee33"
+    },
+    ".claude/skills/moai/workflows/run/mode-orchestration.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:144fc3ab3e1251e83e014eadab12fce0ba2b88dea72bf2999a59cc0ddf7b851b",
+      "deployed_hash": "sha256:144fc3ab3e1251e83e014eadab12fce0ba2b88dea72bf2999a59cc0ddf7b851b",
+      "current_hash": "sha256:144fc3ab3e1251e83e014eadab12fce0ba2b88dea72bf2999a59cc0ddf7b851b"
+    },
+    ".claude/skills/moai/workflows/run/phase-execution.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:30c269281e633a79f1d9998073a45ff27127abfd1db4e1b549aed018e7c57994",
+      "deployed_hash": "sha256:30c269281e633a79f1d9998073a45ff27127abfd1db4e1b549aed018e7c57994",
+      "current_hash": "sha256:30c269281e633a79f1d9998073a45ff27127abfd1db4e1b549aed018e7c57994"
+    },
+    ".claude/skills/moai/workflows/run/task-decomposition.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:92100c38e30b190bac3b35efbdf895d2bc50fc3a14f47fd683c7b14d6b87f913",
+      "deployed_hash": "sha256:92100c38e30b190bac3b35efbdf895d2bc50fc3a14f47fd683c7b14d6b87f913",
+      "current_hash": "sha256:92100c38e30b190bac3b35efbdf895d2bc50fc3a14f47fd683c7b14d6b87f913"
+    },
+    ".claude/skills/moai/workflows/sync.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ca2fef2edc61b8f86035140eb6b396dc5fc385abec7acad4520cd29c49f8ddd1",
+      "deployed_hash": "sha256:ca2fef2edc61b8f86035140eb6b396dc5fc385abec7acad4520cd29c49f8ddd1",
+      "current_hash": "sha256:ca2fef2edc61b8f86035140eb6b396dc5fc385abec7acad4520cd29c49f8ddd1"
+    },
+    ".claude/skills/moai/workflows/sync/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".claude/skills/moai/workflows/sync/delivery.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a3ff8ad5228a7da8236647434f4c26dbf60ede01ce037f5c1ea96deee4e79735",
+      "deployed_hash": "sha256:a3ff8ad5228a7da8236647434f4c26dbf60ede01ce037f5c1ea96deee4e79735",
+      "current_hash": "sha256:a3ff8ad5228a7da8236647434f4c26dbf60ede01ce037f5c1ea96deee4e79735"
+    },
+    ".claude/skills/moai/workflows/sync/doc-execution.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a88ec1c69756aecae6a22ad9ab31801a23f0f832eea2ffed13aa3bb0ba611cea",
+      "deployed_hash": "sha256:a88ec1c69756aecae6a22ad9ab31801a23f0f832eea2ffed13aa3bb0ba611cea",
+      "current_hash": "sha256:a88ec1c69756aecae6a22ad9ab31801a23f0f832eea2ffed13aa3bb0ba611cea"
+    },
+    ".claude/skills/moai/workflows/sync/quality-gates-context.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:714436022609c3449e9a3166673d843757b536f6917ed66af0beb3fb0227c93f",
+      "deployed_hash": "sha256:714436022609c3449e9a3166673d843757b536f6917ed66af0beb3fb0227c93f",
+      "current_hash": "sha256:714436022609c3449e9a3166673d843757b536f6917ed66af0beb3fb0227c93f"
+    },
+    ".claude/skills/moai/workflows/sync/quality-gates-quality.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:85ccf201cf3fb09141a1b4611bfb24c1b7da0746279dca365206b6afabcc173a",
+      "deployed_hash": "sha256:85ccf201cf3fb09141a1b4611bfb24c1b7da0746279dca365206b6afabcc173a",
+      "current_hash": "sha256:85ccf201cf3fb09141a1b4611bfb24c1b7da0746279dca365206b6afabcc173a"
+    },
+    ".claude/skills/moai/workflows/todo.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ae7e5bed9b755faa91fc884c5487d49891ba8bb31419960501daf1255700458c",
+      "deployed_hash": "sha256:ae7e5bed9b755faa91fc884c5487d49891ba8bb31419960501daf1255700458c",
+      "current_hash": "sha256:ae7e5bed9b755faa91fc884c5487d49891ba8bb31419960501daf1255700458c"
+    },
+    ".claude/workflows/codemaps-extract.js": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d51dc1486acb6bb79b9c3534f507273ab33e67b05cd6bd04eef78c00c7bb42d3",
+      "deployed_hash": "sha256:d51dc1486acb6bb79b9c3534f507273ab33e67b05cd6bd04eef78c00c7bb42d3",
+      "current_hash": "sha256:d51dc1486acb6bb79b9c3534f507273ab33e67b05cd6bd04eef78c00c7bb42d3"
+    },
+    ".claude/workflows/plan-research-fanout.js": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3eb8ba3f7e488e473ffe39cefab0a2e1fe2a06646b452aa83cf61a6137a654ab",
+      "deployed_hash": "sha256:3eb8ba3f7e488e473ffe39cefab0a2e1fe2a06646b452aa83cf61a6137a654ab",
+      "current_hash": "sha256:3eb8ba3f7e488e473ffe39cefab0a2e1fe2a06646b452aa83cf61a6137a654ab"
+    },
+    ".claude/workflows/sync-audit-4dim.js": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:476f3cd86d663c6c41196fcd7a82672b7f820adc74c1e3aa761268759f3b6cbd",
+      "deployed_hash": "sha256:476f3cd86d663c6c41196fcd7a82672b7f820adc74c1e3aa761268759f3b6cbd",
+      "current_hash": "sha256:476f3cd86d663c6c41196fcd7a82672b7f820adc74c1e3aa761268759f3b6cbd"
+    },
+    ".claudeignore": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:77931e3931aa51e86051347c498e90dd15f118a95797ca2d37f11a89a9936a64",
+      "deployed_hash": "sha256:77931e3931aa51e86051347c498e90dd15f118a95797ca2d37f11a89a9936a64",
+      "current_hash": "sha256:77931e3931aa51e86051347c498e90dd15f118a95797ca2d37f11a89a9936a64"
+    },
+    ".git_hooks/pre-commit": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:10060b4dab65b0bbfc7bbddd03c9b078f9be2c0d25b889fc07069935b5499bbe",
+      "deployed_hash": "sha256:10060b4dab65b0bbfc7bbddd03c9b078f9be2c0d25b889fc07069935b5499bbe",
+      "current_hash": "sha256:10060b4dab65b0bbfc7bbddd03c9b078f9be2c0d25b889fc07069935b5499bbe"
+    },
+    ".git_hooks/pre-push": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:594eacfed979828287db2f4dcdba79abd1c4d40ecad326cb8f9013a11fea114b",
+      "deployed_hash": "sha256:594eacfed979828287db2f4dcdba79abd1c4d40ecad326cb8f9013a11fea114b",
+      "current_hash": "sha256:594eacfed979828287db2f4dcdba79abd1c4d40ecad326cb8f9013a11fea114b"
+    },
+    ".github/actions/detect-language/action.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3b8f6eb398771076dadbab6df257ea0e287303539986b79b3fba8a3bb81e1b07",
+      "deployed_hash": "sha256:3b8f6eb398771076dadbab6df257ea0e287303539986b79b3fba8a3bb81e1b07",
+      "current_hash": "sha256:3b8f6eb398771076dadbab6df257ea0e287303539986b79b3fba8a3bb81e1b07"
+    },
+    ".github/branch-protection.json.gtmpl": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f559d81e77928fca63571cd61d6491b0a7777d218ab7d8cc9a1498d5a48872cd",
+      "deployed_hash": "sha256:f559d81e77928fca63571cd61d6491b0a7777d218ab7d8cc9a1498d5a48872cd",
+      "current_hash": "sha256:f559d81e77928fca63571cd61d6491b0a7777d218ab7d8cc9a1498d5a48872cd"
+    },
+    ".github/labels.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8cbf4be9d5e42f25e75c4dabf0019837b41c6ab1480cee6eb0e8c25eb6d77b8c",
+      "deployed_hash": "sha256:8cbf4be9d5e42f25e75c4dabf0019837b41c6ab1480cee6eb0e8c25eb6d77b8c",
+      "current_hash": "sha256:8cbf4be9d5e42f25e75c4dabf0019837b41c6ab1480cee6eb0e8c25eb6d77b8c"
+    },
+    ".github/workflows/label-sync.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:691b73035380c4c527380b411209921e321339846d76e6876c052464ef46bbd4",
+      "deployed_hash": "sha256:691b73035380c4c527380b411209921e321339846d76e6876c052464ef46bbd4",
+      "current_hash": "sha256:691b73035380c4c527380b411209921e321339846d76e6876c052464ef46bbd4"
+    },
+    ".gitignore": {
+      "provenance": "user_created",
+      "template_hash": "sha256:d840a35651bda607227fe1d55ee69e384bc65362a966b4ff2d4f0bb939a888d4",
+      "deployed_hash": "sha256:c1ce72692108ec093895d905ac15c56e577a30ba861852703b997cfdc867e4a5",
+      "current_hash": "sha256:c1ce72692108ec093895d905ac15c56e577a30ba861852703b997cfdc867e4a5"
+    },
+    ".mcp.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:38214e600174601ab2d2c72247468f4bdb54bc78b1be86c04fcc7981a3e45ad3",
+      "deployed_hash": "sha256:38214e600174601ab2d2c72247468f4bdb54bc78b1be86c04fcc7981a3e45ad3",
+      "current_hash": "sha256:38214e600174601ab2d2c72247468f4bdb54bc78b1be86c04fcc7981a3e45ad3"
+    },
+    ".moai/README.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4866c21ccc1fe82ff60b0715f43a640cc0e2aaaf5ad6a54fefc36f48ec1772c6",
+      "deployed_hash": "sha256:4866c21ccc1fe82ff60b0715f43a640cc0e2aaaf5ad6a54fefc36f48ec1772c6",
+      "current_hash": "sha256:4866c21ccc1fe82ff60b0715f43a640cc0e2aaaf5ad6a54fefc36f48ec1772c6"
+    },
+    ".moai/branches/decisions/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/config/astgrep-rules/go/concurrency.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:569836cc45ed857de4ca0e17bf4cd8191e9e3175e66113312b56538f9f9e4501",
+      "deployed_hash": "sha256:569836cc45ed857de4ca0e17bf4cd8191e9e3175e66113312b56538f9f9e4501",
+      "current_hash": "sha256:569836cc45ed857de4ca0e17bf4cd8191e9e3175e66113312b56538f9f9e4501"
+    },
+    ".moai/config/astgrep-rules/go/error-handling.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ce7e68099db7228046ca44a1a1625338d684501e8d85614a6eda29b571e17b10",
+      "deployed_hash": "sha256:ce7e68099db7228046ca44a1a1625338d684501e8d85614a6eda29b571e17b10",
+      "current_hash": "sha256:ce7e68099db7228046ca44a1a1625338d684501e8d85614a6eda29b571e17b10"
+    },
+    ".moai/config/astgrep-rules/go/hardcoding.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6586624ceb3759e4712536448d4b1ade0fd6d43ac2e3e1ba3a55858e85d41c07",
+      "deployed_hash": "sha256:6586624ceb3759e4712536448d4b1ade0fd6d43ac2e3e1ba3a55858e85d41c07",
+      "current_hash": "sha256:6586624ceb3759e4712536448d4b1ade0fd6d43ac2e3e1ba3a55858e85d41c07"
+    },
+    ".moai/config/astgrep-rules/go/idioms.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5e5f19ce089a4b09a5c3e5a06e03f65bb03940f6008c8e22b3a1a48a40b52cff",
+      "deployed_hash": "sha256:5e5f19ce089a4b09a5c3e5a06e03f65bb03940f6008c8e22b3a1a48a40b52cff",
+      "current_hash": "sha256:5e5f19ce089a4b09a5c3e5a06e03f65bb03940f6008c8e22b3a1a48a40b52cff"
+    },
+    ".moai/config/astgrep-rules/go/resource-safety.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d648495afdb8c62938b50fade2d079c059990f9b0e9f5ad7981e7ac354069161",
+      "deployed_hash": "sha256:d648495afdb8c62938b50fade2d079c059990f9b0e9f5ad7981e7ac354069161",
+      "current_hash": "sha256:d648495afdb8c62938b50fade2d079c059990f9b0e9f5ad7981e7ac354069161"
+    },
+    ".moai/config/astgrep-rules/security/credentials.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e227766eb1e9654f8e4b811091eb1a48011299854894a8c8cd66368eba845168",
+      "deployed_hash": "sha256:e227766eb1e9654f8e4b811091eb1a48011299854894a8c8cd66368eba845168",
+      "current_hash": "sha256:e227766eb1e9654f8e4b811091eb1a48011299854894a8c8cd66368eba845168"
+    },
+    ".moai/config/astgrep-rules/security/crypto.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:9fa00d04c869a93787ec9b3b2d480dbf9bc174efeae512299bbe908c011b378d",
+      "deployed_hash": "sha256:9fa00d04c869a93787ec9b3b2d480dbf9bc174efeae512299bbe908c011b378d",
+      "current_hash": "sha256:9fa00d04c869a93787ec9b3b2d480dbf9bc174efeae512299bbe908c011b378d"
+    },
+    ".moai/config/astgrep-rules/security/injection.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1ab931e02a362682b455b6adfa9f6216dd38a5fc990f17b4feb9446e17e5f690",
+      "deployed_hash": "sha256:1ab931e02a362682b455b6adfa9f6216dd38a5fc990f17b4feb9446e17e5f690",
+      "current_hash": "sha256:1ab931e02a362682b455b6adfa9f6216dd38a5fc990f17b4feb9446e17e5f690"
+    },
+    ".moai/config/astgrep-rules/security/secrets.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:15446281266aecca6b60afdba5ae46df9c0db9010a808147701220c887e770db",
+      "deployed_hash": "sha256:15446281266aecca6b60afdba5ae46df9c0db9010a808147701220c887e770db",
+      "current_hash": "sha256:15446281266aecca6b60afdba5ae46df9c0db9010a808147701220c887e770db"
+    },
+    ".moai/config/astgrep-rules/security/web.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3da57a2cadd7cee8bc785ba97463d4eea0bbc270efcbd92a15752b08c42d46b1",
+      "deployed_hash": "sha256:3da57a2cadd7cee8bc785ba97463d4eea0bbc270efcbd92a15752b08c42d46b1",
+      "current_hash": "sha256:3da57a2cadd7cee8bc785ba97463d4eea0bbc270efcbd92a15752b08c42d46b1"
+    },
+    ".moai/config/astgrep-rules/sgconfig.yml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:54ee886e21d1c6a4986d1304aba5fd18f0808727040c78f291a39da0982cf40e",
+      "deployed_hash": "sha256:54ee886e21d1c6a4986d1304aba5fd18f0808727040c78f291a39da0982cf40e",
+      "current_hash": "sha256:54ee886e21d1c6a4986d1304aba5fd18f0808727040c78f291a39da0982cf40e"
+    },
+    ".moai/config/evaluator-profiles/default.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:14c0324361a6ed276a9064ac67d6715a4153bb20c81c114a8e1b4f1349d47c94",
+      "deployed_hash": "sha256:14c0324361a6ed276a9064ac67d6715a4153bb20c81c114a8e1b4f1349d47c94",
+      "current_hash": "sha256:14c0324361a6ed276a9064ac67d6715a4153bb20c81c114a8e1b4f1349d47c94"
+    },
+    ".moai/config/evaluator-profiles/frontend.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e9c340711752da266556b65a304eb64038ed513444f27edfee618f6ead73465d",
+      "deployed_hash": "sha256:e9c340711752da266556b65a304eb64038ed513444f27edfee618f6ead73465d",
+      "current_hash": "sha256:e9c340711752da266556b65a304eb64038ed513444f27edfee618f6ead73465d"
+    },
+    ".moai/config/evaluator-profiles/lenient.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:47acdcb9d71f5777286c50a4fc6aa6eb44e66e63ee2dd3174aec99ffb1dafcf8",
+      "deployed_hash": "sha256:47acdcb9d71f5777286c50a4fc6aa6eb44e66e63ee2dd3174aec99ffb1dafcf8",
+      "current_hash": "sha256:47acdcb9d71f5777286c50a4fc6aa6eb44e66e63ee2dd3174aec99ffb1dafcf8"
+    },
+    ".moai/config/evaluator-profiles/strict.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5c75994bb87d1bcf3f450eff448f105aae6a07f8ff783e411e2f38ec5035a713",
+      "deployed_hash": "sha256:5c75994bb87d1bcf3f450eff448f105aae6a07f8ff783e411e2f38ec5035a713",
+      "current_hash": "sha256:5c75994bb87d1bcf3f450eff448f105aae6a07f8ff783e411e2f38ec5035a713"
+    },
+    ".moai/config/sections/archive.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:03331310a7d97a0bdbb5c3cca26f516982739c8d2799649ed6c5af34db22cff3",
+      "deployed_hash": "sha256:03331310a7d97a0bdbb5c3cca26f516982739c8d2799649ed6c5af34db22cff3",
+      "current_hash": "sha256:03331310a7d97a0bdbb5c3cca26f516982739c8d2799649ed6c5af34db22cff3"
+    },
+    ".moai/config/sections/cache.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:60884b6ccdd8b4535d4033aba9104ffde7158375597c686b614af44cde62ce9a",
+      "deployed_hash": "sha256:60884b6ccdd8b4535d4033aba9104ffde7158375597c686b614af44cde62ce9a",
+      "current_hash": "sha256:60884b6ccdd8b4535d4033aba9104ffde7158375597c686b614af44cde62ce9a"
+    },
+    ".moai/config/sections/constitution.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ec3624da9fd878f8ccc21700b46a19617f23cf0eeb691c94cfa3321138643e6c",
+      "deployed_hash": "sha256:ec3624da9fd878f8ccc21700b46a19617f23cf0eeb691c94cfa3321138643e6c",
+      "current_hash": "sha256:ec3624da9fd878f8ccc21700b46a19617f23cf0eeb691c94cfa3321138643e6c"
+    },
+    ".moai/config/sections/context.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:a982fba7345c8e4921453e5be60a3a6fee4edb970ee65f5bbd9b47d5f6df2982",
+      "deployed_hash": "sha256:a982fba7345c8e4921453e5be60a3a6fee4edb970ee65f5bbd9b47d5f6df2982",
+      "current_hash": "sha256:a982fba7345c8e4921453e5be60a3a6fee4edb970ee65f5bbd9b47d5f6df2982"
+    },
+    ".moai/config/sections/crosssession.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8750354635fb07bb33801bf73e3ef3d44ac4d802713701e3eb655e94868e5944",
+      "deployed_hash": "sha256:8750354635fb07bb33801bf73e3ef3d44ac4d802713701e3eb655e94868e5944",
+      "current_hash": "sha256:8750354635fb07bb33801bf73e3ef3d44ac4d802713701e3eb655e94868e5944"
+    },
+    ".moai/config/sections/delegation.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:585467872a732e7ad75446934dcf74b6fb8ab8c280840f77c917c4eaf6159f28",
+      "deployed_hash": "sha256:585467872a732e7ad75446934dcf74b6fb8ab8c280840f77c917c4eaf6159f28",
+      "current_hash": "sha256:585467872a732e7ad75446934dcf74b6fb8ab8c280840f77c917c4eaf6159f28"
+    },
+    ".moai/config/sections/design.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7d43fd039872650037f660ee4328509910e15c09e11d79c353f4520abcb6a8d0",
+      "deployed_hash": "sha256:7d43fd039872650037f660ee4328509910e15c09e11d79c353f4520abcb6a8d0",
+      "current_hash": "sha256:7d43fd039872650037f660ee4328509910e15c09e11d79c353f4520abcb6a8d0"
+    },
+    ".moai/config/sections/feedback.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7f1ec2a5b7ebd80ee313935b43bf4601d4071695476b207d9b2f049b4e788dee",
+      "deployed_hash": "sha256:7f1ec2a5b7ebd80ee313935b43bf4601d4071695476b207d9b2f049b4e788dee",
+      "current_hash": "sha256:7f1ec2a5b7ebd80ee313935b43bf4601d4071695476b207d9b2f049b4e788dee"
+    },
+    ".moai/config/sections/gate.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8eadab9524bb78437960a1dc22239a9b9d19aa647653c35129b6b5f7080f7f93",
+      "deployed_hash": "sha256:8eadab9524bb78437960a1dc22239a9b9d19aa647653c35129b6b5f7080f7f93",
+      "current_hash": "sha256:8eadab9524bb78437960a1dc22239a9b9d19aa647653c35129b6b5f7080f7f93"
+    },
+    ".moai/config/sections/git-convention.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:90db4a44af8b1e576088c9b89a85ff1e267f75d8f1602b8c2bc07001b5395d5a",
+      "deployed_hash": "sha256:90db4a44af8b1e576088c9b89a85ff1e267f75d8f1602b8c2bc07001b5395d5a",
+      "current_hash": "sha256:90db4a44af8b1e576088c9b89a85ff1e267f75d8f1602b8c2bc07001b5395d5a"
+    },
+    ".moai/config/sections/git-strategy.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7f468e05aa2e58eb71c5e8962b2ff028c8797af216473ffbf8b5d8aa1c1ae76f",
+      "deployed_hash": "sha256:7f468e05aa2e58eb71c5e8962b2ff028c8797af216473ffbf8b5d8aa1c1ae76f",
+      "current_hash": "sha256:7f468e05aa2e58eb71c5e8962b2ff028c8797af216473ffbf8b5d8aa1c1ae76f"
+    },
+    ".moai/config/sections/handoff.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:529922054855440a337d05a9fc15daeeea8200bb264f58109ac008d5fcebb283",
+      "deployed_hash": "sha256:529922054855440a337d05a9fc15daeeea8200bb264f58109ac008d5fcebb283",
+      "current_hash": "sha256:529922054855440a337d05a9fc15daeeea8200bb264f58109ac008d5fcebb283"
+    },
+    ".moai/config/sections/harness.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1de711d10324d8420a3bba56b774969f9ef9df2b14050a3462c8f3b28755b76e",
+      "deployed_hash": "sha256:1de711d10324d8420a3bba56b774969f9ef9df2b14050a3462c8f3b28755b76e",
+      "current_hash": "sha256:1de711d10324d8420a3bba56b774969f9ef9df2b14050a3462c8f3b28755b76e"
+    },
+    ".moai/config/sections/interview.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6e518c920088cdb7b2c50f33cba5fb98dd410a9a7cb97dbbd9a312a6525d293f",
+      "deployed_hash": "sha256:6e518c920088cdb7b2c50f33cba5fb98dd410a9a7cb97dbbd9a312a6525d293f",
+      "current_hash": "sha256:6e518c920088cdb7b2c50f33cba5fb98dd410a9a7cb97dbbd9a312a6525d293f"
+    },
+    ".moai/config/sections/language.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:04b05d772aefc1cfed18a0afa2c407a802a533b13c230b467656215718a77793",
+      "deployed_hash": "sha256:04b05d772aefc1cfed18a0afa2c407a802a533b13c230b467656215718a77793",
+      "current_hash": "sha256:04b05d772aefc1cfed18a0afa2c407a802a533b13c230b467656215718a77793"
+    },
+    ".moai/config/sections/llm.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:09eabd141acb3c94e53c0afcd766c0fbdd15aa20b90218316f8a7df0ef77406a",
+      "deployed_hash": "sha256:09eabd141acb3c94e53c0afcd766c0fbdd15aa20b90218316f8a7df0ef77406a",
+      "current_hash": "sha256:09eabd141acb3c94e53c0afcd766c0fbdd15aa20b90218316f8a7df0ef77406a"
+    },
+    ".moai/config/sections/lsp.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fe7ac8d0152f98070930382228329ed3404b89b82e0754071f30428d86b0f7c9",
+      "deployed_hash": "sha256:fe7ac8d0152f98070930382228329ed3404b89b82e0754071f30428d86b0f7c9",
+      "current_hash": "sha256:fe7ac8d0152f98070930382228329ed3404b89b82e0754071f30428d86b0f7c9"
+    },
+    ".moai/config/sections/mx.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ad261346c621c7c236d543321ce605a8e9b2aef2c85321a15cf349b9a47033eb",
+      "deployed_hash": "sha256:ad261346c621c7c236d543321ce605a8e9b2aef2c85321a15cf349b9a47033eb",
+      "current_hash": "sha256:ad261346c621c7c236d543321ce605a8e9b2aef2c85321a15cf349b9a47033eb"
+    },
+    ".moai/config/sections/observability.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e8ce8c66fb8bd750e2bcb6182120ccb6222fb328adcfd00bf23e403d7b6806e",
+      "deployed_hash": "sha256:4e8ce8c66fb8bd750e2bcb6182120ccb6222fb328adcfd00bf23e403d7b6806e",
+      "current_hash": "sha256:4e8ce8c66fb8bd750e2bcb6182120ccb6222fb328adcfd00bf23e403d7b6806e"
+    },
+    ".moai/config/sections/project.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:3373bdf094865e0dd9ae4e63876783894b98e27c0f0ff949ebe0b387dc7c0206",
+      "deployed_hash": "sha256:3373bdf094865e0dd9ae4e63876783894b98e27c0f0ff949ebe0b387dc7c0206",
+      "current_hash": "sha256:3373bdf094865e0dd9ae4e63876783894b98e27c0f0ff949ebe0b387dc7c0206"
+    },
+    ".moai/config/sections/quality.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6ce7462901c307818f9d8e4f1711c37323a8f75bb2b79d755ae30f3909cb33fb",
+      "deployed_hash": "sha256:6ce7462901c307818f9d8e4f1711c37323a8f75bb2b79d755ae30f3909cb33fb",
+      "current_hash": "sha256:6ce7462901c307818f9d8e4f1711c37323a8f75bb2b79d755ae30f3909cb33fb"
+    },
+    ".moai/config/sections/ralph.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:6f8632c473f5f6d521deb1a23df1ab070e86b603560facbc07495a12ffb4d3aa",
+      "deployed_hash": "sha256:6f8632c473f5f6d521deb1a23df1ab070e86b603560facbc07495a12ffb4d3aa",
+      "current_hash": "sha256:6f8632c473f5f6d521deb1a23df1ab070e86b603560facbc07495a12ffb4d3aa"
+    },
+    ".moai/config/sections/report.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c7dedc5631fcd6d4e849d6e4309ce05f8170f27212b88289cc9d0f27f3347300",
+      "deployed_hash": "sha256:c7dedc5631fcd6d4e849d6e4309ce05f8170f27212b88289cc9d0f27f3347300",
+      "current_hash": "sha256:c7dedc5631fcd6d4e849d6e4309ce05f8170f27212b88289cc9d0f27f3347300"
+    },
+    ".moai/config/sections/security.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ce4b3fb1b5eca94246fcd4886eaeeaecbed3f3591e71d7ca023922d8e2e1b235",
+      "deployed_hash": "sha256:ce4b3fb1b5eca94246fcd4886eaeeaecbed3f3591e71d7ca023922d8e2e1b235",
+      "current_hash": "sha256:ce4b3fb1b5eca94246fcd4886eaeeaecbed3f3591e71d7ca023922d8e2e1b235"
+    },
+    ".moai/config/sections/state.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4c4d239b5af7acd982eff03f82747ad9aefd4c77d50446f601e5290a1f629287",
+      "deployed_hash": "sha256:4c4d239b5af7acd982eff03f82747ad9aefd4c77d50446f601e5290a1f629287",
+      "current_hash": "sha256:4c4d239b5af7acd982eff03f82747ad9aefd4c77d50446f601e5290a1f629287"
+    },
+    ".moai/config/sections/statusline.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fd876a0ff6af5b4c7cca498226b4efa3658caa870e6cdb11645b39352559dd94",
+      "deployed_hash": "sha256:fd876a0ff6af5b4c7cca498226b4efa3658caa870e6cdb11645b39352559dd94",
+      "current_hash": "sha256:fd876a0ff6af5b4c7cca498226b4efa3658caa870e6cdb11645b39352559dd94"
+    },
+    ".moai/config/sections/sunset.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:7c7d68059f2e5d7073d2a4d8a04fb205380cf55732a6ef04828d198e088321cb",
+      "deployed_hash": "sha256:7c7d68059f2e5d7073d2a4d8a04fb205380cf55732a6ef04828d198e088321cb",
+      "current_hash": "sha256:7c7d68059f2e5d7073d2a4d8a04fb205380cf55732a6ef04828d198e088321cb"
+    },
+    ".moai/config/sections/system.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:13ba8f4558d606ce1e1e535d2b7db4a79f9ba0aac6bbcba1055d4700f018c66f",
+      "deployed_hash": "sha256:13ba8f4558d606ce1e1e535d2b7db4a79f9ba0aac6bbcba1055d4700f018c66f",
+      "current_hash": "sha256:13ba8f4558d606ce1e1e535d2b7db4a79f9ba0aac6bbcba1055d4700f018c66f"
+    },
+    ".moai/config/sections/user.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:f85ef0949b81fc057e6d7236ce80ec8ba7b8d91068d023c1d2a5b850b96702fb",
+      "deployed_hash": "sha256:f85ef0949b81fc057e6d7236ce80ec8ba7b8d91068d023c1d2a5b850b96702fb",
+      "current_hash": "sha256:f85ef0949b81fc057e6d7236ce80ec8ba7b8d91068d023c1d2a5b850b96702fb"
+    },
+    ".moai/config/sections/workflow.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:1af0a8359a8721ec527001934c1c8426fa93dfdf5e1b1f9f5f0f0efb447a9a81",
+      "deployed_hash": "sha256:1af0a8359a8721ec527001934c1c8426fa93dfdf5e1b1f9f5f0f0efb447a9a81",
+      "current_hash": "sha256:1af0a8359a8721ec527001934c1c8426fa93dfdf5e1b1f9f5f0f0efb447a9a81"
+    },
+    ".moai/decisions/adr-template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:ed3770312c463ce58336b84f91383a3ad726bd800407b86030dee07d10b71f5e",
+      "deployed_hash": "sha256:ed3770312c463ce58336b84f91383a3ad726bd800407b86030dee07d10b71f5e",
+      "current_hash": "sha256:ed3770312c463ce58336b84f91383a3ad726bd800407b86030dee07d10b71f5e"
+    },
+    ".moai/decisions/lsp-client-choice.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:4e46c72e078c4b3d8b69280d139a31cb0eea6e73a837f9178d4e829ec6b967e2",
+      "deployed_hash": "sha256:4e46c72e078c4b3d8b69280d139a31cb0eea6e73a837f9178d4e829ec6b967e2",
+      "current_hash": "sha256:4e46c72e078c4b3d8b69280d139a31cb0eea6e73a837f9178d4e829ec6b967e2"
+    },
+    ".moai/docs/agent-lint.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fdf64953cec9bbf20133e2eac7f7ac923956443998c090afcefa19a5e6a128e2",
+      "deployed_hash": "sha256:fdf64953cec9bbf20133e2eac7f7ac923956443998c090afcefa19a5e6a128e2",
+      "current_hash": "sha256:fdf64953cec9bbf20133e2eac7f7ac923956443998c090afcefa19a5e6a128e2"
+    },
+    ".moai/docs/generic-patterns-guide.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:0496be0843337cc2d7464bcf6ce3cd459ced01c169e901aae4379ffd7b571a56",
+      "deployed_hash": "sha256:0496be0843337cc2d7464bcf6ce3cd459ced01c169e901aae4379ffd7b571a56",
+      "current_hash": "sha256:0496be0843337cc2d7464bcf6ce3cd459ced01c169e901aae4379ffd7b571a56"
+    },
+    ".moai/evolution/changelog.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:c1879107fcc40ec4360058ff9c9048c2033eaecaf22b4131d3a7d036a17183c5",
+      "deployed_hash": "sha256:c1879107fcc40ec4360058ff9c9048c2033eaecaf22b4131d3a7d036a17183c5",
+      "current_hash": "sha256:c1879107fcc40ec4360058ff9c9048c2033eaecaf22b4131d3a7d036a17183c5"
+    },
+    ".moai/evolution/learnings/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/evolution/manifest.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:5fa4dd0b40fc45360cc290b927ff53a4e3b117c34e3865fb26dded686a4ab567",
+      "deployed_hash": "sha256:5fa4dd0b40fc45360cc290b927ff53a4e3b117c34e3865fb26dded686a4ab567",
+      "current_hash": "sha256:5fa4dd0b40fc45360cc290b927ff53a4e3b117c34e3865fb26dded686a4ab567"
+    },
+    ".moai/evolution/new-skills/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/evolution/telemetry/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/learning/README.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:55c52ff8041f720489cb4d54731aaa22b1940b816dcbf79d3fdb81cbbdf22367",
+      "deployed_hash": "sha256:55c52ff8041f720489cb4d54731aaa22b1940b816dcbf79d3fdb81cbbdf22367",
+      "current_hash": "sha256:55c52ff8041f720489cb4d54731aaa22b1940b816dcbf79d3fdb81cbbdf22367"
+    },
+    ".moai/logs/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/project/blueprint/contracts.yaml": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:15e1c1604209cbafbb709fd7f2402f397580f609f9e83ffa9e513b4a242300c6",
+      "deployed_hash": "sha256:15e1c1604209cbafbb709fd7f2402f397580f609f9e83ffa9e513b4a242300c6",
+      "current_hash": "sha256:15e1c1604209cbafbb709fd7f2402f397580f609f9e83ffa9e513b4a242300c6"
+    },
+    ".moai/project/blueprint/module_tree.schema.json": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:d44449e9858b6cb9b225ea305b323ad3c3247abc3f9dd6933ab6322fed01b495",
+      "deployed_hash": "sha256:d44449e9858b6cb9b225ea305b323ad3c3247abc3f9dd6933ab6322fed01b495",
+      "current_hash": "sha256:d44449e9858b6cb9b225ea305b323ad3c3247abc3f9dd6933ab6322fed01b495"
+    },
+    ".moai/project/blueprint/overview.template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:8755ccd1cc9cc5ba22f488caee3d8eafa518e175fb3b6aba56c6657cd37814dc",
+      "deployed_hash": "sha256:8755ccd1cc9cc5ba22f488caee3d8eafa518e175fb3b6aba56c6657cd37814dc",
+      "current_hash": "sha256:8755ccd1cc9cc5ba22f488caee3d8eafa518e175fb3b6aba56c6657cd37814dc"
+    },
+    ".moai/project/navigator/symbols/narrative.template.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:708a8da2353ada604c84f7bea2bc1416f7781876018d634b10aa25a7130ab367",
+      "deployed_hash": "sha256:708a8da2353ada604c84f7bea2bc1416f7781876018d634b10aa25a7130ab367",
+      "current_hash": "sha256:708a8da2353ada604c84f7bea2bc1416f7781876018d634b10aa25a7130ab367"
+    },
+    ".moai/reports/plan-audit/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:fb76746d056491e58049107323967a10dc9dc752b524c988a927cb7ba3b55e72",
+      "deployed_hash": "sha256:fb76746d056491e58049107323967a10dc9dc752b524c988a927cb7ba3b55e72",
+      "current_hash": "sha256:fb76746d056491e58049107323967a10dc9dc752b524c988a927cb7ba3b55e72"
+    },
+    ".moai/state/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/state/chain/.gitkeep": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "deployed_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".moai/status_line.sh": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:2b5aa5ce0bb1526a2b3dbafca7df72978c8575bdd5da12c7cea72f4451a508cb",
+      "deployed_hash": "sha256:2b5aa5ce0bb1526a2b3dbafca7df72978c8575bdd5da12c7cea72f4451a508cb",
+      "current_hash": "sha256:2b5aa5ce0bb1526a2b3dbafca7df72978c8575bdd5da12c7cea72f4451a508cb"
+    },
+    ".worktreeinclude": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:abbc76252cc3bff3e41348977fbf96c70faa8c7c5b70f766f415890d8b9478c7",
+      "deployed_hash": "sha256:abbc76252cc3bff3e41348977fbf96c70faa8c7c5b70f766f415890d8b9478c7",
+      "current_hash": "sha256:abbc76252cc3bff3e41348977fbf96c70faa8c7c5b70f766f415890d8b9478c7"
+    },
+    "CLAUDE.md": {
+      "provenance": "template_managed",
+      "template_hash": "sha256:670c6eecebfd280537980795707f18284c4cea13a3231ceab18912ec5944017f",
+      "deployed_hash": "sha256:670c6eecebfd280537980795707f18284c4cea13a3231ceab18912ec5944017f",
+      "current_hash": "sha256:670c6eecebfd280537980795707f18284c4cea13a3231ceab18912ec5944017f"
+    }
+  }
+}
