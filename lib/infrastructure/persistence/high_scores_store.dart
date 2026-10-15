@@ -1,17 +1,19 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:summing_flutter/application/ports.dart';
 
 import 'persistence_keys.dart';
 
 /// Top turn counts (lower is better), ascending, max 5 (PRD §6.1).
-class HighScoresStore {
+class HighScoresStore implements HighScoreRepository {
   HighScoresStore(this._prefs);
 
   final SharedPreferences _prefs;
   static const int maxEntries = 5;
 
   /// Sorted ascending (best first).
+  @override
   List<int> load() {
     final raw = _prefs.getString(PersistenceKeys.highScores);
     if (raw == null || raw.isEmpty) return [];
@@ -37,6 +39,7 @@ class HighScoresStore {
   }
 
   /// Inserts [turnCount], keeps lowest [maxEntries] scores, ascending.
+  @override
   Future<List<int>> recordCompletedGame(int turnCount) async {
     final current = load();
     if (turnCount < 0) return current;

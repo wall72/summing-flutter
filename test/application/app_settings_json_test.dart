@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:summing_flutter/infrastructure/persistence/app_settings.dart';
+import 'package:summing_flutter/application/models/app_settings.dart';
+import 'package:summing_flutter/application/ports.dart';
 import 'package:summing_flutter/infrastructure/persistence/settings_store.dart';
 
 /// AppSettings JSON 형식 고정 (AC-ARCH-13, REQ-ARCH-004).
@@ -27,12 +28,12 @@ void main() {
     expect(settings.soundOn, isTrue);
   });
 
-  test('settings store loads the summing_settings key', () async {
+  test('settings port loads the summing_settings key', () async {
     SharedPreferences.setMockInitialValues({
       'summing_settings': '{"musicOn":false,"soundOn":true}',
     });
     final prefs = await SharedPreferences.getInstance();
-    final store = SettingsStore(prefs);
+    final SettingsRepository store = SettingsStore(prefs);
 
     expect(store.load(), const AppSettings(musicOn: false, soundOn: true));
   });

@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:summing_flutter/application/ports.dart';
 
 import '../persistence/settings_store.dart';
 import 'game_audio_assets.dart';
@@ -8,7 +9,7 @@ import 'game_audio_assets.dart';
 /// BGM loop + placement / match SFX (PRD §7.4).
 ///
 /// Audio failures never propagate: SFX falls back to [SystemSoundType.click].
-class GameAudioService {
+class GameAudioService implements GameAudio {
   GameAudioService({required SettingsStore settingsStore})
       : _settings = settingsStore;
 
@@ -55,6 +56,7 @@ class GameAudioService {
   }
 
   /// Call after [SettingsStore.save], on startup, or when returning to foreground.
+  @override
   Future<void> applySettingsAndSyncBgm() async {
     if (_playersBroken) return;
 
@@ -79,20 +81,24 @@ class GameAudioService {
   Future<void> stopBgm() => _guard(() async => _bgm?.stop());
 
   /// App went to background: silence BGM (store policy / battery).
+  @override
   Future<void> suspend() async {
     _suspended = true;
     await _guard(() async => _bgm?.pause());
   }
 
   /// App returned to foreground.
+  @override
   Future<void> resume() async {
     if (!_suspended) return;
     _suspended = false;
     await applySettingsAndSyncBgm();
   }
 
+  @override
   Future<void> playTap() => _playSfx(GameAudioAssets.tap);
 
+  @override
   Future<void> playMatch() => _playSfx(GameAudioAssets.match);
 
   Future<void> _playSfx(String assetPath) async {
@@ -123,6 +129,7 @@ class GameAudioService {
 
   /// Call once after a pointer/keyboard interaction on web (e.g. first tap on the app).
   /// Idempotent; safe to call multiple times.
+  @override
   Future<void> notifyUserGesture() async {
     if (_userGestureUnlockedAudio) return;
     _userGestureUnlockedAudio = true;

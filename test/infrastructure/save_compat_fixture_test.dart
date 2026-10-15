@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:summing_flutter/application/ports.dart';
 import 'package:summing_flutter/domain/summing_domain.dart';
 import 'package:summing_flutter/infrastructure/persistence/game_save_store.dart';
 import 'package:summing_flutter/infrastructure/persistence/persistence_keys.dart';
@@ -43,12 +44,12 @@ void main() {
     expect(SaveGameCodec.encode(_fixtureState()), _fixtureJson);
   });
 
-  test('game save store loads the schemaVersion 1 fixture unchanged', () async {
+  test('game save port loads the schemaVersion 1 fixture unchanged', () async {
     SharedPreferences.setMockInitialValues({
       PersistenceKeys.saveGame: _fixtureJson,
     });
     final prefs = await SharedPreferences.getInstance();
-    final GameSaveStore store = GameSaveStore(prefs);
+    final GameSaveRepository store = GameSaveStore(prefs);
 
     final loaded = store.load();
 

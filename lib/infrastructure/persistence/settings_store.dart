@@ -1,15 +1,17 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:summing_flutter/application/models/app_settings.dart';
+import 'package:summing_flutter/application/ports.dart';
 
-import 'app_settings.dart';
 import 'persistence_keys.dart';
 
-class SettingsStore {
+class SettingsStore implements SettingsRepository {
   SettingsStore(this._prefs);
 
   final SharedPreferences _prefs;
 
+  @override
   AppSettings load() {
     final raw = _prefs.getString(PersistenceKeys.settings);
     if (raw == null || raw.isEmpty) {
@@ -24,6 +26,7 @@ class SettingsStore {
     }
   }
 
+  @override
   Future<void> save(AppSettings settings) async {
     await _prefs.setString(
       PersistenceKeys.settings,
