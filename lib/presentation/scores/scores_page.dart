@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:summing_flutter/infrastructure/persistence/persistence_providers.dart';
+import 'package:summing_flutter/application/app_queries.dart';
 
 class ScoresPage extends ConsumerWidget {
   const ScoresPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final persistenceAsync = ref.watch(localPersistenceProvider);
+    final scoresAsync = ref.watch(highScoresProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Top scores'),
       ),
-      body: persistenceAsync.when(
+      body: scoresAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('Error: $e')),
-        data: (p) {
-          final scores = p.highScores.load();
+        data: (scores) {
           if (scores.isEmpty) {
             return const Center(
               child: Padding(

@@ -3,10 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:summing_flutter/presentation/scores/scores_page.dart';
 
-import '../../support/pre_refactor_fakes.dart';
+import '../../support/test_overrides.dart';
 
 Future<void> _pumpScores(WidgetTester tester, List<int> scores) async {
-  final fakes = await PreRefactorFakes.create();
+  final fakes = FakePorts();
   fakes.highScores.scores = scores;
   final container = ProviderContainer(overrides: fakes.overrides());
   addTearDown(container.dispose);

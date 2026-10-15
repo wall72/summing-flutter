@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:summing_flutter/application/port_providers.dart';
 import 'package:summing_flutter/domain/summing_domain.dart';
-import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
 import 'package:summing_flutter/presentation/menu/menu_page.dart';
 
-import '../../support/pre_refactor_fakes.dart';
+import '../../support/test_overrides.dart';
 
 class _Menu {
   _Menu(this.fakes, this.container);
 
-  final PreRefactorFakes fakes;
+  final FakePorts fakes;
   final ProviderContainer container;
 }
 
 Future<_Menu> _pumpMenu(WidgetTester tester, {GameState? saved}) async {
-  final fakes = await PreRefactorFakes.create();
+  final fakes = FakePorts();
   fakes.gameSave.stored = saved;
   final container = ProviderContainer(overrides: fakes.overrides());
   addTearDown(container.dispose);
   // 실제 앱은 시작 시 오디오를 미리 띄운다 (SummingApp).
-  await container.read(gameAudioServiceProvider.future);
+  await container.read(gameAudioProvider.future);
 
   await tester.pumpWidget(
     UncontrolledProviderScope(
