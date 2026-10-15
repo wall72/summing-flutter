@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:summing_flutter/application/game_session_notifier.dart';
+import 'package:summing_flutter/application/port_providers.dart';
+import 'package:summing_flutter/application/ports.dart';
 import 'package:summing_flutter/domain/summing_domain.dart';
-import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
-import 'package:summing_flutter/infrastructure/audio/game_audio_service.dart';
 
-import '../support/pre_refactor_fakes.dart';
+import '../support/test_overrides.dart';
 
 /// 칸 10(=3)과 칸 40(=7)만 채워진 보드. 칸 0의 이웃(1, 9, 10) 합은 3이다.
 Board _playingBoard() {
@@ -42,7 +42,7 @@ GameState _state(Board board, int firstDigit, {int turnCount = 5}) =>
 class _Harness {
   _Harness(this.fakes, this.container);
 
-  final PreRefactorFakes fakes;
+  final FakePorts fakes;
   final ProviderContainer container;
 
   List<String> get log => fakes.log;
@@ -61,15 +61,15 @@ class _Harness {
 }
 
 Future<_Harness> _harness({
-  Future<GameAudioService> Function()? audioFuture,
+  Future<GameAudio> Function()? audioFuture,
 }) async {
-  final fakes = await PreRefactorFakes.create();
+  final fakes = FakePorts();
   final container =
       ProviderContainer(overrides: fakes.overrides(audioFuture: audioFuture));
   addTearDown(container.dispose);
   if (audioFuture == null) {
     // 실제 앱처럼 오디오가 준비된 상태에서 시작한다.
-    await container.read(gameAudioServiceProvider.future);
+    await container.read(gameAudioProvider.future);
   }
   return _Harness(fakes, container);
 }
@@ -126,7 +126,7 @@ void main() {
   group('audio unavailable still applies and saves (AC-ARCH-07)', () {
     test('(a) audio never resolves', () async {
       final h = await _harness(
-        audioFuture: () => Completer<GameAudioService>().future,
+        audioFuture: () => Completer<GameAudio>().future,
       );
       await h.resumeWith(_state(_playingBoard(), 4, turnCount: 5));
 
@@ -139,10 +139,10 @@ void main() {
     test('(b) audio fails', () async {
       final h = await _harness(
         audioFuture: () =>
-            Future<GameAudioService>.error(StateError('audio failed')),
+            Future<GameAudio>.error(StateError('audio failed')),
       );
       await expectLater(
-        h.container.read(gameAudioServiceProvider.future),
+        h.container.read(gameAudioProvider.future),
         throwsA(isA<StateError>()),
       );
       await h.resumeWith(_state(_playingBoard(), 4, turnCount: 5));

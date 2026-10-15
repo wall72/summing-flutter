@@ -4,16 +4,23 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:summing_flutter/application/game_session_notifier.dart';
+import 'package:summing_flutter/application/port_providers.dart';
+import 'package:summing_flutter/application/ports.dart';
 import 'package:summing_flutter/domain/summing_domain.dart';
-import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
-import 'package:summing_flutter/infrastructure/audio/game_audio_service.dart';
 import 'package:summing_flutter/infrastructure/persistence/local_persistence.dart';
 
+/// 저장 포트는 실제 shared_preferences 구현(mock 값)에 연결해 컨테이너 간 저장을 공유한다.
 /// Audio needs native plugins; keep it pending so tests stay silent.
 ProviderContainer _container() => ProviderContainer(
       overrides: [
-        gameAudioServiceProvider.overrideWith(
-          (ref) => Completer<GameAudioService>().future,
+        gameSaveRepositoryProvider.overrideWith(
+          (ref) async => (await LocalPersistence.open()).gameSave,
+        ),
+        highScoreRepositoryProvider.overrideWith(
+          (ref) async => (await LocalPersistence.open()).highScores,
+        ),
+        gameAudioProvider.overrideWith(
+          (ref) => Completer<GameAudio>().future,
         ),
       ],
     );

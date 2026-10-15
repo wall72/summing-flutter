@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:summing_flutter/application/game_session_notifier.dart';
+import 'package:summing_flutter/application/port_providers.dart';
 import 'package:summing_flutter/domain/summing_domain.dart';
-import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
 import 'package:summing_flutter/presentation/game/game_page.dart';
 
-import '../../support/pre_refactor_fakes.dart';
+import '../../support/test_overrides.dart';
 
 /// 현재 동작 고정: Restart는 확인 없이 즉시 새 판을 시작한다 (AC-ARCH-16).
 /// SPEC-UI-001 M1에서 확인 대화상자 흐름으로 의도적으로 바뀔 예정이다.
@@ -15,7 +15,7 @@ void main() {
 
   testWidgets('Restart starts a new run immediately without a dialog',
       (tester) async {
-    final fakes = await PreRefactorFakes.create();
+    final fakes = FakePorts();
     final cells =
         List<SummingCell>.filled(CellIndex.cellCount, SummingCell.empty);
     cells[40] = const SummingCell.filled(7);
@@ -26,7 +26,7 @@ void main() {
     );
     final container = ProviderContainer(overrides: fakes.overrides());
     addTearDown(container.dispose);
-    await container.read(gameAudioServiceProvider.future);
+    await container.read(gameAudioProvider.future);
     await container.read(gameSessionProvider.notifier).resumeGame();
 
     await tester.pumpWidget(

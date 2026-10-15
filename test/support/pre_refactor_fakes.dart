@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:summing_flutter/domain/game_state.dart';
+import 'package:summing_flutter/infrastructure/app_overrides.dart';
 import 'package:summing_flutter/infrastructure/audio/audio_providers.dart';
 import 'package:summing_flutter/infrastructure/audio/game_audio_service.dart';
 import 'package:summing_flutter/infrastructure/persistence/app_settings.dart';
@@ -135,5 +136,7 @@ class PreRefactorFakes {
         gameAudioServiceProvider.overrideWith(
           (ref) => audioFuture != null ? audioFuture() : Future.value(audio),
         ),
+        // 포트로 옮겨진 소비자(notifier 등)도 같은 fake를 보도록 포트를 연결한다.
+        ...appOverrides,
       ];
 }
