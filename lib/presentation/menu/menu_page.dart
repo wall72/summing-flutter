@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:summing_flutter/application/app_queries.dart';
 import 'package:summing_flutter/application/game_session_notifier.dart';
+import 'package:summing_flutter/presentation/common/app_page_route.dart';
 import 'package:summing_flutter/presentation/common/how_to_play_sheet.dart';
 import 'package:summing_flutter/presentation/game/game_page.dart';
 import 'package:summing_flutter/presentation/layout/breakpoints.dart';
@@ -29,7 +30,7 @@ class _MenuPageState extends ConsumerState<MenuPage> {
       return;
     }
     await Navigator.of(context).push<void>(
-      MaterialPageRoute<void>(builder: (_) => const GamePage()),
+      AppPageRoute<void>(builder: (_) => const GamePage()),
     );
     // Refresh Resume visibility / savegame state after returning from game.
     if (mounted) ref.invalidate(resumableGameProvider);
@@ -96,7 +97,7 @@ class _MenuPageState extends ConsumerState<MenuPage> {
       OutlinedButton(
         onPressed: () {
           Navigator.of(context).push<void>(
-            MaterialPageRoute<void>(builder: (_) => const ScoresPage()),
+            AppPageRoute<void>(builder: (_) => const ScoresPage()),
           );
         },
         child: const Text('Scores'),
