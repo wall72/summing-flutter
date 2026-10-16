@@ -96,6 +96,15 @@
 - deviations from design.md: other queue slots get a 1px cellOutline border; whole queue row slides (clipped); placed cell highlight stays until next move; queue digit 20 in low-height panel else 24; 599x640 cell 49.33 (table assumed 40.00, still ≥36); new tokens AppRadius.cell/queueSlot/boardFrame, AppStroke, AppStateLayer
 - note: Flutter easeOutCubic at t=0.5 is 0.87512 (AC-UI-20 tolerance ±0.01 fine)
 
+### M5 + M6 — Screen transitions, overlay entrance, clean-up (manager-develop, tdd; main 9378725 + 0175b09 from worktree commits 0a77b79 + 927cde2)
+
+- verification (orchestrator, main @ 0175b09): `flutter analyze` → `No issues found!`; `flutter test --coverage` → exit 0, `00:15 +363: All tests passed!` (`.moai/state/verify/c31e2948/final-test.txt`)
+- AC-UI-16 grep → 0 lines; AC-UI-23 grep → 0 lines; AC-UI-17 `git diff --exit-code 8090c04 -- lib/domain lib/application persistence_keys.dart save_game_codec.dart` → exit 0
+- AC-UI-18: lib/presentation/** line coverage 703/707 = 99.43% (awk over coverage/lcov.info); lib/main.dart 9/14 (outside AC-UI-18 scope)
+- ACs: AC-UI-01..20, 22..25 PASS; AC-UI-21 PARTIAL (third clause unachievable — SPEC defect above)
+- web/manifest.json: background_color #009688 → #FFF8F1, theme_color #009688 → #F6B7C4 (pinned by web_manifest_test.dart)
+- follow-ups not in scope: web/index.html line 26 still has `<meta name="theme-color" content="#009688">`; AppPageRoute drops the iOS swipe-back gesture (plan D-8 consequence); end overlay has entrance animation only; web (CanvasKit) visual check not performed
+
 ## §F Phase 4 Mode Selection
 
 - Input params: tier L; milestones M1-M6 (6); files ≈ 30+ (lib/presentation + tests + assets + pubspec); domains: 1 (Flutter presentation layer, with theme/asset sub-areas); development_mode tdd; user flag: none (`--team`/`--solo` absent)
@@ -114,7 +123,12 @@
 
 ## §E.3 Run-phase Audit-Ready Signal
 
-_<pending run-phase>_
+- run_status: audit-ready (M1-M6 implemented, TDD, serial mode)
+- run_commits (main): 140a1d7 (M1), 1ea1228 (M2), c588c29 (M3), 17ad06c (M4), 9378725 (M5), 0175b09 (M6); not pushed
+- run_commit_sha: pending-backfill (set after the evidence commit lands)
+- test_suite: 363 tests pass; analyze clean; presentation coverage 99.43%
+- ac_status: 24 PASS / 1 PARTIAL (AC-UI-21 third clause — needs manager-spec rewording to "complete state"; changing the SPEC body invalidates the plan-audit cache)
+- plan_audit: PASS 0.93 (iteration 5)
 
 ## §E.4 Sync-phase Audit-Ready Signal
 
