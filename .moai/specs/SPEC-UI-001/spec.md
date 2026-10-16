@@ -2,9 +2,9 @@
 id: SPEC-UI-001
 title: "파스텔 디자인 시스템·반응형 레이아웃·연출 효과 UI 개편"
 version: "0.3.2"
-status: draft
+status: in-progress
 created: 2026-10-15
-updated: 2026-10-15
+updated: 2026-10-16
 author: Cliff W. Lee
 priority: P1
 phase: "v1.1.0 target"
