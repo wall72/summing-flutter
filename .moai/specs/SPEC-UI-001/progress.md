@@ -66,6 +66,19 @@
 - note_for_m2 (D32): reduced-motion (`MediaQuery.disableAnimations`) — Material InkWell splash on board cells can leave running animations; theme should set `splashFactory: NoSplash.splashFactory` (or equivalent) so AC-UI-14 `hasRunningAnimations == false` holds. M1 adds no dependency on it
 - not_done_in_m1: `status: draft → in-progress` frontmatter transition on spec/plan/acceptance was not applied (orchestrator instruction: no SPEC artifact edits besides this section)
 
+### M2 — Design tokens and theme (manager-develop, cycle_type=tdd; integrated to main as 1ea1228 from worktree commit b904772)
+
+- spec.md status: draft → in-progress (applied in the M2 commit, frontmatter only)
+- verification (orchestrator, main @ 1ea1228): `flutter analyze` → `No issues found!`; `flutter test` → `+240: All tests passed!` (M1 baseline +113)
+- agent evidence files: `.moai/state/verify/c31e2948/m2_*.txt` (RED m2_red.txt/m2_red2.txt, final m2_test_final.txt)
+- ACs: AC-UI-01 PASS, AC-UI-19 PASS, AC-UI-22 PASS, AC-UI-24 PASS, AC-UI-02 PARTIAL (GamePage screens only; menu/scores/sheet in M3; game screens re-check after M4 restyle)
+- grep counts after M2: AC-UI-16 = 2 (board_grid.dart:25,:27 → M4), AC-UI-23 = 13 (menu 7, how_to_play 3, scores 2 → M3; next_queue_row.dart:91 radius → M4)
+- D32 handled: splashFactory NoSplash under MediaQuery.disableAnimations (ReducedMotionTheme)
+- fonts: Nunito 3.602 OFL 1.1 from fonts.gstatic.com (Regular 132,200 B, ExtraBold 132,068 B) + OFL.txt from googlefonts/nunito; Nunito has no `tnum` feature → tabular figures not applied (research.md §5 open item answered)
+- design.md values not exactly reproducible: card/dialog shadow blur 12/y 4 approximated via shadowColor primary 12% + elevation 4 (ThemeData has no blur/offset)
+- note: palette class named AppPalette (not AppColors) to avoid AC-UI-16 grep false positives
+- main.dart coverage 64.3% (untouched `main()` entry; outside AC-UI-18 scope)
+
 ## §F Phase 4 Mode Selection
 
 - Input params: tier L; milestones M1-M6 (6); files ≈ 30+ (lib/presentation + tests + assets + pubspec); domains: 1 (Flutter presentation layer, with theme/asset sub-areas); development_mode tdd; user flag: none (`--team`/`--solo` absent)
