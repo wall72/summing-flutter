@@ -4,17 +4,22 @@
 
 ```
 lib/
-  main.dart                      # ProviderScope + MaterialApp, 오디오 초기화
+  main.dart                      # ProviderScope(overrides: appOverrides) + MaterialApp, 오디오 초기화
   domain/                        # 순수 Dart 게임 규칙 (Flutter 비의존)
     cell_index.dart  summing_cell.dart  board.dart  next_queue.dart
     game_phase.dart  game_state.dart  place_outcome.dart  summing_rules.dart
     summing_domain.dart          # barrel
   application/
+    ports.dart                   # 추상 포트: GameSaveRepository, HighScoreRepository, SettingsRepository, GameAudio
+    port_providers.dart          # 포트 provider (기본은 미바인딩, composition root가 override)
+    app_queries.dart             # resumableGameProvider, highScoresProvider, settingsControllerProvider
+    models/app_settings.dart     # 설정 값 객체 (application 소유)
     game_session_notifier.dart   # gameSessionProvider
     application.dart             # barrel
   infrastructure/
+    app_overrides.dart           # appOverrides: 포트 → 구현 연결 목록 (composition root)
     persistence/                 # shared_preferences 기반 저장소
-      persistence_keys.dart app_settings.dart settings_store.dart
+      persistence_keys.dart app_settings.dart settings_store.dart  # app_settings: application 모델 re-export
       game_save_store.dart high_scores_store.dart save_game_codec.dart
       local_persistence.dart persistence_providers.dart
     audio/
@@ -26,7 +31,7 @@ lib/
     scores/scores_page.dart
     common/{how_to_play_sheet,game_lifecycle_listener}.dart
     presentation.dart            # barrel
-test/                            # domain / application / infrastructure / presentation
+test/                            # domain / application / infrastructure / presentation / architecture
 assets/audio/                    # bg_music.mp3, tap_sound.wav, clap_sound.wav
 web/ android/ ios/               # 플랫폼 러너 (web 우선)
 tools/convert_ios_aiff_to_wav.py
@@ -35,30 +40,31 @@ run_chrome.sh / run_chrome.ps1   # 고정 포트 웹 실행 스크립트
 
 ## 계층 의존 관계 (현재 상태)
 
-실선은 허용된 의존, 점선은 현재 코드에 있지만 개선 대상인 의존입니다.
-
 ```mermaid
 flowchart TD
   P[presentation] --> A[application]
   P --> D[domain]
-  P -.-> I[infrastructure]
   A --> D
-  A -.-> I
+  I[infrastructure] --> A
   I --> D
+  M[main.dart] --> I
 ```
 
 - `domain`은 Flutter와 I/O에 의존하지 않으며, 외부 패키지는 `meta`(`@immutable`)만 사용합니다.
 - `presentation`은 `domain`의 타입(`game_phase`, `game_state`, `cell_index`, `summing_cell`, `next_queue`)을 직접 참조합니다. 화면이 상태를 그리는 데 필요한 읽기 전용 참조로 보고 허용합니다.
-- `application`과 `presentation`이 `infrastructure`의 구체 provider를 직접 참조하는 점선 간선은 개선 후보입니다. `menu_page.dart`는 provider 외에 구체 타입 `AppSettings`와 `LocalPersistence`도 직접 사용합니다.
+- `application`은 `ports.dart`의 추상 포트에만 의존하고, `infrastructure`의 저장소·오디오가 이 포트를 `implements` 합니다(의존 역전).
+- `application`·`presentation`은 `infrastructure`를 import하지 않습니다. 구현 연결은 `lib/infrastructure/app_overrides.dart`의 `appOverrides`를 `lib/main.dart`가 `ProviderScope`에 넘기는 방식으로만 이뤄집니다.
+- 이 경계는 `test/architecture/layer_boundary_test.dart`가 검사합니다.
 
-## 테스트 배치 (11개 파일)
+## 테스트 배치 (23개 파일, 75개 테스트)
 
 | 영역 | 파일 |
 |------|------|
 | domain | `board_test`, `cell_index_test`, `next_queue_test`, `summing_rules_test` |
-| application | `game_session_notifier_persistence_test` |
-| infrastructure | `game_save_store_test`, `high_scores_store_test`, `save_game_codec_test`, `settings_store_test` |
-| presentation | `common/game_lifecycle_listener_test` |
-| 루트 | `widget_test` (`test/widget_test.dart`, 앱 스모크) |
+| application | `app_queries_test`, `app_settings_json_test`, `game_session_notifier_test`, `game_session_notifier_persistence_test`, `port_providers_test` |
+| infrastructure | `app_overrides_test`, `game_save_store_test`, `high_scores_store_test`, `save_compat_fixture_test`, `save_game_codec_test`, `settings_store_test` |
+| presentation | `common/game_lifecycle_listener_test`, `common/lifecycle_audio_test`, `game/game_page_characterization_test`, `menu/menu_page_test`, `scores/scores_page_test` |
+| architecture | `layer_boundary_test` (계층 import 경계) |
+| 지원·루트 | `support/test_overrides.dart`(헬퍼), `widget_test`(앱 스모크) |
 
-테스트가 없는 영역: `GameAudioService`, `GamePage`/`BoardGrid`/`ScoresPage` 위젯. `MenuPage`는 `widget_test`의 스모크 렌더링('Summing', 'New Game' 텍스트 확인) 외에 동작 테스트가 없습니다.
+테스트가 약한 영역: `GameAudioService`(실제 오디오 재생은 기기·웹에서 확인하지 않음), `main.dart`(커버리지 약 44%).

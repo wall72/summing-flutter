@@ -3,7 +3,7 @@
 ## 외부 패키지
 | 패키지 | 사용 위치 |
 |--------|-----------|
-| `flutter_riverpod` | `main.dart`, application, `*_providers.dart`, presentation |
+| `flutter_riverpod` | `main.dart`, application, `*_providers.dart`, `app_overrides.dart`, presentation |
 | `shared_preferences` | `infrastructure/persistence/*_store.dart`, `local_persistence.dart` |
 | `audioplayers` | `infrastructure/audio/` |
 | `meta` | `domain/`(`board`, `game_state`, `next_queue`, `summing_cell`), `app_settings.dart` |
@@ -12,28 +12,29 @@
 ```mermaid
 flowchart LR
   GSN[game_session_notifier] --> Rules[summing_rules]
-  GSN --> AP[audio_providers]
-  GSN --> PP[persistence_providers]
+  GSN --> PP[port_providers]
+  PP --> Ports[ports]
+  AQ[app_queries] --> PP
   Menu[menu_page] --> GSN
-  Menu --> AP
-  Menu --> PP
-  Menu --> LP[local_persistence]
+  Menu --> AQ
   Game[game_page] --> GSN
-  Scores[scores_page] --> PP
+  Scores[scores_page] --> AQ
   Life[game_lifecycle_listener] --> GSN
-  Life --> AP
-  Codec[save_game_codec] --> Domain[domain/*]
-  Game --> Domain
+  Life --> PP
+  Game --> Domain[domain/*]
   Menu --> Domain
   Board[board_grid] --> Domain
   NQ[next_queue_row] --> Domain
-  AP --> PP
-  GAS[game_audio_service] --> SS[settings_store]
-  AP --> GAS
+  Codec[save_game_codec] --> Domain
   GSS[game_save_store] --> Codec
-  Main[main.dart] --> AP
+  GSS -.implements.-> Ports
+  GAS[game_audio_service] -.implements.-> Ports
+  Over[app_overrides] --> PP
+  Over --> GSS
+  Over --> GAS
+  Main[main.dart] --> Over
   Main --> Life
   Main --> Menu
 ```
 
-`application`→`infrastructure`, `presentation`→`infrastructure` 직접 참조는 개선 후보입니다.
+`application`→`infrastructure`, `presentation`→`infrastructure` 직접 참조는 없습니다. `infrastructure`가 `application`의 포트를 구현하는 방향이며, 연결은 `app_overrides.dart`가 맡습니다(경계 검사: `test/architecture/layer_boundary_test.dart`).

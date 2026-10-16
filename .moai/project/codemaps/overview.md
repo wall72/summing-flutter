@@ -1,12 +1,12 @@
 # 코드맵 개요
 
-Flutter 앱 하나로 구성되며, `lib/` 아래 Dart 파일 32개(약 1,600줄)가 4개 계층으로 나뉩니다.
+Flutter 앱 하나로 구성되며, `lib/` 아래 Dart 파일 37개(약 1,780줄)가 4개 계층으로 나뉩니다.
 
 | 계층 | 역할 |
 |------|------|
 | `domain` | 보드·큐·규칙·국면 판정. 순수 Dart, 불변 값 객체 |
-| `application` | `GameSessionNotifier` — 세션 상태, 저장·오디오 호출 조율 |
-| `infrastructure` | `shared_preferences` 저장소, `audioplayers` 오디오 |
+| `application` | 추상 포트(`ports.dart`), 포트 provider, 조회 provider(`app_queries.dart`), `GameSessionNotifier` — 세션 상태·저장·오디오 조율 |
+| `infrastructure` | 포트 구현: `shared_preferences` 저장소, `audioplayers` 오디오. `appOverrides`로 포트에 연결(composition root) |
 | `presentation` | 메뉴·게임·점수판 화면, 생명주기 리스너 |
 
 관련 문서: [modules.md](modules.md), [dependencies.md](dependencies.md), [entry-points.md](entry-points.md), [data-flow.md](data-flow.md)

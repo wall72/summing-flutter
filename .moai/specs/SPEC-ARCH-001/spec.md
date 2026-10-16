@@ -2,7 +2,7 @@
 id: SPEC-ARCH-001
 title: "application/presentation 계층의 infrastructure 의존 역전 (포트 도입)"
 version: "0.2.0"
-status: in-progress
+status: completed
 created: 2026-10-15
 updated: 2026-10-16
 author: Cliff W. Lee

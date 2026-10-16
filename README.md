@@ -128,12 +128,12 @@ flutter run -d chrome
 web/ android/ ios/ # 플랫폼 설정
 lib/
   domain/          # 규칙 엔진·모델
-  application/     # 게임 세션(배치·저장·클리어 처리)
-  infrastructure/  # 저장소, 오디오, 코덱
+  application/     # 게임 세션, 추상 포트(저장소·오디오), 조회 provider
+  infrastructure/  # 포트 구현(저장소, 오디오, 코덱)과 composition root(app_overrides)
   presentation/    # menu / game / scores, lifecycle 저장 리스너
 assets/audio/      # bg_music.mp3, tap_sound.wav, clap_sound.wav
 tools/             # AIFF → WAV 변환 스크립트(엔디안)
-test/              # domain·infrastructure·widget 스모크
+test/              # domain·application·infrastructure·presentation, 계층 경계(architecture)
 run_chrome.ps1     # 고정 포트/프로필로 Chrome 실행 (Windows)
 run_chrome.sh      # 동일 기능 (Linux/WSL)
 ```

@@ -38,7 +38,7 @@ Summing은 9×9 보드에 숫자를 놓아 이웃 칸 합의 일의 자리와 �
 
 ## 알려진 개선 지점 (확인됨)
 
-- `GameSessionNotifier`(application 계층)가 `audio_providers.dart`, `persistence_providers.dart`의 구체 타입을 직접 가져옵니다. `menu_page.dart`도 infrastructure를 직접 참조합니다.
+- (해결됨, SPEC-ARCH-001) application·presentation의 infrastructure 직접 의존은 포트 도입으로 제거되었고 `test/architecture/layer_boundary_test.dart`가 경계를 검사합니다.
 - 재시작 버튼은 확인 절차 없이 `restartGame()`을 호출해 진행 중인 저장을 덮어씁니다.
 - Android `applicationId = "com.example.summing_flutter"`, iOS `PRODUCT_BUNDLE_IDENTIFIER = com.example.summingFlutter`는 임시값입니다.
 - `web/manifest.json`은 `portrait-primary`인데 iOS `Info.plist`는 가로 방향도 허용합니다.
@@ -49,7 +49,7 @@ Summing은 9×9 보드에 숫자를 놓아 이웃 칸 합의 일의 자리와 �
 ## Roadmap candidates (후보일 뿐, SPEC 미작성)
 
 1. 재시작 전 확인 대화상자 추가 (진행 중인 판이 있을 때만)
-2. application 계층의 infrastructure 의존을 추상 인터페이스로 분리
+2. ~~application 계층의 infrastructure 의존을 추상 인터페이스로 분리~~ (SPEC-ARCH-001로 완료)
 3. 위젯 테스트 보강: `GamePage`, `BoardGrid`, `ScoresPage`, `MenuPage`
 4. `GameAudioService` 테스트 및 `placeAt` 점수 기록, `restartGame`/`clearSession` 테스트 추가
 5. `flutter analyze && flutter test`를 돌리는 GitHub Actions 워크플로

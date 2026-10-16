@@ -112,7 +112,35 @@ m1_to_mN_commit_strategy: one-commit-per-milestone (M1-M5), no push
 
 ## §E.4 Sync-phase Audit-Ready Signal
 
-_<pending sync-phase>_
+```yaml
+sync_complete_at: 2026-10-16
+sync_commit_sha: pending-backfill  # 커밋은 자기 SHA를 알 수 없음; 후속 backfill
+sync_status: audit-ready
+docs_updated:
+  - README.md
+  - .moai/project/structure.md
+  - .moai/project/product.md
+  - .moai/project/codemaps/{overview,modules,dependencies,entry-points,data-flow}.md
+  - .moai/specs/SPEC-ARCH-001/spec.md  # frontmatter status: in-progress -> completed 만
+  - .moai/specs/SPEC-ARCH-001/progress.md  # §E.4
+frontmatter_status_transitions:
+  spec_md: in-progress -> completed
+verification_evidence:
+  head: 2880710
+  flutter_analyze: "exit 0, 'No issues found!' (.moai/state/verify/dcd15635/sync-analyze.txt)"
+  flutter_test: "exit 0, '+75: All tests passed!' (.moai/state/verify/dcd15635/sync-test.txt)"
+  lib_coverage: "479/635 = 75.4% (목표 85% 미달; main.dart 44.4%, menu_page.dart 79.7%)"
+  pubspec_diff_vs_6a695b2: 0 lines
+gaps:
+  - 기기·웹에서 실제 오디오 재생 확인 안 함
+  - MX P1/P2 스캐너 미실행
+  - 보안 스캔(Phase 8) 생략 — 인증·네트워크 파일 변경 없음, 영속 저장소는 포트 구현만 변경했고 오케스트레이터가 개별 diff 검토하지 않음
+  - lib 커버리지 75.4% < 85% 목표
+  - plan.md 등 SPEC 본문은 수정하지 않음 (plan에 없는 변경 파일은 본 문서에 반영하지 않음)
+residual_risk:
+  - 커버리지 미달 구간(main.dart, menu_page.dart)의 회귀는 테스트로 잡히지 않을 수 있음
+  - 포트 provider를 override에서 빠뜨리면 런타임에 UnimplementedError (appOverrides 테스트로만 방어)
+```
 
 - plan_complete_at: 2026-10-15T14:45:09+09:00
 - plan_status: audit-ready
