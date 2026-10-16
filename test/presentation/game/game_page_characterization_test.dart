@@ -8,12 +8,15 @@ import 'package:summing_flutter/presentation/game/game_page.dart';
 
 import '../../support/test_overrides.dart';
 
-/// 현재 동작 고정: Restart는 확인 없이 즉시 새 판을 시작한다 (AC-ARCH-16).
-/// SPEC-UI-001 M1에서 확인 대화상자 흐름으로 의도적으로 바뀔 예정이다.
+/// 동작 고정 (AC-ARCH-16 → SPEC-UI-001 M1에서 의도적으로 변경).
+/// 이전 단언 "Restart는 확인 없이 즉시 새 판을 시작한다"는
+/// `.moai/specs/SPEC-ARCH-001/acceptance.md` §D.2와 SPEC-UI-001 `acceptance.md`
+/// §D.2에 따라 확인 대화상자 흐름(AC-UI-08 ~ 11)으로 바뀌었다. 회귀가 아닌 계획된 변경이다.
+/// playing 중 Restart → 확인 대화상자 → 확인하면 새 판 시작과 저장 1회.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Restart starts a new run immediately without a dialog',
+  testWidgets('Restart while playing asks for confirmation, then restarts',
       (tester) async {
     final fakes = FakePorts();
     final cells =
@@ -40,6 +43,19 @@ void main() {
     fakes.log.clear();
 
     await tester.tap(find.text('Restart'));
+    await tester.pumpAndSettle();
+
+    // 확인 전에는 상태와 저장이 그대로다.
+    expect(find.byType(AlertDialog), findsOneWidget);
+    expect(container.read(gameSessionProvider)!.turnCount, 3);
+    expect(fakes.log.where((e) => e == 'save'), isEmpty);
+
+    await tester.tap(
+      find.descendant(
+        of: find.byType(AlertDialog),
+        matching: find.text('Restart'),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);

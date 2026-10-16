@@ -46,6 +46,7 @@ class BoardGrid extends StatelessWidget {
               itemBuilder: (context, linear) {
                 final cell = game.board.cellAt(linear);
                 return _BoardCell(
+                  key: ValueKey('cell.$linear'),
                   cell: cell,
                   background: cell.isAssigned ? filledBg : emptyBg,
                   borderColor: borderColor,
@@ -66,6 +67,7 @@ class BoardGrid extends StatelessWidget {
 
 class _BoardCell extends StatelessWidget {
   const _BoardCell({
+    super.key,
     required this.cell,
     required this.background,
     required this.borderColor,
