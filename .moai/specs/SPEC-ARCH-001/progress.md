@@ -114,7 +114,7 @@ m1_to_mN_commit_strategy: one-commit-per-milestone (M1-M5), no push
 
 ```yaml
 sync_complete_at: 2026-10-16
-sync_commit_sha: pending-backfill  # 커밋은 자기 SHA를 알 수 없음; 후속 backfill
+sync_commit_sha: 16467d0  # sync 커밋 SHA 후속 backfill (placeholder 완료, SPEC 본문 아님)
 sync_status: audit-ready
 docs_updated:
   - README.md
