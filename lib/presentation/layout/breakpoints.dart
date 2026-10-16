@@ -66,7 +66,16 @@ abstract final class GameLayout {
   static const double gapLarge = 16;
 }
 
-/// 저높이 가로 보드 한 변 = min(높이 − 위아래 여백, 폭 − 왼쪽 여백 − 칸 사이 − 오른쪽 여백 − 패널 최소 폭).
+/// 메뉴·점수판 배치 수치 (`design.md` §4).
+abstract final class ScreenLayout {
+  /// compact·medium 메뉴의 가운데 카드 최대 폭.
+  static const double menuCardMaxWidth = 440;
+
+  /// 점수판 목록 최대 폭 (medium 이상에서 가운데 정렬).
+  static const double listMaxWidth = 560;
+}
+
+/// 저높이 가로 보드 한 변 =min(높이 − 위아래 여백, 폭 − 왼쪽 여백 − 칸 사이 − 오른쪽 여백 − 패널 최소 폭).
 double lowHeightBoardSide(Size size) {
   const edge = GameLayout.lowHeightEdge;
   final side = math.min(
