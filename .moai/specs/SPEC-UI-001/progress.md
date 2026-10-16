@@ -79,6 +79,14 @@
 - note: palette class named AppPalette (not AppColors) to avoid AC-UI-16 grep false positives
 - main.dart coverage 64.3% (untouched `main()` entry; outside AC-UI-18 scope)
 
+### M3 — Per-screen responsive styles (manager-develop, tdd; main c588c29 from worktree commit c11bcb0)
+
+- verification (orchestrator, main @ c588c29): `flutter analyze` → `No issues found!`; `flutter test` → `+297: All tests passed!`
+- evidence files: `.moai/state/verify/c31e2948/m3/` (red.txt, green.txt, analyze.txt, test_cov.txt)
+- ACs: AC-UI-02 (menu/scores/sheet) PASS, AC-UI-06 PASS (10 viewports), AC-UI-07 PASS, AC-UI-25 re-verified PASS (cell sizes still from pre-M4 gapless grid → M4 re-check)
+- grep counts after M3: AC-UI-16 = 2 (board_grid.dart:25,:27 → M4), AC-UI-23 = 1 (next_queue_row.dart:91 → M4)
+- agent-chosen values not in design.md: menu outer margin 16/32, low-height menu padding 12/16, card gap 16, menu card max width 440, list max width 560 (ScreenLayout in layout/breakpoints.dart)
+
 ## §F Phase 4 Mode Selection
 
 - Input params: tier L; milestones M1-M6 (6); files ≈ 30+ (lib/presentation + tests + assets + pubspec); domains: 1 (Flutter presentation layer, with theme/asset sub-areas); development_mode tdd; user flag: none (`--team`/`--solo` absent)
