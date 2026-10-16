@@ -87,6 +87,15 @@
 - grep counts after M3: AC-UI-16 = 2 (board_grid.dart:25,:27 → M4), AC-UI-23 = 1 (next_queue_row.dart:91 → M4)
 - agent-chosen values not in design.md: menu outer margin 16/32, low-height menu padding 12/16, card gap 16, menu card max width 440, list max width 560 (ScreenLayout in layout/breakpoints.dart)
 
+### M4 — Board/queue restyle and animations (manager-develop, tdd; main 17ad06c from worktree commit 475209a)
+
+- verification (orchestrator, main @ 17ad06c): `flutter analyze` → `No issues found!`; `flutter test` → `+353: All tests passed!`; AC-UI-16 grep → 0 lines; AC-UI-23 grep → 0 lines (both re-run by the orchestrator)
+- evidence files: `.moai/state/verify/c31e2948/m4/` (red.txt, red2.txt, red_hover.txt, green2.txt, analyze_final.txt, full_test_final.txt)
+- ACs: AC-UI-12 PASS, AC-UI-13 PASS, AC-UI-15 PASS, AC-UI-14 PARTIAL (placement/match/queue move PASS; screen route and end overlay → M5), AC-UI-21 PARTIAL (see debt), AC-UI-07 PASS (360x640 cell 36.44), AC-UI-25 PASS (568x320 cell 32.00, 740x360 cell 36.44 = design values), AC-UI-02 game screens PASS
+- SPEC DEFECT (debt, needs manager-spec): AC-UI-21 third clause asks for an "empty cell in a gameOver BoardGrid", impossible because GamePhase.fromBoard returns gameOver only when every cell is filled (lib/domain/game_phase.dart). Tested instead: complete state empty cell is a non-button 'Empty cell' with no tap action; gameOver digit cells have no tap action. Proposed spec fix: reword to "complete state" (or "not playing"). Fixing the SPEC body invalidates the plan-audit cache.
+- deviations from design.md: other queue slots get a 1px cellOutline border; whole queue row slides (clipped); placed cell highlight stays until next move; queue digit 20 in low-height panel else 24; 599x640 cell 49.33 (table assumed 40.00, still ≥36); new tokens AppRadius.cell/queueSlot/boardFrame, AppStroke, AppStateLayer
+- note: Flutter easeOutCubic at t=0.5 is 0.87512 (AC-UI-20 tolerance ±0.01 fine)
+
 ## §F Phase 4 Mode Selection
 
 - Input params: tier L; milestones M1-M6 (6); files ≈ 30+ (lib/presentation + tests + assets + pubspec); domains: 1 (Flutter presentation layer, with theme/asset sub-areas); development_mode tdd; user flag: none (`--team`/`--solo` absent)
