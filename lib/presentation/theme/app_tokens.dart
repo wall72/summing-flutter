@@ -252,6 +252,27 @@ abstract final class AppRadius {
 
   /// 대화상자, 시트.
   static const double lg = 24;
+
+  /// 위젯이 쓰는 모서리 모양. `Radius.circular` 호출은 토큰 폴더에만 둔다 (AC-UI-23).
+  static const BorderRadius cell = BorderRadius.all(Radius.circular(xs));
+  static const BorderRadius queueSlot = BorderRadius.all(Radius.circular(sm));
+  static const BorderRadius boardFrame =
+      BorderRadius.all(Radius.circular(frame));
+}
+
+/// 선 두께 (`design.md` §2, §5).
+abstract final class AppStroke {
+  /// 모든 셀 외곽선, 큐 나머지 칸 외곽선.
+  static const double outline = 1;
+
+  /// 셀 포커스 링, 큐 첫 칸 외곽선.
+  static const double emphasis = 2;
+}
+
+/// 상태 덧칠 불투명도. 빈 칸은 hover·press 때 cellFilled를 덧칠해 살짝 밝아진다 (`design.md` §5).
+abstract final class AppStateLayer {
+  static const double hover = 0.35;
+  static const double pressed = 0.55;
 }
 
 /// 4pt 간격 단계 (`design.md` §2). 이름에 숫자를 쓰지 않는다
