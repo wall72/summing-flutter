@@ -132,7 +132,18 @@
 
 ## §E.4 Sync-phase Audit-Ready Signal
 
-_<pending sync-phase>_
+- sync_status: complete (documentation synced; commit and PR pending via manager-git, Route B)
+- sync_complete_at: 2026-10-19
+- sync_commit_sha: pending-backfill
+- frontmatter_status_transitions: spec.md `in-progress → completed`, `updated: 2026-10-19` (frontmatter only; plan.md/acceptance.md unchanged)
+- documents_updated: README.md, .moai/project/{product,structure,tech}.md, .moai/project/codemaps/{overview,modules,dependencies,data-flow,entry-points}.md
+- mx_tags_added: 2 ANCHOR (lib/presentation/theme/app_tokens.dart `AppPalette.of`, fan_in 7 files; lib/presentation/theme/app_motion.dart `AppMotion.of`, fan_in 4 files) — comment-only
+- verification (after sync edits, HEAD 3c3241c + working tree): `flutter analyze --no-pub` → `No issues found!`; `flutter test --no-pub` → `00:13 +363: All tests passed!` (`.moai/state/verify/9610dde8/sync-{analyze,test}.txt`)
+- coverage (coverage/lcov.info, pre-sync run on 3c3241c): total 1004/1101 = 91.19%; lib/presentation 703/707 = 99.43%
+- ac_status: 24 PASS / 1 PARTIAL
+- known_debt (AC-UI-21): the third clause "empty cell in a gameOver BoardGrid" is unachievable — GamePhase.fromBoard returns gameOver only when every cell is filled. Verified instead via complete-state empty cell (non-button, no tap action) and gameOver digit cells (no tap action). Proposed fix: reword to "complete state". SPEC body left unchanged by user decision (editing it would invalidate the plan-audit cache).
+- follow_ups (out of scope): web/index.html line 26 `<meta name="theme-color" content="#009688">` still old color; AppPageRoute drops the iOS swipe-back gesture; end overlay has entrance animation only; web (CanvasKit) visual check not performed; `flutter` not on PATH in non-interactive shells (~/.zshenv no longer exports ~/flutter/bin)
+- backup: .moai/backups/sync-20261019-080725/
 
 - plan_complete_at: 2026-10-15T14:45:09+09:00
 - plan_status: audit-ready (PASS-with-debt)

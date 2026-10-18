@@ -10,6 +10,7 @@
 | 저장소 | `shared_preferences ^2.3.2` |
 | 오디오 | `audioplayers ^6.1.0` |
 | 기타 | `meta ^1.12.0` |
+| 폰트 | Nunito 400/800 (`assets/fonts/`, OFL 1.1, `pubspec.yaml`의 `fonts:`) |
 | 개발용 | `flutter_test`, `flutter_lints ^5.0.0` |
 
 앱 버전: `1.0.0+1`, `publish_to: "none"`.
@@ -36,6 +37,6 @@
 
 ## 플랫폼
 
-- 웹: 주 대상. `web/manifest.json` 방향 `portrait-primary`
+- 웹: 주 대상. `web/manifest.json` 방향 `portrait-primary`, `background_color` `#FFF8F1`, `theme_color` `#F6B7C4`(파스텔 테마와 맞춤). `web/index.html`의 `theme-color` 메타 태그는 아직 `#009688`
 - Android: `applicationId = "com.example.summing_flutter"` (임시값)
 - iOS: `com.example.summingFlutter` (임시값), 세로·가로 방향 모두 허용

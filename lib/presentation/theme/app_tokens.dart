@@ -149,6 +149,8 @@ class AppPalette extends ThemeExtension<AppPalette> {
     scrim: _darkBackground.withValues(alpha: 0.7),
   );
 
+  // @MX:ANCHOR: [AUTO] 위젯이 색상 토큰을 읽는 단일 진입점
+  // @MX:REASON: 메뉴·점수판·How to Play·보드·셀·큐·종료 오버레이(7개 파일)가 호출한다. 확장이 없을 때의 밝기별 기본 팔레트 규칙을 바꾸면 테마 없이 그리는 테스트와 모든 화면 색이 함께 바뀐다
   /// 현재 테마의 팔레트. 테마에 확장이 없으면(앱 테마를 쓰지 않는 테스트 등) 밝기에 맞는 기본 팔레트를 쓴다.
   static AppPalette of(BuildContext context) {
     final theme = Theme.of(context);

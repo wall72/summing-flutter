@@ -32,6 +32,8 @@ abstract final class AppMotion {
   /// 화면 전환과 종료 오버레이 진입의 시작 크기 (fade + scale 0.96 → 1.0).
   static const double enterStartScale = 0.96;
 
+  // @MX:ANCHOR: [AUTO] 모든 연출 시간이 거치는 감속 모드 관문
+  // @MX:REASON: 셀·큐·종료 오버레이·화면 전환(AppPageRoute, 4개 파일)이 호출한다. 반환 규칙을 바꾸면 AC-UI-14(감속 모드)와 AC-UI-20(전환 시간)이 함께 깨진다
   // @MX:NOTE: [AUTO] 감속 모드(MediaQuery.disableAnimations)에서는 모든 시간을 0으로 돌려 연출이 첫 프레임에 끝나게 한다(REQ-UI-018, AC-UI-14). 애니메이션 시간은 반드시 이 함수를 거쳐야 하며, 상수를 위젯에 직접 넘기면 감속 모드가 적용되지 않는다
   /// [duration]을 현재 모션 설정에 맞춰 돌려준다. 감속 모드면 [Duration.zero].
   static Duration of(BuildContext context, Duration duration) {
