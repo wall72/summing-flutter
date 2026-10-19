@@ -1,0 +1,1 @@
+- [Worktree pre-commit Flutter failure](project_worktree_precommit_flutter.md) — hook GIT_DIR breaks flutter version in worktrees; use a gitignored unset-shim on PATH

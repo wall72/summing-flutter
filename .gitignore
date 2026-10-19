@@ -19,3 +19,9 @@ Thumbs.db
 .moai/evolution/telemetry/usage-*.jsonl
 .moai/harness/usage-log.jsonl
 .moai/lessons-inbox.jsonl
+
+# Local artifacts (regenerated or machine-local)
+coverage/
+.moai/backups/
+.claude/worktrees/
+package-lock.json

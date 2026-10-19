@@ -1,3 +1,3 @@
 - [Table-cell pipe escape](project_table_cell_pipe_escape.md) — `\|` in AC table commands breaks grep/shell when copied raw; run ACs against pre-change tree
 - [Recompute design numbers](project_recompute_design_numbers.md) — recheck gap arithmetic, adjacent-surface contrast, Material default roles
-- [Flutter AC frame timing](flutter-ac-frame-timing.md) — tap/navigate then pump(Δ) samples t=0; require start pump(); recompute layouts on both axes
+- [Flutter AC frame timing](flutter-ac-frame-timing.md) — tap/navigate then pump(Δ) samples t=0; require start pump(); reduced-motion AC vs InkWell splash; both-axis layouts
