@@ -24,7 +24,8 @@ Summing은 9×9 보드에 숫자를 놓아 이웃 칸 합의 일의 자리와 �
 | 영역 | 현재 동작 |
 |------|-----------|
 | 메뉴 | 새 게임, 이어하기, 점수판, 설정(메뉴 안의 Music·Sound effects 토글), How to Play |
-| 게임 | 9×9 보드, 다음 숫자 큐, 재시작, 종료(Quit), 클리어/게임 오버 오버레이(Play again / Back to menu) |
+| 게임 | 9×9 보드, 다음 숫자 큐, 재시작(진행 중이면 확인 대화상자), 종료(Quit), 클리어/게임 오버 오버레이(Play again / Back to menu) |
+| 화면·연출 | 파스텔 라이트·다크 테마(시스템 밝기), 화면 크기별 반응형 배치(compact / medium / expanded / 저높이 가로), 셀·큐·화면 전환·오버레이 연출, 감속 모드 대응 (SPEC-UI-001) |
 | 점수판 | 클리어한 판만 기록, 턴 수가 적은 순으로 상위 5개 |
 | 저장 | 진행 중인 판을 매 수마다 저장, 앱 백그라운드 전환 시 저장, 끝난 판은 저장 삭제 |
 | 오디오 | 배경음악, 탭·매치 효과음, 설정 반영, 웹 자동재생 제한 대응 |
@@ -39,7 +40,9 @@ Summing은 9×9 보드에 숫자를 놓아 이웃 칸 합의 일의 자리와 �
 ## 알려진 개선 지점 (확인됨)
 
 - (해결됨, SPEC-ARCH-001) application·presentation의 infrastructure 직접 의존은 포트 도입으로 제거되었고 `test/architecture/layer_boundary_test.dart`가 경계를 검사합니다.
-- 재시작 버튼은 확인 절차 없이 `restartGame()`을 호출해 진행 중인 저장을 덮어씁니다.
+- (해결됨, SPEC-UI-001) 진행 중인 판의 재시작은 확인 대화상자를 거칩니다.
+- `web/index.html`의 `theme-color` 메타 태그가 이전 색(`#009688`)으로 남아 있습니다(`web/manifest.json`은 새 색으로 바뀜).
+- 화면 전환(`AppPageRoute`)은 iOS 스와이프 뒤로 가기 제스처를 지원하지 않습니다.
 - Android `applicationId = "com.example.summing_flutter"`, iOS `PRODUCT_BUNDLE_IDENTIFIER = com.example.summingFlutter`는 임시값입니다.
 - `web/manifest.json`은 `portrait-primary`인데 iOS `Info.plist`는 가로 방향도 허용합니다.
 - README가 L3에서는 "Web 플랫폼 중심"이라고 하면서 L104-112에서는 Android/iOS 릴리스 절차까지 안내합니다. 또 L115의 앱 ID `com.example.summing_flutter`는 Android 값이며 iOS bundle id(`com.example.summingFlutter`)와 다릅니다.
@@ -48,9 +51,9 @@ Summing은 9×9 보드에 숫자를 놓아 이웃 칸 합의 일의 자리와 �
 
 ## Roadmap candidates (후보일 뿐, SPEC 미작성)
 
-1. 재시작 전 확인 대화상자 추가 (진행 중인 판이 있을 때만)
+1. ~~재시작 전 확인 대화상자 추가 (진행 중인 판이 있을 때만)~~ (SPEC-UI-001로 완료)
 2. ~~application 계층의 infrastructure 의존을 추상 인터페이스로 분리~~ (SPEC-ARCH-001로 완료)
-3. 위젯 테스트 보강: `GamePage`, `BoardGrid`, `ScoresPage`, `MenuPage`
+3. ~~위젯 테스트 보강: `GamePage`, `BoardGrid`~~ (SPEC-UI-001로 보강), `ScoresPage`, `MenuPage`는 화면 대비·반응형 테스트만 추가됨
 4. `GameAudioService` 테스트 및 `placeAt` 점수 기록, `restartGame`/`clearSession` 테스트 추가
 5. `flutter analyze && flutter test`를 돌리는 GitHub Actions 워크플로
 6. 웹 방향 정책과 iOS 방향 설정 정렬

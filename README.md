@@ -16,7 +16,10 @@
 | **도메인** | 보드, 이웃, 매치, 큐, 승패 판정 — UI 비의존 순수 Dart + 단위 테스트 |
 | **세션** | 새 게임 / 이어하기 / 재시작, 수 저장(`savegame`), 클리어 시 Top 5 기록 |
 | **연결** | 메뉴 복귀 시 이어하기 버튼 갱신, 백그라운드·일시정지 시 `persistIfNeeded`로 저장 일관성 |
-| **UI** | 메뉴(설정·How to Play), 게임(9×9, 오버레이), 점수판, 보드 색: **빈 칸 어두운 회색 / 숫자 있는 칸 밝은 회색** |
+| **UI** | 메뉴(설정·How to Play), 게임(9×9, 오버레이), 점수판. 파스텔 디자인 토큰 기반 라이트·다크 테마(시스템 밝기를 따름, WCAG 대비 검증), Nunito 폰트 |
+| **반응형 배치** | compact(<600) / medium(600–839) / expanded(≥840) / 저높이 가로(높이 <480) 네 가지 배치. 넓은 화면과 저높이 가로에서는 보드 옆에 사이드 패널 |
+| **연출** | 배치·매치 셀 효과, 큐 이동, 화면 전환, 종료 오버레이 등장. 시스템 감속 모드(애니메이션 끄기)에서는 모든 연출 시간이 0 |
+| **재시작 확인** | 진행 중인 판에서 Restart를 누르면 확인 대화상자를 띄우고, 확인했을 때만 재시작 |
 | **오디오** | BGM·탭·매치 SFX, 설정 반영, 웹 등 자동재생 제한 대응(사용자 제스처 후 BGM) |
 
 ## 기술 스택
@@ -25,6 +28,7 @@
 - **flutter_riverpod** — `GameSessionNotifier` / `gameSessionProvider`
 - **shared_preferences** — 설정, 세이브, 하이스코어(JSON)
 - **audioplayers** — BGM / 효과음
+- **Nunito** 폰트(OFL 1.1, `assets/fonts/`) — 앱 기본 글꼴
 
 ## 플랫폼 구성
 
@@ -33,7 +37,7 @@ Web / Android / iOS 플랫폼 폴더를 모두 포함합니다.
 ```
 web/  android/  ios/   # 플랫폼 설정
 lib/                   # 앱 소스
-assets/                # 오디오 에셋
+assets/                # 오디오·폰트 에셋
 test/                  # 테스트
 ```
 
@@ -131,7 +135,11 @@ lib/
   application/     # 게임 세션, 추상 포트(저장소·오디오), 조회 provider
   infrastructure/  # 포트 구현(저장소, 오디오, 코덱)과 composition root(app_overrides)
   presentation/    # menu / game / scores, lifecycle 저장 리스너
+    theme/         # 디자인 토큰(app_tokens), 테마(app_theme), 연출 시간(app_motion)
+    layout/        # 브레이크포인트와 화면별 배치 값(breakpoints)
+    common/        # 화면 전환(app_page_route), 웹 오디오 해제, How to Play 등
 assets/audio/      # bg_music.mp3, tap_sound.wav, clap_sound.wav
+assets/fonts/      # Nunito Regular·ExtraBold + OFL.txt
 tools/             # AIFF → WAV 변환 스크립트(엔디안)
 test/              # domain·application·infrastructure·presentation, 계층 경계(architecture)
 run_chrome.ps1     # 고정 포트/프로필로 Chrome 실행 (Windows)

@@ -31,7 +31,11 @@ sequenceDiagram
 ## 세션 시작·복원
 - `startNewGame`: `GameState.initial` 생성 후 즉시 저장
 - `resumeGame`: 저장본을 읽고, `playing`이 아니면 저장을 지우고 복원하지 않음
-- `restartGame`: `startNewGame`과 동일 (확인 없이 저장 덮어씀)
+- `restartGame`: `startNewGame`과 동일. 화면 쪽에서 `playing`이면 `RestartConfirmDialog`로 확인을 받은 뒤에만 호출하고, `complete`·`gameOver`에서는 바로 호출
+
+## 셀 연출 판정 (`BoardGrid`)
+- 직전 `GameState`와 새 상태를 비교해 `turnCount`가 정확히 1 늘었을 때만 판정: 빈 칸 하나가 채워지면 배치, 숫자 칸이 비워지면 매치, 그 밖(재시작·resume·+2 이상)은 연출 없음
+- 연출 시간은 모두 `AppMotion.of`를 거치며, 감속 모드에서는 0
 
 ## 저장 키
 `summing_settings`, `summing_savegame`(`schemaVersion` 1 JSON), `summing_highscores`(상위 5개)

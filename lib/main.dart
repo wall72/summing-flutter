@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:summing_flutter/application/port_providers.dart';
 import 'package:summing_flutter/infrastructure/app_overrides.dart';
 import 'package:summing_flutter/presentation/common/game_lifecycle_listener.dart';
+import 'package:summing_flutter/presentation/common/web_audio_unlock.dart';
 import 'package:summing_flutter/presentation/menu/menu_page.dart';
+import 'package:summing_flutter/presentation/theme/app_theme.dart';
 
 /// Composition root: infrastructure를 아는 유일한 진입점.
 /// 포트 provider는 `appOverrides`로 실제 구현에 연결된다.
@@ -21,15 +23,10 @@ void main() {
 }
 
 class SummingApp extends ConsumerWidget {
-  const SummingApp({super.key});
+  const SummingApp({super.key, this.webAudioUnlockEnabled = kIsWeb});
 
-  static ThemeData _theme(Brightness brightness) => ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: brightness,
-        ),
-        useMaterial3: true,
-      );
+  /// 웹 첫 제스처 오디오 해제 스위치. 운영값은 `kIsWeb` (브라우저 자동재생 차단 대응).
+  final bool webAudioUnlockEnabled;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -39,19 +36,14 @@ class SummingApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Summing',
       debugShowCheckedModeBanner: false,
-      theme: _theme(Brightness.light),
-      darkTheme: _theme(Brightness.dark),
-      builder: kIsWeb
-          ? (context, child) => Listener(
-                behavior: HitTestBehavior.translucent,
-                // Browsers block autoplay until the first user gesture.
-                onPointerDown: (_) => ref
-                    .read(gameAudioProvider)
-                    .valueOrNull
-                    ?.notifyUserGesture(),
-                child: child ?? const SizedBox.shrink(),
-              )
-          : null,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      // 앱 안 테마 전환은 두지 않고 시스템 밝기를 따른다 (REQ-UI-002).
+      themeMode: ThemeMode.system,
+      builder: (context, child) => WebAudioUnlock(
+        enabled: webAudioUnlockEnabled,
+        child: ReducedMotionTheme(child: child ?? const SizedBox.shrink()),
+      ),
       home: const MenuPage(),
     );
   }

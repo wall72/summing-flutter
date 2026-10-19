@@ -4,9 +4,47 @@ import 'package:flutter/material.dart';
 import 'package:summing_flutter/domain/cell_index.dart';
 import 'package:summing_flutter/domain/game_phase.dart';
 import 'package:summing_flutter/domain/game_state.dart';
-import 'package:summing_flutter/domain/summing_cell.dart';
+import 'package:summing_flutter/presentation/game/widgets/board_cell.dart';
+import 'package:summing_flutter/presentation/theme/app_tokens.dart';
 
-class BoardGrid extends StatelessWidget {
+// @MX:NOTE: [AUTO] 판정 표(design.md §7): turnCount가 정확히 1 늘었을 때만 판정한다. 빈 칸 정확히 하나가 채워짐 = 배치, 숫자 칸 1개 이상이 비워짐 = 매치(지워지기 전 숫자 보관), 변화 없음 = 0개 소거 매치(셀 연출 없음). 재시작·resume·+2 이상·규칙에 없는 변화는 셀 연출이 없다
+/// 직전 상태 [previous]와 새 상태 [next]를 비교해 칸별 연출을 정한다.
+Map<int, CellEffect> cellEffectsBetween(GameState previous, GameState next) {
+  if (next.turnCount != previous.turnCount + 1) return const {};
+
+  final filled = <int>[];
+  final cleared = <int, int>{};
+  for (var i = 0; i < CellIndex.cellCount; i++) {
+    final before = previous.board.cellAt(i);
+    final after = next.board.cellAt(i);
+    if (before == after) continue;
+    if (!before.isAssigned) {
+      filled.add(i);
+    } else if (!after.isAssigned) {
+      cleared[i] = before.value;
+    } else {
+      // 숫자가 다른 숫자로 바뀌는 수는 규칙에 없다.
+      return const {};
+    }
+  }
+
+  if (filled.length == 1 && cleared.isEmpty) {
+    return {filled.single: const CellEffect.place()};
+  }
+  if (filled.isEmpty && cleared.isNotEmpty) {
+    return {
+      for (final entry in cleared.entries)
+        entry.key: CellEffect.match(entry.value),
+    };
+  }
+  return const {};
+}
+
+/// 9×9 보드 (`design.md` §2, §5).
+///
+/// 프레임(surfaceContainer)은 안쪽 여백 2, 반경 8로 잘라내고 셀 간격은 2다.
+/// 셀 한 변 = (보드 한 변 − 2 × 2 − 8 × 2) / 9.
+class BoardGrid extends StatefulWidget {
   const BoardGrid({
     super.key,
     required this.game,
@@ -17,98 +55,83 @@ class BoardGrid extends StatelessWidget {
   final void Function(int linear) onCellTap;
 
   @override
+  State<BoardGrid> createState() => _BoardGridState();
+}
+
+class _BoardGridState extends State<BoardGrid> {
+  /// 마지막 수가 만든 칸별 연출. 다음 상태가 들어올 때까지 유지한다.
+  Map<int, CellEffect> _effects = const {};
+
+  // @MX:WARN: [AUTO] 직전 GameState와 새 GameState를 비교해 셀 연출을 정한다. 같은 상태로 다시 그려질 때(identical)는 연출을 유지하고, 상태가 바뀌면 바로 앞 상태하고만 비교한다
+  // @MX:REASON: 연출 상태 수명주기가 위젯 재사용에 묶여 있다. 빠른 연속 탭에서 두 수가 한 프레임에 반영되면 turnCount가 +2가 되어 연출이 없어야 하고(REQ-UI-016), 0개 소거 매치를 배치로 오판하면 안 된다(AC-UI-12). 비교 기준을 바꾸면 연출이 섞이거나 재시작·resume에서 셀 연출이 생긴다(AC-UI-13)
+  @override
+  void didUpdateWidget(BoardGrid oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!identical(oldWidget.game, widget.game)) {
+      _effects = cellEffectsBetween(oldWidget.game, widget.game);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final isLight = theme.brightness == Brightness.light;
-    // Empty cells: dark gray. Any cell with a digit (including the outer ring
-    // after place-without-clear): light gray.
-    final emptyBg = isLight ? const Color(0xFF5A5A5A) : const Color(0xFF2A2A2A);
-    final filledBg =
-        isLight ? const Color(0xFFE8E8E8) : const Color(0xFF6E6E6E);
-    final borderColor = theme.colorScheme.outlineVariant.withValues(alpha: 0.5);
-    final textColor = theme.colorScheme.onSurface;
+    final palette = AppPalette.of(context);
+    final game = widget.game;
     final playing = game.phase == GamePhase.playing;
+    const n = CellIndex.size;
+    const gap = AppSpacing.hairline;
 
     return LayoutBuilder(
       builder: (context, constraints) {
         final side = math.min(constraints.maxWidth, constraints.maxHeight);
-        final fontSize = side / CellIndex.size * 0.42;
+        final cellSide = math.max(0.0, (side - 2 * gap - (n - 1) * gap) / n);
+        final digitSize = cellSide * AppTypeScale.cellDigitRatio;
+
+        Widget cellAt(int linear) {
+          final cell = game.board.cellAt(linear);
+          return BoardCell(
+            key: ValueKey('cell.$linear'),
+            index: linear,
+            cell: cell,
+            digitSize: digitSize,
+            effect: _effects[linear],
+            onTap: playing && !cell.isAssigned
+                ? () => widget.onCellTap(linear)
+                : null,
+          );
+        }
 
         return Center(
           child: SizedBox.square(
             dimension: side,
-            child: GridView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: CellIndex.size,
+            child: ClipRRect(
+              borderRadius: AppRadius.boardFrame,
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: palette.surfaceContainer),
+                child: Padding(
+                  padding: const EdgeInsets.all(gap),
+                  child: Column(
+                    children: [
+                      for (var row = 0; row < n; row++) ...[
+                        if (row > 0) const SizedBox(height: gap),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              for (var col = 0; col < n; col++) ...[
+                                if (col > 0) const SizedBox(width: gap),
+                                Expanded(child: cellAt(row * n + col)),
+                              ],
+                            ],
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
               ),
-              itemCount: CellIndex.cellCount,
-              itemBuilder: (context, linear) {
-                final cell = game.board.cellAt(linear);
-                return _BoardCell(
-                  cell: cell,
-                  background: cell.isAssigned ? filledBg : emptyBg,
-                  borderColor: borderColor,
-                  textColor: textColor,
-                  fontSize: fontSize,
-                  onTap: playing && !cell.isAssigned
-                      ? () => onCellTap(linear)
-                      : null,
-                );
-              },
             ),
           ),
         );
       },
-    );
-  }
-}
-
-class _BoardCell extends StatelessWidget {
-  const _BoardCell({
-    required this.cell,
-    required this.background,
-    required this.borderColor,
-    required this.textColor,
-    required this.fontSize,
-    required this.onTap,
-  });
-
-  final SummingCell cell;
-  final Color background;
-  final Color borderColor;
-  final Color textColor;
-  final double fontSize;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      label: cell.isAssigned ? '${cell.value}' : 'Empty cell',
-      button: onTap != null,
-      child: Material(
-        color: background,
-        child: InkWell(
-          onTap: onTap,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              border: Border.all(color: borderColor, width: 0.5),
-            ),
-            child: Center(
-              child: cell.isAssigned
-                  ? Text(
-                      '${cell.value}',
-                      style: TextStyle(
-                        fontSize: fontSize,
-                        fontWeight: FontWeight.w600,
-                        color: textColor,
-                      ),
-                    )
-                  : null,
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
